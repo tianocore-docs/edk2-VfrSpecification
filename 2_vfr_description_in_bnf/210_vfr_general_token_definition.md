@@ -36,17 +36,17 @@
 ```c
 Hex8 ::=
   "0x"["0"-"9""A"-"F""a"-"f"]{1,8}
-  
+
 Hex4 ::=
   "0x"["0"-"9""A"-"F""a"-"f"]{1,4}
-  
+
 Hex2 ::=
   "0x"["0"-"9""A"-"F""a"-"f"]{1,2}
-  
-guidSubDefinition ::= 
+
+guidSubDefinition ::=
   Hex2 "," Hex2 "," Hex2 "," Hex2 ","
   Hex2 "," Hex2 "," Hex2 "," Hex2
-  
+
 guidDefinition ::=
   "{"
   Hex8 "," Hex4 "," Hex4 ","
@@ -68,7 +68,7 @@ defined as two 32-bit values, followed by two 16-bit values, followed by eight
 ```c
 StringIdentifier ::=
   ["A"-"Z""a"-"z""_"]["A"-"Z""a"-"z""_""0"-"9"]*
-  
+
 getStringId ::=
   "STRING_TOKEN" "(" Number ")"
 ```
@@ -93,8 +93,8 @@ section.
 ### 2.10.4 VFR Statement Header Definition
 
 ```c
-vfrStatementHeader  ::= 
-  "prompt" "=" getStringId "," 
+vfrStatementHeader  ::=
+  "prompt" "=" getStringId ","
   "help"   "=" getStringId ","
 ```
 
@@ -117,17 +117,17 @@ questionheaderFlagsField ::=
   | "INTERACTIVE"
   | "RESET_REQUIRED"
   | "OPTIONS_ONLY"
-  
+
 vfrStorageVarId ::=
   ( StringIdentifier "[" Number "]" )
-  | 
+  |
   (
     StringIdentifier
     (
       "." StringIdentifier { "[" Number "]" }
     )*
   )
-``` 
+```
 
 #### BEHAVIORS AND RESTRICTIONS
 
@@ -150,8 +150,8 @@ None.
 ### 2.10.6 VFR Constant Value Definition
 
 ```c
-vfrConstantValueField  ::= 
-    Number 
+vfrConstantValueField  ::=
+    Number
   | "TRUE"
   | "FALSE"
   | "ONE"
@@ -182,7 +182,7 @@ vfrStatementStatTag ::=
 
 vfrStatementStatTagList ::=
   vfrStatementStatTag ( "," vfrStatementStatTag )*
-``` 
+```
 
 **********
 **Note:** There are no BEHAVIORS AND RESTRICTIONS or an Example for this

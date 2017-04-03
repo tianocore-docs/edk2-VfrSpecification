@@ -43,7 +43,7 @@ ternary operators, and constants.
 ### 2.12.1 OR
 
 ```c
-vfrStatementExpression ::= 
+vfrStatementExpression ::=
   andTerm ( "OR" andTerm )*
 ```
 
@@ -54,7 +54,7 @@ Generates `EFI_IFR_OR` op-codes.
 ### 2.12.2 AND
 
 ```c
-andTerm ::= 
+andTerm ::=
   bitwiseorTerm ( "AND" bitwiseorTerm )*
 ```
 
@@ -65,7 +65,7 @@ Generates `EFI_IFR_AND` op-codes.
 ### 2.12.3 bitwiseor
 
 ```c
-bitwiseorTerm ::= 
+bitwiseorTerm ::=
   bitwiseandTerm ( "|" bitwiseandTerm )*
 ```
 
@@ -76,7 +76,7 @@ Generates `EFI_IFR_BITWISE_OR` op-codes.
 ### 2.12.4 bitwiseand
 
 ```c
-bitwiseandTerm ::= 
+bitwiseandTerm ::=
   equalTerm ( "&" equalTerm )*
 ```
 
@@ -102,7 +102,7 @@ Generates `EFI_IFR_EQUAL` or `EFI_IFR_NOT_EQUAL` op-codes.
 ### 2.12.6 compare
 
 ```c
-compareTerm ::= 
+compareTerm ::=
   shiftTerm
   (
       "<" shiftTerm
@@ -120,7 +120,7 @@ Generates `EFI_IFR_LESS_THAN EFI_IFR_LESS_EQUAL, EFI_IFR_IFR_GREATER_EQUAL,` or
 ### 2.12.7 shift
 
 ```c
-shiftTerm ::= 
+shiftTerm ::=
   addMinusTerm
   (
       "<<" addMinusTerm
@@ -135,7 +135,7 @@ Generates `EFI_IFR_SHIFT_LEFT` or `EFI_IFR_SHIFT_RIGHT` op-codes.
 ### 2.12.8 add/minus
 
 ```c
-addMinusTerm ::= 
+addMinusTerm ::=
   multdivmodTerm
   (
       "+" multdivmodTerm
@@ -166,7 +166,7 @@ Generates `EFI_IFR_MULTIPLY EFI_IFR_MODULO` or `EFI_IFR_DIVIDE` op-codes.
 ### 2.12.10 cast terms
 
 ```c
-castTerm ::= 
+castTerm ::=
   (
     "("
     (
@@ -176,7 +176,7 @@ castTerm ::=
       | "UINT16"
       | "UINT8"
     )
-    ")" 
+    ")"
   )*
   atomTerm
 ```
@@ -189,7 +189,7 @@ one of the following types: `BOOLEAN`, `UINT64`, `UINT32`, `UINT16`,  `UINT8`.
 ### 2.12.11 atom terms
 
 ```c
-atomTerm ::= 
+atomTerm ::=
     vfrExpressionCatenate
   | vfrExpressionMatch
   | vfrExpressionParen
@@ -205,10 +205,10 @@ atomTerm ::=
 #### 2.12.11.1 catenate
 
 ```c
-vfrExpressionCatenate ::= 
+vfrExpressionCatenate ::=
   "catenate"
   "(" vfrStatementExpression "," vfrStatementExpression ")"
-```  
+```
 
 #### BEHAVIORS AND RESTRICTIONS
 
@@ -217,10 +217,10 @@ Generates `EFI_IFR_CATENATE` op-codes.
 #### Example
 
 ```c
-string  varid   = MyData.String, 
-        prompt  = STRING_TOKEN(STR_PROMPT), 
-        help    = STRING_TOKEN(STR_HELP), 
-        minsize = 6, 
+string  varid   = MyData.String,
+        prompt  = STRING_TOKEN(STR_PROMPT),
+        help    = STRING_TOKEN(STR_HELP),
+        minsize = 6,
         maxsize = 40,
         inconsistentif prompt = STRING_TOKEN(STR_CHECK),
            pushthis != catenate(stringref(STRING_TOKEN(STR_STRING_RIGHT)),
@@ -246,9 +246,9 @@ Generates `EFI_IFR_MATCH` op-codes.
 ```c
 grayoutif  match(stringref(STRING_TOKEN(STR_PATTERN)),
                  stringref(STRING_TOKEN(STR_STRING)))
-      numeric varid   = MyData.Data, 
-              prompt  = STRING_TOKEN(STR_PROMPT), 
-              help    = STRING_TOKEN(STR_HELP), 
+      numeric varid   = MyData.Data,
+              prompt  = STRING_TOKEN(STR_PROMPT),
+              help    = STRING_TOKEN(STR_HELP),
               minimum = 0,
               maximum = 243,
       endnumeric;
@@ -269,7 +269,7 @@ Changes the order of the calculation.
 #### 2.12.11.4 build-in functions
 
 ```c
-vfrExpressionBuildInFunction ::= 
+vfrExpressionBuildInFunction ::=
     dupExp
   | ideqvalExp
   | ideqidExp
@@ -281,7 +281,7 @@ vfrExpressionBuildInFunction ::=
   | securityExp
   | getExp
 ```
-  
+
 ##### 2.12.11.4.1 dup
 
 ```c
@@ -296,9 +296,9 @@ Generates `EFI_IFR_DUP` op-codes.
 #### Example
 
 ```c
-numeric varid   = MyData.Data, 
-        prompt  = STRING_TOKEN(STR_PROMPT), 
-        help    = STRING_TOKEN(STR_HELP), 
+numeric varid   = MyData.Data,
+        prompt  = STRING_TOKEN(STR_PROMPT),
+        help    = STRING_TOKEN(STR_HELP),
         minimum = 0,
         maximum = 0xf0,
           default value = 2 + dup,
@@ -308,11 +308,11 @@ endnumeric;
 ##### 2.12.11.4.2 ideqval
 
 ```c
-ideqvalExp ::= 
+ideqvalExp ::=
   "ideqval"
   vfrQuestionDataFieldName "==" Number
 ```
-  
+
 #### BEHAVIORS AND RESTRICTIONS
 
 Generates `EFI_IFR_EQ_ID_VAL` op-codes.
@@ -321,9 +321,9 @@ Generates `EFI_IFR_EQ_ID_VAL` op-codes.
 
 ```c
 grayoutif ideqval MyData.Data1 == 99;
-  numeric varid   = MyData.Data, 
-          prompt  = STRING_TOKEN(STR_PROMPT), 
-          help    = STRING_TOKEN(STR_HELP), 
+  numeric varid   = MyData.Data,
+          prompt  = STRING_TOKEN(STR_PROMPT),
+          help    = STRING_TOKEN(STR_HELP),
           minimum = 0,
           maximum = 0xf0,
   endnumeric;
@@ -337,7 +337,7 @@ ideqidExp ::=
   "ideqid"
   vfrQuestionDataFieldName "==" vfrQuestionDataFieldName
 ```
-  
+
 #### BEHAVIORS AND RESTRICTIONS
 
 Generates `EFI_IFR_EQ_ID_ID` op-codes.
@@ -346,9 +346,9 @@ Generates `EFI_IFR_EQ_ID_ID` op-codes.
 
 ```c
 grayoutif ideqid MyData.Data2 == MyData.Data3;
-  numeric varid   = MyData.Data, 
-          prompt  = STRING_TOKEN(STR_PROMPT), 
-          help    = STRING_TOKEN(STR_HELP), 
+  numeric varid   = MyData.Data,
+          prompt  = STRING_TOKEN(STR_PROMPT),
+          help    = STRING_TOKEN(STR_HELP),
           minimum = 0,
           maximum = 0xf0,
   endnumeric;
@@ -362,18 +362,18 @@ ideqvallistExp ::=
   "ideqvallist"
   vfrQuestionDataFieldName "==" ( Number )+
 ```
-  
+
 #### BEHAVIORS AND RESTRICTIONS
 
 Generates `EFI_IFR_EQ_ID_LIST` op-codes.
 
 ```c
 grayoutif ideqvallist MyData.Data1 == 1 3;
-  numeric name    = MyNumeric, 
-          varid   = MyData.Data, 
-          prompt  = STRING_TOKEN(STR_PROMPT), 
+  numeric name    = MyNumeric,
+          varid   = MyData.Data,
+          prompt  = STRING_TOKEN(STR_PROMPT),
           help    = STRING_TOKEN(STR_HELP),
-          minimum = 0, 
+          minimum = 0,
           maximum = 0xf0,
   endnumeric;
 endif;
@@ -394,9 +394,9 @@ Generates `EFI_IFR_QUESTION_REF1` op-codes.
 #### Example
 
 ```c
-numeric varid   = MyData.Data, 
-        prompt  = STRING_TOKEN(STR_PROMPT), 
-        help    = STRING_TOKEN(STR_HELP), 
+numeric varid   = MyData.Data,
+        prompt  = STRING_TOKEN(STR_PROMPT),
+        help    = STRING_TOKEN(STR_HELP),
         minimum = 0,
         maximum = 0xf0,
         default value = questionref(MyNumeric),
@@ -418,9 +418,9 @@ Generates `EFI_IFR_RULE_REF` op-codes.
 
 ```c
 grayoutif ruleref(MyRule) == 1;
-  string varid   = MyData.String, 
-         prompt  = STRING_TOKEN(STR_PROMPT), 
-         help    = STRING_TOKEN(STR_HELP), 
+  string varid   = MyData.String,
+         prompt  = STRING_TOKEN(STR_PROMPT),
+         help    = STRING_TOKEN(STR_HELP),
          minsize = 6,
          maxsize = 40,
   endstring;
@@ -442,9 +442,9 @@ Generates `EFI_IFR_STRING_REF1` op-codes.
 
 ```c
 grayoutif stringref(STRING_TOKEN(STR_STRING)) == 1;
-  string varid   = MyData.String, 
-         prompt  = STRING_TOKEN(STR_PROMPT), 
-         help    = STRING_TOKEN(STR_HELP), 
+  string varid   = MyData.String,
+         prompt  = STRING_TOKEN(STR_PROMPT),
+         help    = STRING_TOKEN(STR_HELP),
          minsize = 6,
          maxsize = 40,
   endstring;
@@ -469,7 +469,7 @@ string  varid   = MyData.String,
         prompt  = STRING_TOKEN(STR_PROMPT), help = STRING_TOKEN(STR_HELP),
         minsize = 6,
         maxsize = 40,
-        inconsistentif prompt = STRING_TOKEN(STR_CHECK), 
+        inconsistentif prompt = STRING_TOKEN(STR_CHECK),
           pushthis != stringref(STRING_TOKEN(STR_STRING))
         endif
 endstring;
@@ -491,12 +491,12 @@ Generates `EFI_IFR_SECURITY` op-codes.
 ```c
 grayoutif NOT security(EFI_GUID);
     text
-      help = STRING_TOKEN(STR_HELP), 
+      help = STRING_TOKEN(STR_HELP),
       text = STRING_TOKEN(STR_TEXT);
 endif;
 ```
 
-##### 2.12.11.4.10 get 
+##### 2.12.11.4.10 get
 
 ```
 getExp ::=
@@ -508,11 +508,11 @@ getExp ::=
 Generates `EFI_IFR_GET` op-codes.
 
 ```c
-numeric varid   = MyData.Data, 
+numeric varid   = MyData.Data,
         prompt  = STRING_TOKEN(STR_PROMPT),
         help    = STRING_TOKEN(STR_HELP),
         minimum = 0,
-        maximum = 255, 
+        maximum = 255,
         read get(MyData.Data1);
 endnumeric;
 ```
@@ -532,7 +532,7 @@ vfrExpressionConstant ::=
 
 #### BEHAVIORS AND RESTRICTIONS
 
-Generates `EFI_IFR_TRUE EFI_IFR_FALSE`, `EFI_IFR_ONE EFI_IFR_ONES`, 
+Generates `EFI_IFR_TRUE EFI_IFR_FALSE`, `EFI_IFR_ONE EFI_IFR_ONES`,
 `EFI_IFR_ZERO`, `EFI_IFR_UNDEFINED`, or `EFI_IFR_VERSION` op-codes.
 
 ####2.12.11.6 unary operators
@@ -550,7 +550,7 @@ vfrExpressionUnaryOp ::=
   | tolwerExp
   | setExp
 ```
-  
+
 ##### 2.12.11.6.1 length
 
 ```c
@@ -564,11 +564,11 @@ Generates `EFI_IFR_LENGTH` op-codes.
 #### Example
 
 ```c
-numeric varid   = MyData.Data, 
-        prompt  = STRING_TOKEN(STR_PROMPT), 
-        help    = STRING_TOKEN(STR_HELP), 
+numeric varid   = MyData.Data,
+        prompt  = STRING_TOKEN(STR_PROMPT),
+        help    = STRING_TOKEN(STR_HELP),
         minimum = 0,
-        maximum = 255, 
+        maximum = 255,
         default value = length(stringref(STRING_TOKEN(STR_STRING))),
 endnumeric;
 ```
@@ -587,11 +587,11 @@ Generates `EFI_IFR_BITWISENOT` op-codes.
 #### Example
 
 ```c
-numeric varid   = MyData.Data, 
-        prompt  = STRING_TOKEN(STR_PROMPT), 
-        help    = STRING_TOKEN(STR_HELP), 
+numeric varid   = MyData.Data,
+        prompt  = STRING_TOKEN(STR_PROMPT),
+        help    = STRING_TOKEN(STR_HELP),
         minimum = 0,
-        maximum = 255, 
+        maximum = 255,
         default value = ~(length(stringref(STRING_TOKEN(STR_STRING)))),
 endnumeric;
 ```
@@ -601,25 +601,25 @@ endnumeric;
 ```c
 question23refExp ::=
   "questionrefval"
-  "(" 
+  "("
     {
       DevicePath "=" "STRING_TOKEN" "\(" S:Number "\)" ","
     }
     {
       Uuid "=" guidDefinition[Guid] ","
-    } 
+    }
     vfrStatementExpression
   ")"
-```  
+```
 
 #### BEHAVIORS AND RESTRICTIONS
 
 Generates `EFI_IFR_QUESTION_REF2` or `EFI_IFR_QUESTION_REF3` op-codes.
 
 ```c
-numeric varid   = MyData.Data, 
-        prompt  = STRING_TOKEN(STR_PROMPT), 
-        help    = STRING_TOKEN(STR_HELP), 
+numeric varid   = MyData.Data,
+        prompt  = STRING_TOKEN(STR_PROMPT),
+        help    = STRING_TOKEN(STR_HELP),
         minimum = 0,
         maximum = 255,
         default value = questionrefval(QuestionID),
@@ -640,9 +640,9 @@ Generates `EFI_IFR_STRING_REF2` op-codes.
 #### Example
 
 ```c
-numeric varid   = MyData.Data, 
-        prompt  = STRING_TOKEN(STR_PROMPT), 
-        help    = STRING_TOKEN(STR_HELP), 
+numeric varid   = MyData.Data,
+        prompt  = STRING_TOKEN(STR_PROMPT),
+        help    = STRING_TOKEN(STR_HELP),
         minimum = 0,
         maximum = 255,
         default value = length(stringrefval(STR_STRING)),
@@ -663,9 +663,9 @@ Generates `EFI_IFR_TO_BOOLEAN` op-codes.
 #### Example
 
 ```c
-numeric varid   = MyData.Data, 
-        prompt  = STRING_TOKEN(STR_PROMPT), 
-        help    = STRING_TOKEN(STR_HELP), 
+numeric varid   = MyData.Data,
+        prompt  = STRING_TOKEN(STR_PROMPT),
+        help    = STRING_TOKEN(STR_HELP),
         minimum = 0,
         maximum = 255, default value = boolval(12),
 endnumeric;
@@ -686,9 +686,9 @@ Generates `EFI_IFR_TO_STRING` op-codes.
 #### Example
 
 ```c
-numeric varid   = MyData.Data, 
-        prompt  = STRING_TOKEN(STR_PROMPT), 
-        help    = STRING_TOKEN(STR_HELP), 
+numeric varid   = MyData.Data,
+        prompt  = STRING_TOKEN(STR_PROMPT),
+        help    = STRING_TOKEN(STR_HELP),
         minimum = 0,
         maximum = 255,
         default value = length(stringval(format = 8, 12)),
@@ -709,9 +709,9 @@ Generates `EFI_IFR_TO_UINT` op-codes.
 #### Example
 
 ```c
-numeric varid   = MyData.Data, 
-        prompt  = STRING_TOKEN(STR_PROMPT), 
-        help    = STRING_TOKEN(STR_HELP), 
+numeric varid   = MyData.Data,
+        prompt  = STRING_TOKEN(STR_PROMPT),
+        help    = STRING_TOKEN(STR_HELP),
         minimum = 0,
         maximum = 255,
         default value = unintval(12 * 3),
@@ -733,9 +733,9 @@ Generates `EFI_IFR_TO_UPPER` op-codes.
 
 ```c
 grayoutif length(toupper(stringref(STRING_TOKEN(STR_STRING))))==1;
-  string varid   = MyData.String, 
-         prompt  = STRING_TOKEN(STR_PROMPT), 
-         help    = STRING_TOKEN(STR_HELP), 
+  string varid   = MyData.String,
+         prompt  = STRING_TOKEN(STR_PROMPT),
+         help    = STRING_TOKEN(STR_HELP),
          minsize = 6,
          maxsize = 40,
   endstring;
@@ -755,9 +755,9 @@ Generates `EFI_IFR_TO_LOWER` op-codes.
 
 ```c
 grayoutif length(tolower(stringref(STRING_TOKEN(STR_STRING))))==2;
-  string varid   = MyData.String, 
-         prompt  = STRING_TOKEN(STR_PROMPT), 
-         help    = STRING_TOKEN(STR_HELP), 
+  string varid   = MyData.String,
+         prompt  = STRING_TOKEN(STR_PROMPT),
+         help    = STRING_TOKEN(STR_HELP),
          minsize = 6,
          maxsize = 40,
   endstring;
@@ -770,7 +770,7 @@ endif;
 setExp ::=
   "set"
   "("
-  vfrStorageVarId { "|" "flags" "=" vfrNumericFlags } "," 
+  vfrStorageVarId { "|" "flags" "=" vfrNumericFlags } ","
   vfrStatementExpression
   ")"
 ```
@@ -782,7 +782,7 @@ Generates `EFI_IFR_SET` op-codes.
 #### Example
 
 ```c
-numeric varid   = MyData.Data, 
+numeric varid   = MyData.Data,
         prompt  = STRING_TOKEN(STR_PROMPT),
         help    = STRING_TOKEN(STR_HELP),
         minimum = 0,
@@ -794,7 +794,7 @@ endnumeric;
 ##### 2.12.11.7 ternary operators
 
 ```c
-vfrExpressionTernaryOp ::= 
+vfrExpressionTernaryOp ::=
     conditionalExp
   | findExp
   | midExp
@@ -825,9 +825,9 @@ Generates `EFI_IFR_CONDITIONAL` op-codes.
 #### Example
 
 ```c
-numeric varid   = MyData.Data, 
-        prompt  = STRING_TOKEN(STR_PROMPT), 
-        help    = STRING_TOKEN(STR_HELP), 
+numeric varid   = MyData.Data,
+        prompt  = STRING_TOKEN(STR_PROMPT),
+        help    = STRING_TOKEN(STR_HELP),
         minimum = 0,
         maximum = 255,
         default value = cond(2 == 1 ? 5 : 10),
@@ -848,7 +848,7 @@ findExp ::=
   ","
   vfrStatementExpression
   ")"
-  
+
 findFormat ::=
     "SENSITIVE"
   | "INSENSITIVE"
@@ -861,12 +861,12 @@ Generates `EFI_IFR_FIND` op-codes.
 #### Example
 
 ```c
-numeric varid   = MyData.Data, 
-        prompt  = STRING_TOKEN(STR_PROMPT), 
-        help    = STRING_TOKEN(STR_HELP), 
+numeric varid   = MyData.Data,
+        prompt  = STRING_TOKEN(STR_PROMPT),
+        help    = STRING_TOKEN(STR_HELP),
         minimum = 0,
-        maximum = 255, 
-        default value = 
+        maximum = 255,
+        default value =
           find(INSENSITIVE, (stringref(STRING_TOKEN(STR_STRING1))),
                             (stringref(STRING_TOKEN(STR_STRING2))), 1),
 endnumeric;
@@ -894,9 +894,9 @@ Generates `EFI_IFR_MID` op-codes.
 
 ```c
 grayoutif length(mid(stringref(STRING_TOKEN(STR_STRING)),6,8))==1;
-  string varid   = MyData.String, 
-         prompt  = STRING_TOKEN(STR_PROMPT), 
-         help    = STRING_TOKEN(STR_HELP), 
+  string varid   = MyData.String,
+         prompt  = STRING_TOKEN(STR_PROMPT),
+         help    = STRING_TOKEN(STR_HELP),
          minsize = 6,
          maxsize = 40,
   endstring;
@@ -926,11 +926,11 @@ Generates `EFI_IFR_TOKEN` op-codes.
 ```c
 grayoutif length(token(stringref(STRING_TOKEN(STR_STRING1)),
                  stringref(STRING_TOKEN(STR_STRING2)), 0)) == 2;
-  string varid   = MyData.String, 
-         prompt  = STRING_TOKEN(STR_PROMPT), 
-         help    = STRING_TOKEN(STR_HELP), 
+  string varid   = MyData.String,
+         prompt  = STRING_TOKEN(STR_PROMPT),
+         help    = STRING_TOKEN(STR_HELP),
          minsize = 6,
-         maxsize = 40, 
+         maxsize = 40,
   endstring;
 endif;
 ```
@@ -949,8 +949,8 @@ spanExp ::=
   ","
   vfrStatementExpression
   ")"
-  
-spanFlags ::= 
+
+spanFlags ::=
     Number
   | "LAST_NON_MATCH"
   | "FIRST_NON_MATCH"
@@ -963,12 +963,12 @@ Generates `EFI_IFR_SPAN` op-codes.
 #### Example
 
 ```c
-numeric varid = MyData.Data, 
-        prompt  = STRING_TOKEN(STR_PROMPT), 
-        help    = STRING_TOKEN(STR_HELP), 
+numeric varid = MyData.Data,
+        prompt  = STRING_TOKEN(STR_PROMPT),
+        help    = STRING_TOKEN(STR_HELP),
         minimum = 0,
         maximum = 255,
-        default value = span(flags = LAST_NON_MATCH, 
+        default value = span(flags = LAST_NON_MATCH,
                              stringref(STRING_TOKEN(STR_STRING1)),
                              stringref(STRING_TOKEN(STR_STRING2)),0),
 endnumeric;
@@ -989,7 +989,7 @@ vfrExpressionMap ::=
     ";"
   )*
   ")"
-```  
+```
 
 #### BEHAVIORS AND RESTRICTIONS
 
@@ -998,9 +998,9 @@ Generates `EFI_IFR_MAP` op-codes.
 #### Example
 
 ```c
-numeric varid   = MyData.Data, 
-        prompt  = STRING_TOKEN(STR_PROMPT), 
-        help    = STRING_TOKEN(STR_HELP), 
+numeric varid   = MyData.Data,
+        prompt  = STRING_TOKEN(STR_PROMPT),
+        help    = STRING_TOKEN(STR_HELP),
         minimum = 0,
         maximum = 255,
         default value = map(pushthis:0,10;1,2;3,5;6,8;),
@@ -1012,11 +1012,11 @@ endnumeric;
 ```c
 vfrExpressionMatch ::=
   "match2"
-  "(" 
+  "("
   vfrStatementExpressionPattern
-  "," 
+  ","
   vfrStatementExpressionString
-  "," 
+  ","
   guidDefinition[Guid]
   ")"
 ```
@@ -1029,10 +1029,10 @@ Generates `EFI_IFR_MATCH2` op-codes.
 
 ```c
 grayoutif match2(stringref(STRING_TOKEN(STR_PATTERN)),
-                 stringref(STRING_TOKEN(STR_STRING)), 
+                 stringref(STRING_TOKEN(STR_STRING)),
                  PERL_GUID);
     numeric varid   = MyData.Data,
-            prompt  = STRING_TOKEN(STR_PROMPT), 
+            prompt  = STRING_TOKEN(STR_PROMPT),
             help    = STRING_TOKEN(STR_HELP),
             minimum = 0,
             maximum = 243,

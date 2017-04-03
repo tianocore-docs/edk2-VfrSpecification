@@ -45,7 +45,7 @@ vfrFormSetList ::=
     | vfrStatementSuppressIfFormSet
     | vfrStatementExtension
     )*
-```    
+```
 
 #### BEHAVIORS AND RESTRICTIONS
 

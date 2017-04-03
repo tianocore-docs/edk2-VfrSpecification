@@ -35,18 +35,18 @@ A complete VFR program takes the following form:
 
 ```c
 vfrProgram ::=
- ( 
+ (
      vfrPragmaPackDefinition
    | vfrDataStructDefinition
  )*
  vfrFormSetDefinition
- 
+
 vfrPragmaPackDefinition ::=
  "#pragma" "pack" "(" vfrPragmaPackType ")"
- 
+
 vfrPragmaPackType ::=
   {
-      "show"  
+      "show"
     | ( "push" | "pop" ) { "," StringIdentifier } {"," Number }
     | { Number }
   }

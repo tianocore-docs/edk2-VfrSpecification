@@ -42,13 +42,13 @@ vfrStatementVarStoreLinear ::=
     | "UINT16" ","
     | "UINT32" ","
     | "UINT64" ","
-    | "EFI_HII_DATE" "," 
+    | "EFI_HII_DATE" ","
     | "EFI_HII_TIME" ","
     | "EFI_HII_REF" ","
   )
   { "varid" "=" Number "," }
   "name" "=" StringIdentifier ","
-  "guid" "=" guidDefinition ";" 
+  "guid" "=" guidDefinition ";"
 ```
 
 #### BEHAVIORS AND RESTRICTIONS
@@ -77,14 +77,14 @@ vfrStatementVarStoreEfi ::=
     | "UINT16" ","
     | "UINT32" ","
     | "UINT64" ","
-    | "EFI_HII_DATE" "," 
+    | "EFI_HII_DATE" ","
     | "EFI_HII_TIME" ","
     | "EFI_HII_REF" ","
   )
   { "varid" "=" Number "," }
   "attribute" "=" Number ( "|" Number )* ","
   "name" "=" StringIdentifier ","
-  "guid" "=" guidDefinition ";" 
+  "guid" "=" guidDefinition ";"
 ```
 
 #### BEHAVIORS AND RESTRICTIONS
@@ -100,7 +100,7 @@ data structure name. The `StringIdentifier` of `name` is the varstore name.
 
 ```c
 efivarstore EfiDataStructure
-  attribute = EFI_VARIABLE_BOOTSERVICE_ACCESS, 
+  attribute = EFI_VARIABLE_BOOTSERVICE_ACCESS,
   name      = EfiData,
   guid      = GUID;
 ```
@@ -121,8 +121,8 @@ vfrStatementVarStoreNameValue ::=
 
 ```c
 namevaluevarstore NameValueVarStore,
-  name = STRING_TOKEN(STR_NAMEVALUE_TABLE_ITEM1), 
+  name = STRING_TOKEN(STR_NAMEVALUE_TABLE_ITEM1),
   name = STRING_TOKEN(STR_NAMEVALUE_TABLE_ITEM2),
-  name = STRING_TOKEN(STR_NAMEVALUE_TABLE_ITEM3), 
+  name = STRING_TOKEN(STR_NAMEVALUE_TABLE_ITEM3),
   guid = GUID;
 ```

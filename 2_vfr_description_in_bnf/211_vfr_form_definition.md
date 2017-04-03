@@ -35,7 +35,7 @@
 vfrFormDefinition ::=
   "form" "formid" "=" Number ","
   "title" "=" getStringId ";"
-  ( 
+  (
       vfrStatementImage
     | vfrStatementLocked
     | vfrStatementRules
@@ -70,7 +70,7 @@ vfrFormMapDefinition ::=
     "maptitle" "=" getStringId ";"
     "mapguid" "=" guidDefinition ";"
   )*
-  ( 
+  (
       vfrStatementImage
     | vfrStatementLocked
     | vfrStatementRules
@@ -83,7 +83,7 @@ vfrFormMapDefinition ::=
     | vfrStatementExtension
     | vfrStatementModal
   )*
-  "endform" ";" 
+  "endform" ";"
 ```
 
 #### BEHAVIORS AND RESTRICTIONS
@@ -124,7 +124,7 @@ section.
 
 ```c
 vfrStatementRules ::=
-  "rule" StringIdentifier "," 
+  "rule" StringIdentifier ","
     vfrStatementExpression
   "endrule" ";"
 ```
@@ -137,7 +137,7 @@ be unique in the formset.
 #### Example
 
 ```c
-rule MyRule, 1 + 2 
+rule MyRule, 1 + 2
 endrule;
 ```
 
@@ -169,10 +169,10 @@ vfrStatementSubTitle ::=
     { "," (vfrStatementStat | vfrStatementQuestions)*}
     "endsubtitle" ";"
   )
-  
+
 vfrSubtitleFlags ::=
   subtitleFlagsField ( "|" subtitleFlagsField )* ";"
-  
+
 subtitleFlagsField ::=
     Number
   | "HORIZONTAL"
@@ -188,18 +188,18 @@ subtitleFlagsField ::=
 
 ```c
 subtitle
-  text = STRING_TOKEN(STR_SUBTITLE_TEXT), 
+  text = STRING_TOKEN(STR_SUBTITLE_TEXT),
   flags = HORIZONTAL;
 
 subtitle
   text = STRING_TOKEN(STR_SUBTITLE_TEXT),
 
   text
-    help  = STRING_TOKEN(STR_TEXT_TEXT), 
+    help  = STRING_TOKEN(STR_TEXT_TEXT),
     text  = STRING_TOKEN(STR_TEXT_TEXT);
-    flags = RESET_REQUIRED, 
+    flags = RESET_REQUIRED,
     key   = 0x0001;
-    
+
 endsubtitle;
 ```
 
@@ -212,11 +212,11 @@ vfrStatementStaticText ::=
   "text" "=" getStringId
   { "," "text" "=" getStringId }
   {
-    "," "flags" "=" staticTextFlagsField ( "|" staticTextFlagsField )* 
+    "," "flags" "=" staticTextFlagsField ( "|" staticTextFlagsField )*
     "," "key" "=" Number
   }
   { "," vfrStatementStatTagList } ";"
-  
+
 staticTextFlagsField ::=
     Number
   | questionheaderFlagsField
@@ -239,15 +239,15 @@ Generates `EFI_IFR_TEXT`:
 
 ```c
 text
-  help = STRING_TOKEN(STR_TEXT_TEXT), 
+  help = STRING_TOKEN(STR_TEXT_TEXT),
   text = STRING_TOKEN(STR_TEXT_TEXT);
-```  
+```
 
 Generates `EFI_IFR_ACTION`:
 
 ```c
 text
-  help  = STRING_TOKEN(STR_TEXT_TEXT), 
+  help  = STRING_TOKEN(STR_TEXT_TEXT),
   text  = STRING_TOKEN(STR_TEXT_TEXT);
   flags = RESET_REQUIRED,
   key   = 0x0001;
@@ -256,7 +256,7 @@ text
 #### 2.11.5.3 VFR Cross Reference Type Statements Definition
 
 ```c
-vfrStatementCrossReference ::= 
+vfrStatementCrossReference ::=
     vfrStatementGoto
   | vfrStatementResetButton
 ```
@@ -266,7 +266,7 @@ vfrStatementCrossReference ::=
 section.
 **********
 
-##### 2.11.5.3.1 VFR Goto Statement Definition 
+##### 2.11.5.3.1 VFR Goto Statement Definition
 
 ```c
 vfrStatementGoto ::=
@@ -297,7 +297,7 @@ vfrStatementGoto ::=
     (
       Number ","
     )
-  } 
+  }
   vfrQuestionHeader
   { "," "flags" "=" vfrGotoFlags }
   { "," "key" "=" Number }
@@ -306,8 +306,8 @@ vfrStatementGoto ::=
 
 vfrGotoFlags ::=
   gotoFlagsField ( "|" gotoFlagsField )*
-  
-gotoFlagsField ::= 
+
+gotoFlagsField ::=
     Number
   | questionheaderFlagsField
 ```
@@ -324,7 +324,7 @@ Generate `EFI_IFR_REF` without `key`
 goto 1,
   prompt = STRING_TOKEN(STR_GOTO_PROMPT),
   help   = STRING_TOKEN(STR_GOTO_HELP);
-```  
+```
 
 Generate `EFI_IFR_REF` with `key`
 
@@ -340,19 +340,19 @@ Generate `EFI_IFR_REF2`
 ```c
 goto
   formid   = 1,
-  question = QuesttionRef, 
-  prompt   = STRING_TOKEN(STR_GOTO_PROMPT), 
+  question = QuesttionRef,
+  prompt   = STRING_TOKEN(STR_GOTO_PROMPT),
   help     = STRING_TOKEN(STR_GOTO_HELP);
 ```
-  
+
 Generate `EFI_IFR_REF3`
 
 ```c
 goto
   formsetguid = FORMSET_GUID,
   formid      = 1,
-  question    = QuesttionRef, 
-  prompt      = STRING_TOKEN(STR_GOTO_PROMPT), 
+  question    = QuesttionRef,
+  prompt      = STRING_TOKEN(STR_GOTO_PROMPT),
   help        = STRING_TOKEN(STR_GOTO_HELP);
 ```
 
@@ -372,7 +372,7 @@ Generate `EFI_IFR_REF5` without `varid`
 
 ```c
 goto
-  prompt = STRING_TOKEN(STR_GOTO_PROMPT), 
+  prompt = STRING_TOKEN(STR_GOTO_PROMPT),
   help   = STRING_TOKEN(STR_GOTO_HELP);
 ```
 
@@ -380,8 +380,8 @@ Generate `EFI_IFR_REF5` with `varid`
 
 ```c
 goto
-  varid   = MySTestData.mFieldRef, 
-  prompt  = STRING_TOKEN(STR_GOTO_PROMPT), 
+  varid   = MySTestData.mFieldRef,
+  prompt  = STRING_TOKEN(STR_GOTO_PROMPT),
   help    = STRING_TOKEN STR_GOTO_HELP);
   default = FID;QID;GuidValue;STRING_TOKEN(STR_DEVICE_PATH),
   ;
@@ -391,19 +391,19 @@ Generate `EFI_IFR_REF` with option code
 
 ```c
 goto 1,
-  prompt = STRING_TOKEN(STR_GOTO_PROMPT), 
-  help   = STRING_TOKEN(STR_GOTO_HELP), 
+  prompt = STRING_TOKEN(STR_GOTO_PROMPT),
+  help   = STRING_TOKEN(STR_GOTO_HELP),
   refresh interval = 3
   ;
 ```
 
-##### 2.11.5.3.2 VFR ResetButton Statement Definition 
+##### 2.11.5.3.2 VFR ResetButton Statement Definition
 
 ```c
 vfrStatementResetButton ::=
   "resetbutton"
-  "defaultStore" "=" StringIdentifier "," 
-  vfrStatementHeader "," 
+  "defaultStore" "=" StringIdentifier ","
+  vfrStatementHeader ","
   { vfrStatementStatTagList "," }
   "endresetbutton" ";"
 ```
@@ -419,7 +419,7 @@ vfrStatementResetButton ::=
 ```c
 resetbutton
   defaultstore = DefaultStoreRef,
-  prompt = STRING_TOKEN(STR_RESET_BUTTON_PROMPT), 
+  prompt = STRING_TOKEN(STR_RESET_BUTTON_PROMPT),
   help   = STRING_TOKEN(STR_RESET_BUTTON_HELP),
 endresetbutton;
 ```
@@ -441,10 +441,10 @@ vfrStatementQuestions ::=
 section.
 **********
 
-#### 2.11.6.1 VFR Question Tag Definition 
+#### 2.11.6.1 VFR Question Tag Definition
 
 ```
-vfrStatementQuestionTag ::= 
+vfrStatementQuestionTag ::=
     vfrStatementStatTag ","
   | vfrStatementInconsistentIf
   | vfrStatementNoSubmitIf
@@ -461,12 +461,12 @@ vfrStatementQuestionTag ::=
 section.
 **********
 
-##### 2.11.6.1.1 VFR Question Tag InconsistentIf Definition 
+##### 2.11.6.1.1 VFR Question Tag InconsistentIf Definition
 
 ```c
 vfrStatementInconsistentIf ::=
   "inconsistentif"
-  "prompt" "=" getStringId "," 
+  "prompt" "=" getStringId ","
   vfrStatementExpression
   "endif"
 ```
@@ -480,25 +480,25 @@ It can only be used in questions.
 ```c
 checkbox
   name       = MyCheckBox,
-  varid      = MySTestData.mField1, 
+  varid      = MySTestData.mField1,
   questionid = 0xcb,
-  prompt     = STRING_TOKEN(STR_CHECK_BOX_PROMPT), 
+  prompt     = STRING_TOKEN(STR_CHECK_BOX_PROMPT),
   help       = STRING_TOKEN(STR_CHECK_BOX_HELP),
   flags      = CHECKBOX_DEFAULT | INTERACTIVE,
 
   inconsistentif
-    prompt = STRING_TOKEN(STR_INCONSISTENT_IF), 
+    prompt = STRING_TOKEN(STR_INCONSISTENT_IF),
     ideqval MySTestData.mField1 == 2007
   endif
 endcheckbox;
 ```
 
-##### 2.11.6.1.2 VFR Question Tag NoSubmitIf Definition 
+##### 2.11.6.1.2 VFR Question Tag NoSubmitIf Definition
 
 ```c
 vfrStatementNoSubmitIf ::=
   "nosubmitif"
-  "prompt" "=" getStringId "," 
+  "prompt" "=" getStringId ","
   vfrStatementExpression
   "endif"
 ```
@@ -511,10 +511,10 @@ It can only be used in questions.
 
 ```c
 checkbox
-  name       = MyCheckBox, 
-  varid      = MySTestData.mField1, 
+  name       = MyCheckBox,
+  varid      = MySTestData.mField1,
   questionid = 0xcb,
-  prompt     = STRING_TOKEN(STR_CHECK_BOX_PROMPT), 
+  prompt     = STRING_TOKEN(STR_CHECK_BOX_PROMPT),
   help       = STRING_TOKEN(STR_CHECK_BOX_HELP),
   flags      = CHECKBOX_DEFAULT | INTERACTIVE,
 
@@ -524,11 +524,11 @@ checkbox
 endcheckbox;
 ```
 
-##### 2.11.6.1.3 VFR Question Tag DisableIf Definition 
+##### 2.11.6.1.3 VFR Question Tag DisableIf Definition
 
 ```c
 vfrStatementDisableIfQuest ::=
-  "disableif" vfrStatementExpression ";" 
+  "disableif" vfrStatementExpression ";"
   vfrStatementQuestionOptionList
   "endif"
 ```
@@ -542,12 +542,12 @@ None.
 ```c
 checkbox
   name       = MyCheckBox,
-  varid      = MySTestData.mField1, 
+  varid      = MySTestData.mField1,
   questionid = 0xcb,
-  prompt     = STRING_TOKEN(STR_CHECK_BOX_PROMPT), 
+  prompt     = STRING_TOKEN(STR_CHECK_BOX_PROMPT),
   help       = STRING_TOKEN(STR_CHECK_BOX_HELP),
   flags      = CHECKBOX_DEFAULT | INTERACTIVE,
-  
+
   disableif
     ideqvallist MySTestData.mField1 == 1 3 5 7;
     refresh interval = 1
@@ -555,7 +555,7 @@ checkbox
 endcheckbox;
 ```
 
-##### 2.11.6.1.4 VFR Question Tag Refresh Definition 
+##### 2.11.6.1.4 VFR Question Tag Refresh Definition
 
 ```c
 vfrStatementRefresh ::=
@@ -569,16 +569,16 @@ It can only be used in questions.
 #### Example
 
 ```c
-numeric varid   = MyData.Data, 
-        prompt  = STRING_TOKEN(STR_PROMPT), 
-        help    = STRING_TOKEN(STR_HELP), 
+numeric varid   = MyData.Data,
+        prompt  = STRING_TOKEN(STR_PROMPT),
+        help    = STRING_TOKEN(STR_HELP),
         minimum = 0,
-        maximum = 0xff, 
+        maximum = 0xff,
         refresh interval = 3
 endnumeric;
 ```
 
-##### 2.11.6.1.5 VFR Question Tag VarstoreDevice Definition 
+##### 2.11.6.1.5 VFR Question Tag VarstoreDevice Definition
 
 ```c
 vfrStatementVarstoreDevice ::=
@@ -594,17 +594,17 @@ It can only be used in questions.
 ```c
 checkbox
   name       = MyCheckBox,
-  varid      = MySTestData.mField1, 
+  varid      = MySTestData.mField1,
   questionid = 0xcb,
-  prompt     = STRING_TOKEN(STR_CHECK_BOX_PROMPT), 
+  prompt     = STRING_TOKEN(STR_CHECK_BOX_PROMPT),
   help       = STRING_TOKEN(STR_CHECK_BOX_HELP),
   flags      = CHECKBOX_DEFAULT | INTERACTIVE,
-  
+
   varstoredevice = STRING_TOKEN(STR_VARSTOREDEVICE),
 endcheckbox;
 ```
 
-##### 2.11.6.1.6 VFR Question Tag RefreshEvent Definition 
+##### 2.11.6.1.6 VFR Question Tag RefreshEvent Definition
 
 ```c
 vfrStatementRefreshEvent ::=
@@ -619,19 +619,19 @@ It can only be used in questions.
 
 ```c
 numeric
-  varid       = MySTestData.mField2, 
-  prompt      = STRING_TOKEN(STR_NUMERIC_PROMPT), 
+  varid       = MySTestData.mField2,
+  prompt      = STRING_TOKEN(STR_NUMERIC_PROMPT),
   help        = STRING_TOKEN(STR_NUMERIC_HELP),
-  flags       = DISPLAY_UINT_HEX, 
-  minimum     = 0, 
-  maximum     = 300, 
+  flags       = DISPLAY_UINT_HEX,
+  minimum     = 0,
+  maximum     = 300,
   step        = 0,
-  refreshguid = EFI_IFR_REFRESH_ID_OP_GUID, 
+  refreshguid = EFI_IFR_REFRESH_ID_OP_GUID,
   default     = 175,
 endnumeric;
 ```
 
-##### 2.11.6.1.7 VFR Question Tag WarningIf Definition vfrStatement 
+##### 2.11.6.1.7 VFR Question Tag WarningIf Definition vfrStatement
 
 ```c
 WarningIf ::=
@@ -649,19 +649,19 @@ It can only be used in questions.
 ```c
 checkbox
   name       = MyCheckBox,
-  varid      = MySTestData.mField1, 
+  varid      = MySTestData.mField1,
   questionid = 0xcb,
-  prompt     = STRING_TOKEN(STR_CHECK_BOX_PROMPT), 
+  prompt     = STRING_TOKEN(STR_CHECK_BOX_PROMPT),
   help       = STRING_TOKEN(STR_CHECK_BOX_HELP),
   flags      = CHECKBOX_DEFAULT | INTERACTIVE,
-  
+
   warningif prompt = STRING_TOKEN(STR_INCONSISTENT_IF), timeout = 5,
     ideqval MySTestData.mField1 == 2007
   endif
 endcheckbox;
 ```
 
-#### 2.11.6.2 VFR Question Tag List Definition 
+#### 2.11.6.2 VFR Question Tag List Definition
 
 ```c
 vfrStatementQuestionTagList ::=
@@ -673,7 +673,7 @@ vfrStatementQuestionTagList ::=
 section.
 **********
 
-#### 2.11.6.3 VFR Question Option Tag Definition 
+#### 2.11.6.3 VFR Question Option Tag Definition
 
 ```c
 vfrStatementQuestionOptionTag ::=
@@ -690,11 +690,11 @@ vfrStatementQuestionOptionTag ::=
 section.
 **********
 
-##### 2.11.6.3.1 VFR Question SuppressIf Statement Definition 
+##### 2.11.6.3.1 VFR Question SuppressIf Statement Definition
 
 ```c
 vfrStatementSuppressIfQuest ::=
-  "suppressif" vfrStatementExpression ";" 
+  "suppressif" vfrStatementExpression ";"
     vfrStatementQuestionOptionList
   "endif"
 ```
@@ -704,16 +704,16 @@ vfrStatementSuppressIfQuest ::=
 section.
 **********
 
-##### 2.11.6.3.2 VFR Default Statement Definition 
+##### 2.11.6.3.2 VFR Default Statement Definition
 
 ```c
 vfrStatementDefault ::=
   "default"
   (
-    ( 
+    (
         vfrStatementValue ","
       | "=" vfrConstantValueField ","
-    )    
+    )
     { "defaultstore" "=" StringIdentifier "," }
   )
 ```
@@ -736,7 +736,7 @@ default value = 1 + 2,
 default = {1,2,3},
 ```
 
-##### 2.11.6.3.3 VFR Value Statement Definition 
+##### 2.11.6.3.3 VFR Value Statement Definition
 
 ```c
 vfrStatementValue ::=
@@ -753,7 +753,7 @@ None.
 Value = 0;
 ```
 
-##### 2.11.6.3.4 VFR Option Type Statements Definition 
+##### 2.11.6.3.4 VFR Option Type Statements Definition
 
 ```c
 vfrStatementOptions ::=
@@ -765,7 +765,7 @@ vfrStatementOptions ::=
 section.
 **********
 
-##### 2.11.6.3.5 VFR OneOf Option Statement Definition 
+##### 2.11.6.3.5 VFR OneOf Option Statement Definition
 
 ```c
 vfrStatementOneOfOption ::=
@@ -775,10 +775,10 @@ vfrStatementOneOfOption ::=
   "flags" "=" vfrOneOfOptionFlags
   ( "," vfrImageTag )*
   ";"
-  
-vfrOneOfOptionFlags ::= 
+
+vfrOneOfOptionFlags ::=
   oneofoptionFlagsField ( "|" oneofoptionFlagsField )*
-  
+
 oneofoptionFlagsField ::=
     Number
   | "OPTION_DEFAULT"
@@ -806,7 +806,7 @@ questions.
 option text = STRING_TOKEN(STR_ONE_OF_TEXT), value = 0x2, flags = DEFAULT | RESET_REQUIRED;
 ```
 
-##### 2.11.6.3.6 VFR Read Statement Definition 
+##### 2.11.6.3.6 VFR Read Statement Definition
 
 ```c
 vfrStatementRead ::=
@@ -821,7 +821,7 @@ None.
 
 None
 
-##### 2.11.6.3.7 VFR Write Statement Definition 
+##### 2.11.6.3.7 VFR Write Statement Definition
 
 ```c
 vfrStatementWrite ::=
@@ -836,11 +836,11 @@ None.
 
 None
 
-#### 2.11.6.4 VFR Question Tag List Definition 
+#### 2.11.6.4 VFR Question Tag List Definition
 
 ```c
 vfrStatementQuestionOptionList ::=
-  ( 
+  (
       vfrStatementQuestionTag
     | vfrStatementQuestionOptionTag
   )*
@@ -851,11 +851,11 @@ vfrStatementQuestionOptionList ::=
 section.
 **********
 
-#### 2.11.6.5 VFR Boolean Type Statement Definition 
+#### 2.11.6.5 VFR Boolean Type Statement Definition
 
 ```c
 vfrStatementBooleanType ::=
-    vfrStatementCheckBox 
+    vfrStatementCheckBox
   | vfrStatementAction
 ```
 
@@ -864,7 +864,7 @@ vfrStatementBooleanType ::=
 section.
 **********
 
-##### 2.11.6.5.1 VFR CheckBox Statement Definition 
+##### 2.11.6.5.1 VFR CheckBox Statement Definition
 
 ```c
 vfrStatementCheckBox ::=
@@ -877,8 +877,8 @@ vfrStatementCheckBox ::=
 
 vfrCheckBoxFlags ::=
   checkboxFlagsField ( "|" checkboxFlagsField )*
-  
-checkboxFlagsField ::= 
+
+checkboxFlagsField ::=
     Number
   | "CHECKBOX_DEFAULT"
   | "CHECKBOX_DEFAULT_MFG"
@@ -897,29 +897,29 @@ The value of `key` is used as question ID.
 
 ```c
 checkbox
-  name    = MyCheckBox, 
-  varid   = MySTestData.mField1, 
+  name    = MyCheckBox,
+  varid   = MySTestData.mField1,
   prompt  = STRING_TOKEN(STR_CHECK_BOX_PROMPT),
-  help    = STRING_TOKEN(STR_CHECK_BOX_HELP), 
-  flags   = CHECKBOX_DEFAULT | INTERACTIVE, 
+  help    = STRING_TOKEN(STR_CHECK_BOX_HELP),
+  flags   = CHECKBOX_DEFAULT | INTERACTIVE,
   default = TRUE,
 endcheckbox;
 ```
 
-##### 2.11.6.5.2 VFR Action Statement Definition 
+##### 2.11.6.5.2 VFR Action Statement Definition
 
 ```c
 vfrStatementAction ::=
-  "action" 
-  vfrQuestionHeader "," 
-  { "flags" "=" vfrActionFlags "," } 
-  "config" "=" getStringId "," 
+  "action"
+  vfrQuestionHeader ","
+  { "flags" "=" vfrActionFlags "," }
+  "config" "=" getStringId ","
   vfrStatementQuestionTagList
   "endaction" ";"
-  
-vfrActionFlags ::= 
+
+vfrActionFlags ::=
   actionFlagsField ( "|" actionFlagsField )*
-  
+
 actionFlagsField ::=
     Number
   | questionheaderFlagsField
@@ -935,18 +935,18 @@ actionFlagsField ::=
 
 ```c
 action
-  prompt = STRING_TOKEN(STR_ACTION_PROMPT), 
-  help   = STRING_TOKEN(STR_ACTION_HELP), 
+  prompt = STRING_TOKEN(STR_ACTION_PROMPT),
+  help   = STRING_TOKEN(STR_ACTION_HELP),
   flags  = INTERACTIVE,
   config = STRING_TOKEN(STR_ACTION_CONFIG),
 endaction;
 ```
 
-#### 2.11.6.6 VFR Numeric Type Statements Definition 
+#### 2.11.6.6 VFR Numeric Type Statements Definition
 
 ```c
 vfrStatementNumericType ::=
-    vfrStatementNumeric 
+    vfrStatementNumeric
   | vfrStatementOneOf
 ```
 
@@ -955,26 +955,26 @@ vfrStatementNumericType ::=
 section.
 **********
 
-##### 2.11.6.6.1 VFR Numeric Statement Definition 
+##### 2.11.6.6.1 VFR Numeric Statement Definition
 
 ```c
 vfrStatementNumeric ::=
   "numeric"
   vfrQuestionHeader ,
-  { "flags" "=" vfrNumericFlags "," } 
-  { "key" "=" Number "," } 
+  { "flags" "=" vfrNumericFlags "," }
+  { "key" "=" Number "," }
   vfrSetMinMaxStep
   vfrStatementQuestionOptionList
   "endnumeric" ";"
-  
+
 vfrSetMinMaxStep ::=
   "minimum" "=" Number ","
-  "maximum" "=" Number "," 
+  "maximum" "=" Number ","
   { "step"  "=" Number "," }
-  
-vfrNumericFlags ::= 
+
+vfrNumericFlags ::=
   numericFlagsField ( "|" numericFlagsField )*
-  
+
 numericFlagsField ::=
     Number
   | "NUMERIC_SIZE_1"
@@ -1001,27 +1001,27 @@ The default display format is `DISPLAY_UINT_DEC`.
 ```c
 numeric
   varid   = STestData.mField2,
-  prompt  = STRING_TOKEN(STR_NUMERIC_PROMPT), 
-  help    = STRING_TOKEN(STR_NUMERIC_HELP), 
+  prompt  = STRING_TOKEN(STR_NUMERIC_PROMPT),
+  help    = STRING_TOKEN(STR_NUMERIC_HELP),
   flags   = DISPLAY_UINT_HEX,
-  minimum = 0, 
-  maximum = 300, 
+  minimum = 0,
+  maximum = 300,
   step    = 0,
   default = 175,
 endnumeric;
 ```
 
-##### 2.11.6.6.2 VFR OneOf Statement Definition 
+##### 2.11.6.6.2 VFR OneOf Statement Definition
 
 ```c
 vfrStatementOneOf ::=
   "oneof"
   vfrQuestionHeader,
   { "flags" "=" vfrOneofFlagsField "," }
-  { vfrSetMinMaxStep } 
+  { vfrSetMinMaxStep }
   vfrStatementQuestionOptionList
   "endoneof" ";"
-  
+
 vfrOneofFlagsField ::=
   numericFlagsField ( "|" numericFlagsField )*
 ```
@@ -1039,22 +1039,22 @@ The flag is defined in the VFR Numeric Statement Definition.
 
 ```c
 oneof
-  varid  = STestData.mField3[0], 
-  prompt = STRING_TOKEN(STR_ONE_OF_PROMPT), 
+  varid  = STestData.mField3[0],
+  prompt = STRING_TOKEN(STR_ONE_OF_PROMPT),
   help   = STRING_TOKEN(STR_ONE_OF_HELP),
   flags  = DISPLAY_UINT_DEC,
-  
+
   option text = STRING_TOKEN(STR_ONE_OF_TEXT1), value = 0x0, flags = 0;
   option text = STRING_TOKEN(STR_ONE_OF_TEXT2), value = 0x1, flags = 0;
   option text = STRING_TOKEN(STR_ONE_OF_TEXT3), value = 0x2, flags = DEFAULT;
 endoneof;
 ```
 
-#### 2.11.6.7 VFR String Type Statements Definition 
+#### 2.11.6.7 VFR String Type Statements Definition
 
 ```c
-vfrStatementStringType ::= 
-    vfrStatementString 
+vfrStatementStringType ::=
+    vfrStatementString
   | vfrStatementPassword
 ```
 
@@ -1063,7 +1063,7 @@ vfrStatementStringType ::=
 section.
 **********
 
-##### 2.11.6.7.1 VFR String Statement Definition 
+##### 2.11.6.7.1 VFR String Statement Definition
 
 ```c
 vfrStatementString ::=
@@ -1075,11 +1075,11 @@ vfrStatementString ::=
   "maxsize" "=" Number ","
   vfrStatementQuestionOptionList
   "endstring" ";"
-  
+
 vfrStringFlagsField ::=
   stringFlagsField ( "|" stringFlagsField )*
-  
-stringFlagsField ::= 
+
+stringFlagsField ::=
     Number
   | "MULTI_LINE"
   | questionheaderFlagsField
@@ -1095,31 +1095,31 @@ stringFlagsField ::=
 
 ```c
 string
-  varid   = STestData.mField1, 
-  prompt  = STRING_TOKEN(STR_MY_STRING_PROMPT), 
+  varid   = STestData.mField1,
+  prompt  = STRING_TOKEN(STR_MY_STRING_PROMPT),
   help    = STRING_TOKEN(STR_MY_STRING_HELP),
-  flags   = MULTI_LINE, 
-  minsize = 6, 
+  flags   = MULTI_LINE,
+  minsize = 6,
   maxsize = 0x14,
 endstring;
 ```
 
-##### 2.11.6.7.2 VFR Password Statement Definition 
+##### 2.11.6.7.2 VFR Password Statement Definition
 
 ```c
-vfrStatementPassword ::= 
-  "password" 
+vfrStatementPassword ::=
+  "password"
   vfrQuestionHeader ,
   { "flags" "=" vfrPasswordFlagsField "," }
   { "key" "=" Number "," }
   "minsize" "=" Number ","
-  "maxsize" "=" Number "," 
+  "maxsize" "=" Number ","
   vfrStatementQuestionOptionList
   "endpassword" ";"
-  
+
 vfrPasswordFlagsField ::=
   passwordFlagsField ( "|" passwordFlagsField )*
-  
+
 passwordFlagsField ::=
     Number
   | questionheaderFlagsField
@@ -1137,22 +1137,22 @@ The value of `key` is used as a question ID.
 
 ```c
 password
-  varid    = STestData.mPrivate.mField2, 
+  varid    = STestData.mPrivate.mField2,
   prompt  = STRING_TOKEN(STR_PASSWORD_PROMPT),
-  help    = STRING_TOKEN(STR_PASSWORD_HELP), 
-  minsize = 6, 
+  help    = STRING_TOKEN(STR_PASSWORD_HELP),
+  minsize = 6,
   maxsize = 20,
 endpassword;
 ```
 
-#### 2.11.6.8 VFR OrderedList Statement Definition 
+#### 2.11.6.8 VFR OrderedList Statement Definition
 
 ```c
 vfrStatementOrderedList ::=
-  "orderedlist" 
+  "orderedlist"
   vfrQuestionHeader ","
-  { "maxcontainers" "=" Number "," } 
-  { "flags" "=" vfrOrderedListFlags } 
+  { "maxcontainers" "=" Number "," }
+  { "flags" "=" vfrOrderedListFlags }
   vfrStatementQuestionOptionList
   "endlist" ";"
 
@@ -1179,10 +1179,10 @@ variable size defined by `varid` in `vfrQuestionHeader`.
 
 ```c
 orderedlist
-  varid  = STestPriData.mField3, 
-  prompt = STRING_TOKEN(STR_BOOT_OPTIONS), 
+  varid  = STestPriData.mField3,
+  prompt = STRING_TOKEN(STR_BOOT_OPTIONS),
   help   = STRING_TOKEN(STR_BOOT_OPTIONS),
-  
+
   option text = STRING_TOKEN(STR_BOOT_OPTION2), value = 2, flags = RESET_REQUIRED;
   option text = STRING_TOKEN(STR_BOOT_OPTION1), value = 1, flags = RESET_REQUIRED;
   option text = STRING_TOKEN(STR_BOOT_OPTION3), value = 3, flags = RESET_REQUIRED;
@@ -1197,43 +1197,43 @@ endlist;
 vfrStatementDate ::=
   "date"
   (
-    ( 
+    (
       vfrQuestionHeader ,
       { "flags" "=" vfrDateFlags "," }
       vfrStatementQuestionOptionList
     )
-    |  
+    |
     (
       "year" "varid" "=" StringIdentifier "." StringIdentifier ","
       "prompt" "=" getStringId ","
       "help" "=" getStringId ","
       minMaxDateStepDefault
-      
+
       "month" "varid" "=" StringIdentifier "." StringIdentifier ","
       "prompt" "=" getStringId ","
       "help" "=" getStringId ","
       minMaxDateStepDefault
-      
+
       "day" "varid" "=" StringIdentifier "." StringIdentifier ","
       "prompt" "=" getStringId ","
-      "help" "=" getStringId "," 
+      "help" "=" getStringId ","
       minMaxDateStepDefault
-      
+
       ( vfrStatementInconsistentIf )*
     )
   )
   "enddate" ";"
-  
+
 minMaxDateStepDefault ::=
   "minimum" "=" Number ","
   "maximum" "=" Number ","
   { "step" "=" Number "," }
   { "default" "=" Number "," }
-  
-vfrDateFlags ::= 
+
+vfrDateFlags ::=
   dateFlagsField ( "|" dateFlagsField )*
-  
-dateFlagsField ::= 
+
+dateFlagsField ::=
     Number
   | "YEAR_SUPPRESS"
   | "MONTH_SUPPRESS"
@@ -1257,10 +1257,10 @@ Examples follow.
 
 ```c
 date
-  varid   = STestData.mDate, 
-  prompt  = STRING_TOKEN(STR_DATE_PROMPT), 
+  varid   = STestData.mDate,
+  prompt  = STRING_TOKEN(STR_DATE_PROMPT),
   help    = STRING_TOKEN(STR_DATE_PROMPT),
-  flags   = STORAGE_NORMAL, 
+  flags   = STORAGE_NORMAL,
   default = 2007/08/26,
 enddate;
 ```
@@ -1268,24 +1268,24 @@ enddate;
 **Old syntax of VFR Date:**
 
 ```c
-date year varid       = Date.Year, 
-          prompt      = STRING_TOKEN(STR_DATE_PROMPT), 
+date year varid       = Date.Year,
+          prompt      = STRING_TOKEN(STR_DATE_PROMPT),
           help        = STRING_TOKEN(STR_DATE_HELP),
-          minimum     = 2003, 
+          minimum     = 2003,
           maximum     = 2100,
           step        = 1,
           default     = 2003,
 
           month varid = Date.Month
-          prompt      = STRING_TOKEN(STR_DATE_PROMPT), 
+          prompt      = STRING_TOKEN(STR_DATE_PROMPT),
           help        = STRING_TOKEN(STR_DATE_HELP),
           minimum     = 1,
           maximum     = 12,
           step        = 1,
           default     = 1,
-          
+
           day varid   = Date.Day,
-          prompt      = STRING_TOKEN(STR_DATE_PROMPT), 
+          prompt      = STRING_TOKEN(STR_DATE_PROMPT),
           help        = STRING_TOKEN(STR_DATE_HELP),
           minimum     = 1,
           maximum     = 31,
@@ -1294,48 +1294,48 @@ date year varid       = Date.Year,
 enddate;
 ```
 
-#### 2.11.6.10 VFR Time Statement Definition 
+#### 2.11.6.10 VFR Time Statement Definition
 
 ```c
 vfrStatementTime :
   "time"
   (
-    ( 
+    (
       vfrQuestionHeader ","
-      { "flags" "=" vfrTimeFlags "," } 
+      { "flags" "=" vfrTimeFlags "," }
       vfrStatementQuestionOptionList
     )
     |
     (
       "hour" "varid" "=" StringIdentifier "." StringIdentifier ","
-      "prompt" "=" getStringId "," 
-      "help" "=" getStringId "," 
+      "prompt" "=" getStringId ","
+      "help" "=" getStringId ","
       minMaxTimeStepDefault
-      
+
       "minute" "varid" "=" StringIdentifier "." StringIdentifier ","
-      "prompt" "=" getStringId "," 
-      "help" "=" getStringId "," 
+      "prompt" "=" getStringId ","
+      "help" "=" getStringId ","
       minMaxTimeStepDefault
-      
+
       "second" "varid" "=" StringIdentifier "." StringIdentifier ","
-      "prompt" "=" getStringId "," 
-      "help" "=" getStringId "," 
+      "prompt" "=" getStringId ","
+      "help" "=" getStringId ","
       minMaxTimeStepDefault
-      
+
       ( vfrStatementInconsistentIf )*
     )
   )
   "endtime" ";"
-  
-minMaxTimeStepDefault ::= 
+
+minMaxTimeStepDefault ::=
   "minimum"   "=" Number ","
   "maximum"   "=" Number ","
   { "step"    "=" Number "," }
   { "default" "=" Number "," }
-  
+
 vfrTimeFlags ::=
   timeFlagsField ( "|" timeFlagsField )*
-  
+
 timeFlagsField ::=
     Number
   | "HOUR_SUPPRESS"
@@ -1364,11 +1364,11 @@ In the new syntax of VFR, `flags` is optional, and the default value is 0
 
 ```c
 time
-      name    = MyTime, 
-      varid   = STestData.mTime, 
-      prompt  = STRING_TOKEN(STR_TIME_PROMPT), 
-      help    = STRING_TOKEN(STR_TIME_PROMPT), 
-      flags   = STORAGE_NORMAL, 
+      name    = MyTime,
+      varid   = STestData.mTime,
+      prompt  = STRING_TOKEN(STR_TIME_PROMPT),
+      help    = STRING_TOKEN(STR_TIME_PROMPT),
+      flags   = STORAGE_NORMAL,
       default = 15:33:33,
 endtime;
 ```
@@ -1376,26 +1376,26 @@ endtime;
 **Old Time Syntax:**
 
 ```c
-time hour varid = Time.Hour, 
-     prompt     = STRING_TOKEN(STR_TIME_PROMPT), 
-     help       = STRING_TOKEN(STR_TIME_HELP), 
+time hour varid = Time.Hour,
+     prompt     = STRING_TOKEN(STR_TIME_PROMPT),
+     help       = STRING_TOKEN(STR_TIME_HELP),
      minimum    = 0,
-     maximum    = 23, 
-     step       = 1, 
+     maximum    = 23,
+     step       = 1,
      default    = 0,
-     
+
      minute varid = Time.Minute,
-     prompt       = STRING_TOKEN(STR_TIME_PROMPT), 
-     help         = STRING_TOKEN(STR_TIME_HELP), 
-     minimum      = 0, 
-     maximum      = 59, 
+     prompt       = STRING_TOKEN(STR_TIME_PROMPT),
+     help         = STRING_TOKEN(STR_TIME_HELP),
+     minimum      = 0,
+     maximum      = 59,
      step         = 1,
      default      = 0,
-     
+
      second varid = Time.Second,
-     prompt       = STRING_TOKEN(STR_TIME_PROMPT), 
-     help         = STRING_TOKEN(STR_TIME_HELP), 
-     minimum      = 0, 
+     prompt       = STRING_TOKEN(STR_TIME_PROMPT),
+     help         = STRING_TOKEN(STR_TIME_HELP),
+     minimum      = 0,
      maximum      = 59,
      step         = 1,
      default      = 0,
@@ -1415,10 +1415,10 @@ vfrStatementConditional ::=
 **Note:** There are no BEHAVIORS AND RESTRICTION or an Example for this section.
 **********
 
-#### 2.11.7.1 VFR Statement List Definition 
+#### 2.11.7.1 VFR Statement List Definition
 
 ```c
-vfrStatementStatList ::= 
+vfrStatementStatList ::=
     vfrStatementStat
   | vfrStatementQuestions
   | vfrStatementConditional
@@ -1438,7 +1438,7 @@ vfrStatementDisableIfStat ::=
   "disableif" vfrStatementExpression ";"
   ( vfrStatementStatList )*
   "endif" ";"
-```  
+```
 
 **********
 **Note:** There are no BEHAVIORS AND RESTRICTIONS or an Example for this
@@ -1452,7 +1452,7 @@ vfrStatementSuppressIfStat ::=
   "suppressif" vfrStatementExpression ";"
   ( vfrStatementStatList )*
   "endif" ";"
-```  
+```
 
 **********
 **Note:** There are no BEHAVIORS AND RESTRICTIONS or an Example for this
@@ -1466,7 +1466,7 @@ vfrStatementGrayOutIfStat ::=
   "grayoutif" vfrStatementExpression ";"
   ( vfrStatementStatList )*
   "endif" ";"
-```  
+```
 
 **********
 **Note:** There are no BEHAVIORS AND RESTRICTIONS or an Example for this
@@ -1475,7 +1475,7 @@ section.
 
 ### 2.11.8 VFR GUID Statement Definition
 
-#### 2.11.8.1 VFR Label Statement Definition 
+#### 2.11.8.1 VFR Label Statement Definition
 
 ```c
 vfrStatementLabel ::=
@@ -1523,12 +1523,12 @@ It is an extended EFI_IFR_GUID op-code.
 
 ```c
 banner
-  title = STRING_TOKEN(STR_BANNER_TITLE), 
-  line 1, 
+  title = STRING_TOKEN(STR_BANNER_TITLE),
+  line 1,
   align center;
 ```
 
-#### 2.11.8.3 VFR GUID Extension Definition 
+#### 2.11.8.3 VFR GUID Extension Definition
 
 ```c
 vfrStatementExtension ::=
@@ -1542,9 +1542,9 @@ vfrStatementExtension ::=
       | "UINT16" { "[" Number "]" }
       | "UINT8" { "[" Number "]" }
       | "BOOLEAN" { "[" Number "]" }
-      | "EFI_STRING_ID" { "[" Number "]" } 
+      | "EFI_STRING_ID" { "[" Number "]" }
       | "EFI_HII_DATE" { "[" Number "]" }
-      | "EFI_HII_TIME" { "[" Number "]" } 
+      | "EFI_HII_TIME" { "[" Number "]" }
       | "EFI_HII_REF" { "[" Number "]" }
       | StringIdentifier { "[" Number "]" }
     )
@@ -1555,7 +1555,7 @@ vfrStatementExtension ::=
     "endguidop"
   }
   ";"
-  
+
 vfrExtensionData ::=
   (
     "," "data" { "[" Number "]" }
@@ -1577,8 +1577,8 @@ array index starts from zero.
 
 ```c
 guidop
-  guid = GUID, 
-  datatype = UINT32, 
+  guid = GUID,
+  datatype = UINT32,
   data = 0x12345678;
 ```
 

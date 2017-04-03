@@ -33,7 +33,7 @@
 
 ```c
 vfrStatementDefaultStore ::=
-  "defaultstore" StringIdentifier "," 
+  "defaultstore" StringIdentifier ","
   "prompt" "=" getStringId
   { "," "attribute" "=" Number } ";"
 ```

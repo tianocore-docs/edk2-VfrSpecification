@@ -38,17 +38,17 @@ vfrFormSetDefinition ::=
   "title" "=" getStringId ","
   "help" "=" getStringId ","
   { "classguid" "=" classguidDefinition "," }
-  { "class" "=" classDefinition "," } 
+  { "class" "=" classDefinition "," }
   { "subclass" "=" subclassDefinition "," }
-  vfrFormSetList 
+  vfrFormSetList
   "endformset" ";"
-  
-classguidDefinition ::= 
+
+classguidDefinition ::=
   guidDefinition { "|" guidDefinition } { "|" guidDefinition }
-  
-classDefinition ::= 
+
+classDefinition ::=
   validClassNames ( "|" validClassNames )*
-  
+
 validClassNames ::=
     "NON_DEVICE"
   | "DISK_DEVICE"
@@ -58,7 +58,7 @@ validClassNames ::=
   | "ONBOARD_DEVICE"
   | "OTHER_DEVICE"
   | Number
-  
+
 subclassDefinition ::=
     "SETUP_APPLICATION"
   | "GENERAL_APPLICATION"

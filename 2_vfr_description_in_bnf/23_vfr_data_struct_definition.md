@@ -33,11 +33,11 @@
 
 ```c
 vfrDataStructDefinition ::=
- { "typedef" } "struct" 
+ { "typedef" } "struct"
  { StringIdentifier }
  "{" vfrDataStructFields "}"
  { StringIdentifier } ";"
- 
+
 vfrDataStructFields ::=
   (
       dataStructField64
@@ -51,45 +51,45 @@ vfrDataStructFields ::=
     | dataStructFieldRef
     | dataStructFieldUser
   )*
-  
+
 dataStructField64 ::=
-  "UINT64" 
+  "UINT64"
   StringIdentifier { "[" Number "]" } ";"
-                          
+
 dataStructField32 ::=
-  "UINT32" 
+  "UINT32"
   StringIdentifier { "[" Number "]" } ";"
-                          
+
 dataStructField16 ::=
-  "UINT16" 
+  "UINT16"
   StringIdentifier { "[" Number "]" } ";"
-                          
-dataStructField8 ::= 
-  "UINT8" 
+
+dataStructField8 ::=
+  "UINT8"
   StringIdentifier { "[" Number "]" } ";"
-                          
-dataStructFieldBool ::= 
-  "BOOLEAN" 
+
+dataStructFieldBool ::=
+  "BOOLEAN"
   StringIdentifier { "[" Number "]" } ";"
-                          
-dataStructFieldString ::= 
-  "EFI_STRING_ID" 
+
+dataStructFieldString ::=
+  "EFI_STRING_ID"
   StringIdentifier { "[" Number "]" } ";"
-                          
-dataStructFieldDate ::= 
-  "EFI_HII_DATE" 
+
+dataStructFieldDate ::=
+  "EFI_HII_DATE"
   StringIdentifier { "[" Number "]" } ";"
-                          
-dataStructFieldTime ::= 
-  "EFI_HII_TIME" 
+
+dataStructFieldTime ::=
+  "EFI_HII_TIME"
   StringIdentifier { "[" Number "]" } ";"
-                          
-dataStructFieldRef ::= 
-  "EFI_HII_REF" 
+
+dataStructFieldRef ::=
+  "EFI_HII_REF"
   StringIdentifier { "[" Number "]" } ";"
-                          
-dataStructFieldUser ::= 
-  StringIdentifier 
+
+dataStructFieldUser ::=
+  StringIdentifier
   StringIdentifier { "[" Number "]" } ";"
 ```
 

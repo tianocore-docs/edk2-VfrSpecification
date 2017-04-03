@@ -33,10 +33,10 @@
 
 ```c
 vfrStatementSuppressIfFormSet ::=
-  "suppressif" vfrStatementExpression ";" 
+  "suppressif" vfrStatementExpression ";"
     vfrFormSetList
   "endif" ";"
-```  
+```
 
 **********
 **Note:** There are no BEHAVIORS AND RESTRICTIONS or an Example for this
