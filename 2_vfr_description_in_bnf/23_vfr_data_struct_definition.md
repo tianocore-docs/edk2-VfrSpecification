@@ -38,6 +38,12 @@ vfrDataStructDefinition ::=
  "{" vfrDataStructFields "}"
  { StringIdentifier } ";"
 
+vfrDataStructDefinition ::=
+ { "typedef" } "union"
+ { StringIdentifier }
+ "{" vfrDataStructFields "}"
+ { StringIdentifier } ";"
+
 vfrDataStructFields ::=
   (
       dataStructField64
@@ -50,6 +56,10 @@ vfrDataStructFields ::=
     | dataStructFieldTime
     | dataStructFieldRef
     | dataStructFieldUser
+    | dataStructBitField64
+    | dataStructBitField32
+    | dataStructBitField16
+    | dataStructBitField8
   )*
 
 dataStructField64 ::=
@@ -91,6 +101,22 @@ dataStructFieldRef ::=
 dataStructFieldUser ::=
   StringIdentifier
   StringIdentifier { "[" Number "]" } ";"
+
+dataStructBitField64 ::=
+  "UINT64"
+  { StringIdentifier } ":" Number ";"
+
+dataStructBitField32 ::=
+  "UINT32"
+  { StringIdentifier } ":" Number ";"
+
+dataStructBitField16 ::=
+  "UINT16"
+  { StringIdentifier } ":" Number ";"
+
+dataStructBitField8 ::=
+  "UINT8"
+  { StringIdentifier } ":" Number ";"
 ```
 
 #### BEHAVIORS AND RESTRICTIONS
@@ -100,6 +126,7 @@ supported. The keyword of the fields' type must be a user defined data
 structure or one of these types: `UINT8`, `UINT16`, `UINT32`, `UINT64`,
 `BOOLEAN`, `EFI_STRING_ID`, `EFI_HII_DATA`, `EFI_HII_TIME EFI_HII_REF`, and at
 most one-dimensional array is permitted.
+Note: for the bit field, the number of the bit width could not exceed 32.
 
 #### Example
 
@@ -110,6 +137,19 @@ typedef struct {
   UINT32 mU32[10];
   UINT64 mU64;
 } MyData;
+
+typedef union {
+  UINT16   Field16;
+  UINT8    Field8;
+} MyUnionData;
+
+typedef struct {
+  UINT16   Field16;
+  UINT8    MyBits1 : 1;
+  UINT8    MyBits2 : 3;
+  UINT8    MyBits3 : 3;
+  UINT16   MyBits4 : 4;
+} MyBitsData;
 ```
 
 **Unsupported Example of enum type:**
