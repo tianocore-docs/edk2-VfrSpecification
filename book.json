@@ -1,8 +1,7 @@
 {
   "variables" : {
-    "draft"   : "yes",
     "title"   : "EDK II VFR Programming Language Specification",
-    "version" : "Revision 1.91"
+    "version" : "Revision 1.92"
   },
 
   "plugins": ["puml"],
