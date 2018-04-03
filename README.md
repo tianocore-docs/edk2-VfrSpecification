@@ -1,7 +1,7 @@
 <!--- @file
   README.md for EDK II VFR Programming Language Specification
 
-  Copyright (c) 2007-2017, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2007-2018, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -72,7 +72,7 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
 OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS DOCUMENTATION, EVEN IF
 ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-Copyright (c) 2007-2017, Intel Corporation. All rights reserved.
+Copyright (c) 2007-2018, Intel Corporation. All rights reserved.
 
 
 ### Revision History
@@ -91,4 +91,5 @@ Copyright (c) 2007-2017, Intel Corporation. All rights reserved.
 | 1.80     | Add syntax for warningif opcode, update definition for name/value varstore and subtitle opcode, update referenced UEFI spec version info.                                                                      | Jan 14, 2014      |
 | 1.90     | Correct sample code for catenate/match/cond opcode. Add syntax for match2 opcode. Add sample code to show the buffer type constant value for orderedlist opcode and default opcode.                            | July 2, 2015      |
 | 1.91     | Convert to Gitbook                                                                                                                                                                                             | April 2017        |
-|          | [#683](https://bugzilla.tianocore.org/show_bug.cgi?id=683) VFR Spec: Add union data type and bit fields in VFR Data Struct Definition                                                                          |                   |
+| 1.92     | [#683](https://bugzilla.tianocore.org/show_bug.cgi?id=683) VFR Spec: Add union data type and bit fields in VFR Data Struct Definition                                                                          | Mar 2018          |
+
