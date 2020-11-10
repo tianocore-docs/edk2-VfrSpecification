@@ -2,6 +2,7 @@
   2.10 VFR General Token Definition
 
   Copyright (c) 2007-2017, Intel Corporation. All rights reserved.<BR>
+  (C) Copyright 2020 Hewlett Packard Enterprise Development LP<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -117,6 +118,7 @@ questionheaderFlagsField ::=
   | "INTERACTIVE"
   | "RESET_REQUIRED"
   | "OPTIONS_ONLY"
+  | "REST_STYLE"
 
 vfrStorageVarId ::=
   ( StringIdentifier "[" Number "]" )
