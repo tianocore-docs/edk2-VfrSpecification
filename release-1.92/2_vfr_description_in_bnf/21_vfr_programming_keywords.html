@@ -1,0 +1,530 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2.1 VFR Programming Keywords · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="22_vfr_program.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../#edk-ii-vfr-programming-language-specification">
+            
+                    
+                    EDK II VFR Programming Language Specification
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../1_introduction.html">
+            
+                <a href="../1_introduction.html#1-introduction">
+            
+                    
+                    1 Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../1_introduction.html">
+            
+                <a href="../1_introduction.html#11-overview">
+            
+                    
+                    1.1 Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../1_introduction.html">
+            
+                <a href="../1_introduction.html#12-assumed-knowledge">
+            
+                    
+                    1.2 Assumed Knowledge
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../1_introduction.html">
+            
+                <a href="../1_introduction.html#13-related-information">
+            
+                    
+                    1.3 Related Information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../1_introduction.html">
+            
+                <a href="../1_introduction.html#14-terms">
+            
+                    
+                    1.4 Terms
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./#2-vfr-description-in-bnf">
+            
+                    
+                    2 VFR Description in BNF
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="21_vfr_programming_keywords.html">
+            
+                <a href="21_vfr_programming_keywords.html#21-vfr-programming-keywords">
+            
+                    
+                    2.1 VFR Programming Keywords
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="22_vfr_program.html">
+            
+                <a href="22_vfr_program.html#22-vfr-program">
+            
+                    
+                    2.2 VFR Program
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="23_vfr_data_struct_definition.html">
+            
+                <a href="23_vfr_data_struct_definition.html#23-vfr-data-struct-definition">
+            
+                    
+                    2.3 VFR Data Struct Definition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="24_vfr_formset_definition.html">
+            
+                <a href="24_vfr_formset_definition.html#24-vfr-formset-definition">
+            
+                    
+                    2.4 VFR FormSet Definition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="25_vfr_formset_list_definition.html">
+            
+                <a href="25_vfr_formset_list_definition.html#25-vfr-formset-list-definition">
+            
+                    
+                    2.5 VFR FormSet List Definition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="26_vfr_default_stores_definition.html">
+            
+                <a href="26_vfr_default_stores_definition.html#26-vfr-default-stores-definition">
+            
+                    
+                    2.6 VFR Default Stores Definition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="27_vfr_variable_store_definition.html">
+            
+                <a href="27_vfr_variable_store_definition.html#27-vfr-variable-store-definition">
+            
+                    
+                    2.7 VFR Variable Store Definition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="28_vfr_formset_disableif_definition.html">
+            
+                <a href="28_vfr_formset_disableif_definition.html#28-vfr-formset-disableif-definition">
+            
+                    
+                    2.8 VFR FormSet DisableIf Definition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="29_vfr_formset_suppressif_definition.html">
+            
+                <a href="29_vfr_formset_suppressif_definition.html#29-vfr-formset-suppressif-definition">
+            
+                    
+                    2.9 VFR FormSet SuppressIf Definition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="210_vfr_general_token_definition.html">
+            
+                <a href="210_vfr_general_token_definition.html#210-vfr-general-token-definition">
+            
+                    
+                    2.10 VFR General Token Definition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="211_vfr_form_definition.html">
+            
+                <a href="211_vfr_form_definition.html#211-vfr-form-definition">
+            
+                    
+                    2.11 VFR Form Definition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="212_vfr_expression_statement_definition.html">
+            
+                <a href="212_vfr_expression_statement_definition.html#212-vfr-expression-statement-definition">
+            
+                    
+                    2.12 VFR Expression Statement Definition
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >2.1 VFR Programming Keywords</a>
+    </h1>
+</div>
+<div>
+    <!-- 
+    <img style="float:left; align:middle; height:2em" src="media/TianocoreTitlePageLogo.jpg"/>
+     -->
+    
+      <h2>
+        <div style="position:absolute;text-align:left">EDK II VFR Programming Language Specification</div>
+        <div style="text-align:right">Revision 1.92</div>
+      </h2>  
+    
+    <hr>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <!--- @file
+  2.1 VFR Programming Keywords
+
+  Copyright (c) 2007-2017, Intel Corporation. All rights reserved.<BR>
+
+  Redistribution and use in source (original document form) and 'compiled'
+  forms (converted to PDF, epub, HTML and other formats) with or without
+  modification, are permitted provided that the following conditions are met:
+
+  1) Redistributions of source code (original document form) must retain the
+     above copyright notice, this list of conditions and the following
+     disclaimer as the first lines of this file unmodified.
+
+  2) Redistributions in compiled form (transformed to other DTDs, converted to
+     PDF, epub, HTML and other formats) must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution.
+
+  THIS DOCUMENTATION IS PROVIDED BY TIANOCORE PROJECT "AS IS" AND ANY EXPRESS OR
+  IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+  MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+  EVENT SHALL TIANOCORE PROJECT  BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+  OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS DOCUMENTATION, EVEN IF
+  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+-->
+<h2 id="21-vfr-programming-keywords">2.1 VFR Programming Keywords</h2>
+<p>The following keywords constitute the working set of commands for the VFR
+language. An example line of VFR code follows each keyword description to help
+programmers understand how a sample such code should look.</p>
+<h3 id="comment-marker">// (comment marker)</h3>
+<p>This allows a programmer to leave comments in the VFR file. They have no effect
+on the IFR binary that is generated.  <strong>Example:</strong></p>
+<pre><code class="lang-c"><span class="hljs-comment">// this is a typical comment marker</span>
+</code></pre>
+<h3 id="define">#define</h3>
+<p>This command is used to assign a meaningful name to a constant, and is very
+similar in function to the &apos;C&apos; style.  <strong>Example:</strong></p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> FORMSET_GUID  {0xA04A27f4,0xDF00,0x4D42,0xB5,0x52,0x39,0x51,0x13,0x02,0x11,0x3D}</span>
+</code></pre>
+<h3 id="include">#include</h3>
+<p>This command tells the VFR compiler to use the contents of a file as part of
+the source to compile.  <strong>Example:</strong></p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;C:\Source\DriverSampleStrDefs.h&quot;</span></span>
+</code></pre>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                    
+                    
+
+<div>
+    <hr>
+    
+      <h2>
+        <div style="position:absolute;text-align:left">EDK II VFR Programming Language Specification</div>
+        <div style="text-align:right">Revision 1.92</div>
+      </h2>  
+    
+</div>
+
+
+
+                
+            </div>
+
+            
+                
+                <a href="./#2-vfr-description-in-bnf" class="navigation navigation-prev " aria-label="Previous page: 2 VFR Description in BNF">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="22_vfr_program.html#22-vfr-program" class="navigation navigation-next " aria-label="Next page: 2.2 VFR Program">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2.1 VFR Programming Keywords","level":"1.3.1","depth":2,"next":{"title":"2.2 VFR Program","level":"1.3.2","depth":2,"anchor":"#22-vfr-program","path":"2_vfr_description_in_bnf/22_vfr_program.md","ref":"2_vfr_description_in_bnf/22_vfr_program.md#22-vfr-program","articles":[]},"previous":{"title":"2 VFR Description in BNF","level":"1.3","depth":1,"anchor":"#2-vfr-description-in-bnf","path":"2_vfr_description_in_bnf/README.md","ref":"2_vfr_description_in_bnf/README.md#2-vfr-description-in-bnf","articles":[{"title":"2.1 VFR Programming Keywords","level":"1.3.1","depth":2,"anchor":"#21-vfr-programming-keywords","path":"2_vfr_description_in_bnf/21_vfr_programming_keywords.md","ref":"2_vfr_description_in_bnf/21_vfr_programming_keywords.md#21-vfr-programming-keywords","articles":[]},{"title":"2.2 VFR Program","level":"1.3.2","depth":2,"anchor":"#22-vfr-program","path":"2_vfr_description_in_bnf/22_vfr_program.md","ref":"2_vfr_description_in_bnf/22_vfr_program.md#22-vfr-program","articles":[]},{"title":"2.3 VFR Data Struct Definition","level":"1.3.3","depth":2,"anchor":"#23-vfr-data-struct-definition","path":"2_vfr_description_in_bnf/23_vfr_data_struct_definition.md","ref":"2_vfr_description_in_bnf/23_vfr_data_struct_definition.md#23-vfr-data-struct-definition","articles":[]},{"title":"2.4 VFR FormSet Definition","level":"1.3.4","depth":2,"anchor":"#24-vfr-formset-definition","path":"2_vfr_description_in_bnf/24_vfr_formset_definition.md","ref":"2_vfr_description_in_bnf/24_vfr_formset_definition.md#24-vfr-formset-definition","articles":[]},{"title":"2.5 VFR FormSet List Definition","level":"1.3.5","depth":2,"anchor":"#25-vfr-formset-list-definition","path":"2_vfr_description_in_bnf/25_vfr_formset_list_definition.md","ref":"2_vfr_description_in_bnf/25_vfr_formset_list_definition.md#25-vfr-formset-list-definition","articles":[]},{"title":"2.6 VFR Default Stores Definition","level":"1.3.6","depth":2,"anchor":"#26-vfr-default-stores-definition","path":"2_vfr_description_in_bnf/26_vfr_default_stores_definition.md","ref":"2_vfr_description_in_bnf/26_vfr_default_stores_definition.md#26-vfr-default-stores-definition","articles":[]},{"title":"2.7 VFR Variable Store Definition","level":"1.3.7","depth":2,"anchor":"#27-vfr-variable-store-definition","path":"2_vfr_description_in_bnf/27_vfr_variable_store_definition.md","ref":"2_vfr_description_in_bnf/27_vfr_variable_store_definition.md#27-vfr-variable-store-definition","articles":[]},{"title":"2.8 VFR FormSet DisableIf Definition","level":"1.3.8","depth":2,"anchor":"#28-vfr-formset-disableif-definition","path":"2_vfr_description_in_bnf/28_vfr_formset_disableif_definition.md","ref":"2_vfr_description_in_bnf/28_vfr_formset_disableif_definition.md#28-vfr-formset-disableif-definition","articles":[]},{"title":"2.9 VFR FormSet SuppressIf Definition","level":"1.3.9","depth":2,"anchor":"#29-vfr-formset-suppressif-definition","path":"2_vfr_description_in_bnf/29_vfr_formset_suppressif_definition.md","ref":"2_vfr_description_in_bnf/29_vfr_formset_suppressif_definition.md#29-vfr-formset-suppressif-definition","articles":[]},{"title":"2.10 VFR General Token Definition","level":"1.3.10","depth":2,"anchor":"#210-vfr-general-token-definition","path":"2_vfr_description_in_bnf/210_vfr_general_token_definition.md","ref":"2_vfr_description_in_bnf/210_vfr_general_token_definition.md#210-vfr-general-token-definition","articles":[]},{"title":"2.11 VFR Form Definition","level":"1.3.11","depth":2,"anchor":"#211-vfr-form-definition","path":"2_vfr_description_in_bnf/211_vfr_form_definition.md","ref":"2_vfr_description_in_bnf/211_vfr_form_definition.md#211-vfr-form-definition","articles":[]},{"title":"2.12 VFR Expression Statement Definition","level":"1.3.12","depth":2,"anchor":"#212-vfr-expression-statement-definition","path":"2_vfr_description_in_bnf/212_vfr_expression_statement_definition.md","ref":"2_vfr_description_in_bnf/212_vfr_expression_statement_definition.md#212-vfr-expression-statement-definition","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"title":"EDK II VFR Programming Language Specification","version":"Revision 1.92"},"plugins":["puml-aleung"],"pluginsConfig":{"puml-aleung":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"2_vfr_description_in_bnf/21_vfr_programming_keywords.md","mtime":"2020-12-01T06:00:38.623Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-01T06:01:07.011Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
