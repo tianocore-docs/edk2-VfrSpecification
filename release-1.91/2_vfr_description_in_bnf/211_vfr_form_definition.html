@@ -1,0 +1,1707 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2.11 VFR Form Definition · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="212_vfr_expression_statement_definition.html" />
+    
+    
+    <link rel="prev" href="210_vfr_general_token_definition.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../#edk-ii-vfr-programming-language-specification">
+            
+                    
+                    EDK II VFR Programming Language Specification
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../1_introduction.html">
+            
+                <a href="../1_introduction.html#1-introduction">
+            
+                    
+                    1 Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../1_introduction.html">
+            
+                <a href="../1_introduction.html#11-overview">
+            
+                    
+                    1.1 Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../1_introduction.html">
+            
+                <a href="../1_introduction.html#12-assumed-knowledge">
+            
+                    
+                    1.2 Assumed Knowledge
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../1_introduction.html">
+            
+                <a href="../1_introduction.html#13-related-information">
+            
+                    
+                    1.3 Related Information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../1_introduction.html">
+            
+                <a href="../1_introduction.html#14-terms">
+            
+                    
+                    1.4 Terms
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./#2-vfr-description-in-bnf">
+            
+                    
+                    2 VFR Description in BNF
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="21_vfr_programming_keywords.html">
+            
+                <a href="21_vfr_programming_keywords.html#21-vfr-programming-keywords">
+            
+                    
+                    2.1 VFR Programming Keywords
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="22_vfr_program.html">
+            
+                <a href="22_vfr_program.html#22-vfr-program">
+            
+                    
+                    2.2 VFR Program
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="23_vfr_data_struct_definition.html">
+            
+                <a href="23_vfr_data_struct_definition.html#23-vfr-data-struct-definition">
+            
+                    
+                    2.3 VFR Data Struct Definition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="24_vfr_formset_definition.html">
+            
+                <a href="24_vfr_formset_definition.html#24-vfr-formset-definition">
+            
+                    
+                    2.4 VFR FormSet Definition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="25_vfr_formset_list_definition.html">
+            
+                <a href="25_vfr_formset_list_definition.html#25-vfr-formset-list-definition">
+            
+                    
+                    2.5 VFR FormSet List Definition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="26_vfr_default_stores_definition.html">
+            
+                <a href="26_vfr_default_stores_definition.html#26-vfr-default-stores-definition">
+            
+                    
+                    2.6 VFR Default Stores Definition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="27_vfr_variable_store_definition.html">
+            
+                <a href="27_vfr_variable_store_definition.html#27-vfr-variable-store-definition">
+            
+                    
+                    2.7 VFR Variable Store Definition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="28_vfr_formset_disableif_definition.html">
+            
+                <a href="28_vfr_formset_disableif_definition.html#28-vfr-formset-disableif-definition">
+            
+                    
+                    2.8 VFR FormSet DisableIf Definition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="29_vfr_formset_suppressif_definition.html">
+            
+                <a href="29_vfr_formset_suppressif_definition.html#29-vfr-formset-suppressif-definition">
+            
+                    
+                    2.9 VFR FormSet SuppressIf Definition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="210_vfr_general_token_definition.html">
+            
+                <a href="210_vfr_general_token_definition.html#210-vfr-general-token-definition">
+            
+                    
+                    2.10 VFR General Token Definition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="211_vfr_form_definition.html">
+            
+                <a href="211_vfr_form_definition.html#211-vfr-form-definition">
+            
+                    
+                    2.11 VFR Form Definition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="212_vfr_expression_statement_definition.html">
+            
+                <a href="212_vfr_expression_statement_definition.html#212-vfr-expression-statement-definition">
+            
+                    
+                    2.12 VFR Expression Statement Definition
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >2.11 VFR Form Definition</a>
+    </h1>
+</div>
+<div>
+    <!-- 
+    <img style="float:left; align:middle; height:2em" src="media/TianocoreTitlePageLogo.jpg"/>
+     -->
+    
+      <h2>
+        <div style="position:absolute;text-align:left">EDK II VFR Programming Language Specification</div>
+        <div style="text-align:right">Revision 1.91</div>
+      </h2>  
+    
+    <hr>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <!--- @file
+  2.11 VFR Form Definition
+
+  Copyright (c) 2007-2017, Intel Corporation. All rights reserved.<BR>
+
+  Redistribution and use in source (original document form) and 'compiled'
+  forms (converted to PDF, epub, HTML and other formats) with or without
+  modification, are permitted provided that the following conditions are met:
+
+  1) Redistributions of source code (original document form) must retain the
+     above copyright notice, this list of conditions and the following
+     disclaimer as the first lines of this file unmodified.
+
+  2) Redistributions in compiled form (transformed to other DTDs, converted to
+     PDF, epub, HTML and other formats) must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution.
+
+  THIS DOCUMENTATION IS PROVIDED BY TIANOCORE PROJECT "AS IS" AND ANY EXPRESS OR
+  IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+  MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+  EVENT SHALL TIANOCORE PROJECT  BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+  OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS DOCUMENTATION, EVEN IF
+  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+-->
+<h2 id="211-vfr-form-definition">2.11 VFR Form Definition</h2>
+<pre><code class="lang-c">vfrFormDefinition ::=
+  <span class="hljs-string">&quot;form&quot;</span> <span class="hljs-string">&quot;formid&quot;</span> <span class="hljs-string">&quot;=&quot;</span> Number <span class="hljs-string">&quot;,&quot;</span>
+  <span class="hljs-string">&quot;title&quot;</span> <span class="hljs-string">&quot;=&quot;</span> getStringId <span class="hljs-string">&quot;;&quot;</span>
+  (
+      vfrStatementImage
+    | vfrStatementLocked
+    | vfrStatementRules
+    | vfrStatementDefault
+    | vfrStatementStat
+    | vfrStatementQuestions
+    | vfrStatementConditional
+    | vfrStatementLabel
+    | vfrStatementBanner
+    | vfrStatementExtension
+    | vfrStatementModal
+  )*
+<span class="hljs-string">&quot;endform&quot;</span> <span class="hljs-string">&quot;;&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<hr>
+<p><strong>Note:</strong> <code>formid</code> must be unique for each form statement in a given formset.</p>
+<hr>
+<h4 id="example">Example</h4>
+<p>None.</p>
+<h3 id="2111-vfr-form-map-definition">2.11.1 VFR Form Map Definition</h3>
+<pre><code class="lang-c">vfrFormMapDefinition ::=
+  <span class="hljs-string">&quot;formmap&quot;</span> <span class="hljs-string">&quot;formid&quot;</span> <span class="hljs-string">&quot;=&quot;</span> Number <span class="hljs-string">&quot;,&quot;</span>
+  (
+    <span class="hljs-string">&quot;maptitle&quot;</span> <span class="hljs-string">&quot;=&quot;</span> getStringId <span class="hljs-string">&quot;;&quot;</span>
+    <span class="hljs-string">&quot;mapguid&quot;</span> <span class="hljs-string">&quot;=&quot;</span> guidDefinition <span class="hljs-string">&quot;;&quot;</span>
+  )*
+  (
+      vfrStatementImage
+    | vfrStatementLocked
+    | vfrStatementRules
+    | vfrStatementDefault
+    | vfrStatementStat
+    | vfrStatementQuestions
+    | vfrStatementConditional
+    | vfrStatementLabel
+    | vfrStatementBanner
+    | vfrStatementExtension
+    | vfrStatementModal
+  )*
+  <span class="hljs-string">&quot;endform&quot;</span> <span class="hljs-string">&quot;;&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<hr>
+<p><strong>Note:</strong> <code>formid</code> must be unique for each form statement in a given formset.</p>
+<hr>
+<h4 id="example">Example</h4>
+<p>None.</p>
+<h3 id="2112-vfr-image-statement-definition">2.11.2 VFR Image Statement Definition</h3>
+<pre><code class="lang-c">vfrStatementImage ::=
+  vfrImageTag <span class="hljs-string">&quot;;&quot;</span>
+</code></pre>
+<hr>
+<p><strong>Note:</strong> There are no BEHAVIORS AND RESTRICTIONS or an Example for this
+section.</p>
+<hr>
+<h3 id="2113-vfr-locked-statement-definition">2.11.3 VFR Locked Statement Definition</h3>
+<pre><code class="lang-c">vfrStatementLocked ::=
+  vfrLockedTag <span class="hljs-string">&quot;;&quot;</span>
+</code></pre>
+<hr>
+<p><strong>Note:</strong> There are no BEHAVIORS AND RESTRICTIONS or an Example for this
+section.</p>
+<hr>
+<h3 id="2114-vfr-rule-statement-definition">2.11.4 VFR Rule Statement Definition</h3>
+<pre><code class="lang-c">vfrStatementRules ::=
+  <span class="hljs-string">&quot;rule&quot;</span> StringIdentifier <span class="hljs-string">&quot;,&quot;</span>
+    vfrStatementExpression
+  <span class="hljs-string">&quot;endrule&quot;</span> <span class="hljs-string">&quot;;&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS:</h4>
+<p><code>StringIdentifier</code> is the name that can be referenced by a question. It should
+be unique in the formset.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">rule MyRule, <span class="hljs-number">1</span> + <span class="hljs-number">2</span>
+endrule;
+</code></pre>
+<h3 id="2115-vfr-statement-definition">2.11.5 VFR Statement Definition</h3>
+<pre><code class="lang-c">vfrStatementStat ::=
+    vfrStatementSubTitle
+  | vfrStatementStaticText
+  | vfrStatementCrossReference
+</code></pre>
+<hr>
+<p><strong>Note:</strong> There are no BEHAVIORS AND RESTRICTIONS or an Example for this
+section.</p>
+<hr>
+<h4 id="21151-vfr-subtitle-definition">2.11.5.1 VFR SubTitle Definition</h4>
+<pre><code class="lang-c">vfrStatementSubTitle ::=
+  <span class="hljs-string">&quot;subtitle&quot;</span>
+  <span class="hljs-string">&quot;text&quot;</span> <span class="hljs-string">&quot;=&quot;</span> getStringId
+  { <span class="hljs-string">&quot;,&quot;</span> <span class="hljs-string">&quot;flags&quot;</span> <span class="hljs-string">&quot;=&quot;</span> vfrSubtitleFlags }
+  (
+    { <span class="hljs-string">&quot;,&quot;</span> vfrStatementStatTagList } <span class="hljs-string">&quot;;&quot;</span>
+  |
+    { <span class="hljs-string">&quot;,&quot;</span> vfrStatementStatTagList }
+    { <span class="hljs-string">&quot;,&quot;</span> (vfrStatementStat | vfrStatementQuestions)*}
+    <span class="hljs-string">&quot;endsubtitle&quot;</span> <span class="hljs-string">&quot;;&quot;</span>
+  )
+
+vfrSubtitleFlags ::=
+  subtitleFlagsField ( <span class="hljs-string">&quot;|&quot;</span> subtitleFlagsField )* <span class="hljs-string">&quot;;&quot;</span>
+
+subtitleFlagsField ::=
+    Number
+  | <span class="hljs-string">&quot;HORIZONTAL&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<hr>
+<p><strong>Note:</strong> <code>flags</code> is optional, and the default value is 0.</p>
+<hr>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">subtitle
+  text = STRING_TOKEN(STR_SUBTITLE_TEXT),
+  flags = HORIZONTAL;
+
+subtitle
+  text = STRING_TOKEN(STR_SUBTITLE_TEXT),
+
+  text
+    help  = STRING_TOKEN(STR_TEXT_TEXT),
+    text  = STRING_TOKEN(STR_TEXT_TEXT);
+    flags = RESET_REQUIRED,
+    key   = <span class="hljs-number">0x0001</span>;
+
+endsubtitle;
+</code></pre>
+<h4 id="21152-vfr-text-definition">2.11.5.2 VFR Text Definition</h4>
+<pre><code class="lang-c">vfrStatementStaticText ::=
+  <span class="hljs-string">&quot;text&quot;</span>
+  <span class="hljs-string">&quot;help&quot;</span> <span class="hljs-string">&quot;=&quot;</span> getStringId <span class="hljs-string">&quot;,&quot;</span>
+  <span class="hljs-string">&quot;text&quot;</span> <span class="hljs-string">&quot;=&quot;</span> getStringId
+  { <span class="hljs-string">&quot;,&quot;</span> <span class="hljs-string">&quot;text&quot;</span> <span class="hljs-string">&quot;=&quot;</span> getStringId }
+  {
+    <span class="hljs-string">&quot;,&quot;</span> <span class="hljs-string">&quot;flags&quot;</span> <span class="hljs-string">&quot;=&quot;</span> staticTextFlagsField ( <span class="hljs-string">&quot;|&quot;</span> staticTextFlagsField )*
+    <span class="hljs-string">&quot;,&quot;</span> <span class="hljs-string">&quot;key&quot;</span> <span class="hljs-string">&quot;=&quot;</span> Number
+  }
+  { <span class="hljs-string">&quot;,&quot;</span> vfrStatementStatTagList } <span class="hljs-string">&quot;;&quot;</span>
+
+staticTextFlagsField ::=
+    Number
+  | questionheaderFlagsField
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<hr>
+<p><strong>Note:</strong> <code>flags</code> is optional. The default value is 0.</p>
+<hr>
+<p>If <code>EFI_IFR_FLAGS_CALLBACK</code> is set in <code>flags</code> then it will generate an
+<code>EFI_IFR_ACTION</code> op-code. Otherwise, it generates the <code>EFI_IFR_TEXT</code> op-code.</p>
+<p>The value of <code>key</code> will be used as a question ID.</p>
+<h4 id="example">Example</h4>
+<p>Generates <code>EFI_IFR_TEXT</code>:</p>
+<pre><code class="lang-c">text
+  help = STRING_TOKEN(STR_TEXT_TEXT),
+  text = STRING_TOKEN(STR_TEXT_TEXT);
+</code></pre>
+<p>Generates <code>EFI_IFR_ACTION</code>:</p>
+<pre><code class="lang-c">text
+  help  = STRING_TOKEN(STR_TEXT_TEXT),
+  text  = STRING_TOKEN(STR_TEXT_TEXT);
+  flags = RESET_REQUIRED,
+  key   = <span class="hljs-number">0x0001</span>;
+</code></pre>
+<h4 id="21153-vfr-cross-reference-type-statements-definition">2.11.5.3 VFR Cross Reference Type Statements Definition</h4>
+<pre><code class="lang-c">vfrStatementCrossReference ::=
+    vfrStatementGoto
+  | vfrStatementResetButton
+</code></pre>
+<hr>
+<p><strong>Note:</strong> There are no BEHAVIORS AND RESTRICTIONS or an Example for this
+section.</p>
+<hr>
+<h5 id="211531-vfr-goto-statement-definition">2.11.5.3.1 VFR Goto Statement Definition</h5>
+<pre><code class="lang-c">vfrStatementGoto ::=
+  <span class="hljs-string">&quot;goto&quot;</span>
+  {
+    (
+      <span class="hljs-string">&quot;devicePath&quot;</span>  <span class="hljs-string">&quot;=&quot;</span> getStringId <span class="hljs-string">&quot;,&quot;</span>
+      <span class="hljs-string">&quot;formsetguid&quot;</span> <span class="hljs-string">&quot;=&quot;</span> guidDefinition <span class="hljs-string">&quot;,&quot;</span>
+      <span class="hljs-string">&quot;formid&quot;</span>   <span class="hljs-string">&quot;=&quot;</span> Number <span class="hljs-string">&quot;,&quot;</span>
+      <span class="hljs-string">&quot;question&quot;</span> <span class="hljs-string">&quot;=&quot;</span> Number <span class="hljs-string">&quot;,&quot;</span>
+    )
+    |
+    (
+      <span class="hljs-string">&quot;formsetguid&quot;</span> <span class="hljs-string">&quot;=&quot;</span> guidDefinition <span class="hljs-string">&quot;,&quot;</span>
+      <span class="hljs-string">&quot;formid&quot;</span>   <span class="hljs-string">&quot;=&quot;</span> Number <span class="hljs-string">&quot;,&quot;</span>
+      <span class="hljs-string">&quot;question&quot;</span> <span class="hljs-string">&quot;=&quot;</span> Number <span class="hljs-string">&quot;,&quot;</span>
+    )
+    |
+    (
+      <span class="hljs-string">&quot;formid&quot;</span>   <span class="hljs-string">&quot;=&quot;</span> Number <span class="hljs-string">&quot;,&quot;</span>
+      <span class="hljs-string">&quot;question&quot;</span> <span class="hljs-string">&quot;=&quot;</span>
+      (
+          StringIdentifier <span class="hljs-string">&quot;,&quot;</span>
+        | Number <span class="hljs-string">&quot;,&quot;</span>
+      )
+    )
+    |
+    (
+      Number <span class="hljs-string">&quot;,&quot;</span>
+    )
+  }
+  vfrQuestionHeader
+  { <span class="hljs-string">&quot;,&quot;</span> <span class="hljs-string">&quot;flags&quot;</span> <span class="hljs-string">&quot;=&quot;</span> vfrGotoFlags }
+  { <span class="hljs-string">&quot;,&quot;</span> <span class="hljs-string">&quot;key&quot;</span> <span class="hljs-string">&quot;=&quot;</span> Number }
+  { <span class="hljs-string">&quot;,&quot;</span> vfrStatementQuestionOptionList }
+  <span class="hljs-string">&quot;;&quot;</span>
+
+vfrGotoFlags ::=
+  gotoFlagsField ( <span class="hljs-string">&quot;|&quot;</span> gotoFlagsField )*
+
+gotoFlagsField ::=
+    Number
+  | questionheaderFlagsField
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>The value of <code>key</code> is used as a question ID.</p>
+<h4 id="example">Example</h4>
+<p>Generate <code>EFI_IFR_REF</code> without <code>key</code></p>
+<pre><code class="lang-c"><span class="hljs-keyword">goto</span> <span class="hljs-number">1</span>,
+  prompt = STRING_TOKEN(STR_GOTO_PROMPT),
+  help   = STRING_TOKEN(STR_GOTO_HELP);
+</code></pre>
+<p>Generate <code>EFI_IFR_REF</code> with <code>key</code></p>
+<pre><code class="lang-c"><span class="hljs-keyword">goto</span> <span class="hljs-number">1</span>,
+  prompt = STRING_TOKEN(STR_GOTO_PROMPT),
+  help   = STRING_TOKEN(STR_GOTO_HELP);
+  key    = <span class="hljs-number">0x1234</span>;
+</code></pre>
+<p>Generate <code>EFI_IFR_REF2</code></p>
+<pre><code class="lang-c"><span class="hljs-keyword">goto</span>
+  formid   = <span class="hljs-number">1</span>,
+  question = QuesttionRef,
+  prompt   = STRING_TOKEN(STR_GOTO_PROMPT),
+  help     = STRING_TOKEN(STR_GOTO_HELP);
+</code></pre>
+<p>Generate <code>EFI_IFR_REF3</code></p>
+<pre><code class="lang-c"><span class="hljs-keyword">goto</span>
+  formsetguid = FORMSET_GUID,
+  formid      = <span class="hljs-number">1</span>,
+  question    = QuesttionRef,
+  prompt      = STRING_TOKEN(STR_GOTO_PROMPT),
+  help        = STRING_TOKEN(STR_GOTO_HELP);
+</code></pre>
+<p>Generate <code>EFI_IFR_REF4</code></p>
+<pre><code class="lang-c"><span class="hljs-keyword">goto</span>
+  devicepath  = STRING_TOKEN(STR_DEVICE_PATH),
+  formsetguid = FORMSET_GUID,
+  formid      = <span class="hljs-number">1</span>,
+  question    = QuesttionRef,
+  prompt      = STRING_TOKEN(STR_GOTO_PROMPT),
+  help        = STRING_TOKEN(STR_GOTO_HELP);
+</code></pre>
+<p>Generate <code>EFI_IFR_REF5</code> without <code>varid</code></p>
+<pre><code class="lang-c"><span class="hljs-keyword">goto</span>
+  prompt = STRING_TOKEN(STR_GOTO_PROMPT),
+  help   = STRING_TOKEN(STR_GOTO_HELP);
+</code></pre>
+<p>Generate <code>EFI_IFR_REF5</code> with <code>varid</code></p>
+<pre><code class="lang-c"><span class="hljs-keyword">goto</span>
+  varid   = MySTestData.mFieldRef,
+  prompt  = STRING_TOKEN(STR_GOTO_PROMPT),
+  help    = STRING_TOKEN STR_GOTO_HELP);
+  <span class="hljs-keyword">default</span> = FID;QID;GuidValue;STRING_TOKEN(STR_DEVICE_PATH),
+  ;
+</code></pre>
+<p>Generate <code>EFI_IFR_REF</code> with option code</p>
+<pre><code class="lang-c"><span class="hljs-keyword">goto</span> <span class="hljs-number">1</span>,
+  prompt = STRING_TOKEN(STR_GOTO_PROMPT),
+  help   = STRING_TOKEN(STR_GOTO_HELP),
+  refresh interval = <span class="hljs-number">3</span>
+  ;
+</code></pre>
+<h5 id="211532-vfr-resetbutton-statement-definition">2.11.5.3.2 VFR ResetButton Statement Definition</h5>
+<pre><code class="lang-c">vfrStatementResetButton ::=
+  <span class="hljs-string">&quot;resetbutton&quot;</span>
+  <span class="hljs-string">&quot;defaultStore&quot;</span> <span class="hljs-string">&quot;=&quot;</span> StringIdentifier <span class="hljs-string">&quot;,&quot;</span>
+  vfrStatementHeader <span class="hljs-string">&quot;,&quot;</span>
+  { vfrStatementStatTagList <span class="hljs-string">&quot;,&quot;</span> }
+  <span class="hljs-string">&quot;endresetbutton&quot;</span> <span class="hljs-string">&quot;;&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<hr>
+<p><strong>Note:</strong> <code>defaultStore</code> should point to the default store defined before.</p>
+<hr>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">resetbutton
+  defaultstore = DefaultStoreRef,
+  prompt = STRING_TOKEN(STR_RESET_BUTTON_PROMPT),
+  help   = STRING_TOKEN(STR_RESET_BUTTON_HELP),
+endresetbutton;
+</code></pre>
+<h3 id="2116-vfr-question-type-statements-definition">2.11.6 VFR Question Type Statements Definition</h3>
+<pre><code class="lang-c">vfrStatementQuestions ::=
+    vfrStatementBooleanType
+ | vfrStatementDate
+ | vfrStatementNumericType
+ | vfrStatementStringType
+ | vfrStatementOrderedList
+ | vfrStatementTime
+</code></pre>
+<hr>
+<p><strong>Note:</strong> There are no BEHAVIORS AND RESTRICTIONS or an Example for this
+section.</p>
+<hr>
+<h4 id="21161-vfr-question-tag-definition">2.11.6.1 VFR Question Tag Definition</h4>
+<pre><code>vfrStatementQuestionTag ::=
+    vfrStatementStatTag &quot;,&quot;
+  | vfrStatementInconsistentIf
+  | vfrStatementNoSubmitIf
+  | vfrStatementDisableIfQuest
+  | vfrStatementRefresh
+  | vfrStatementVarstoreDevice
+  | vfrStatementExtension
+  | vfrStatementRefreshEvent
+  | vfrStatementWarningIf
+</code></pre><hr>
+<p><strong>Note:</strong> There are no BEHAVIORS AND RESTRICTIONS or an Example for this
+section.</p>
+<hr>
+<h5 id="211611-vfr-question-tag-inconsistentif-definition">2.11.6.1.1 VFR Question Tag InconsistentIf Definition</h5>
+<pre><code class="lang-c">vfrStatementInconsistentIf ::=
+  <span class="hljs-string">&quot;inconsistentif&quot;</span>
+  <span class="hljs-string">&quot;prompt&quot;</span> <span class="hljs-string">&quot;=&quot;</span> getStringId <span class="hljs-string">&quot;,&quot;</span>
+  vfrStatementExpression
+  <span class="hljs-string">&quot;endif&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>It can only be used in questions.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">checkbox
+  name       = MyCheckBox,
+  varid      = MySTestData.mField1,
+  questionid = <span class="hljs-number">0xcb</span>,
+  prompt     = STRING_TOKEN(STR_CHECK_BOX_PROMPT),
+  help       = STRING_TOKEN(STR_CHECK_BOX_HELP),
+  flags      = CHECKBOX_DEFAULT | INTERACTIVE,
+
+  inconsistentif
+    prompt = STRING_TOKEN(STR_INCONSISTENT_IF),
+    ideqval MySTestData.mField1 == <span class="hljs-number">2007</span>
+  endif
+endcheckbox;
+</code></pre>
+<h5 id="211612-vfr-question-tag-nosubmitif-definition">2.11.6.1.2 VFR Question Tag NoSubmitIf Definition</h5>
+<pre><code class="lang-c">vfrStatementNoSubmitIf ::=
+  <span class="hljs-string">&quot;nosubmitif&quot;</span>
+  <span class="hljs-string">&quot;prompt&quot;</span> <span class="hljs-string">&quot;=&quot;</span> getStringId <span class="hljs-string">&quot;,&quot;</span>
+  vfrStatementExpression
+  <span class="hljs-string">&quot;endif&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>It can only be used in questions.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">checkbox
+  name       = MyCheckBox,
+  varid      = MySTestData.mField1,
+  questionid = <span class="hljs-number">0xcb</span>,
+  prompt     = STRING_TOKEN(STR_CHECK_BOX_PROMPT),
+  help       = STRING_TOKEN(STR_CHECK_BOX_HELP),
+  flags      = CHECKBOX_DEFAULT | INTERACTIVE,
+
+  nosubmitif prompt = STRING_TOKEN(STR_NOSUBMIT_IF),
+    ideqval MySTestData.mField1 == <span class="hljs-number">2007</span>
+  endif
+endcheckbox;
+</code></pre>
+<h5 id="211613-vfr-question-tag-disableif-definition">2.11.6.1.3 VFR Question Tag DisableIf Definition</h5>
+<pre><code class="lang-c">vfrStatementDisableIfQuest ::=
+  <span class="hljs-string">&quot;disableif&quot;</span> vfrStatementExpression <span class="hljs-string">&quot;;&quot;</span>
+  vfrStatementQuestionOptionList
+  <span class="hljs-string">&quot;endif&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>None.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">checkbox
+  name       = MyCheckBox,
+  varid      = MySTestData.mField1,
+  questionid = <span class="hljs-number">0xcb</span>,
+  prompt     = STRING_TOKEN(STR_CHECK_BOX_PROMPT),
+  help       = STRING_TOKEN(STR_CHECK_BOX_HELP),
+  flags      = CHECKBOX_DEFAULT | INTERACTIVE,
+
+  disableif
+    ideqvallist MySTestData.mField1 == <span class="hljs-number">1</span> <span class="hljs-number">3</span> <span class="hljs-number">5</span> <span class="hljs-number">7</span>;
+    refresh interval = <span class="hljs-number">1</span>
+  endif
+endcheckbox;
+</code></pre>
+<h5 id="211614-vfr-question-tag-refresh-definition">2.11.6.1.4 VFR Question Tag Refresh Definition</h5>
+<pre><code class="lang-c">vfrStatementRefresh ::=
+  <span class="hljs-string">&quot;refresh&quot;</span> <span class="hljs-string">&quot;interval&quot;</span> <span class="hljs-string">&quot;=&quot;</span> Number
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>It can only be used in questions.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">numeric varid   = MyData.Data,
+        prompt  = STRING_TOKEN(STR_PROMPT),
+        help    = STRING_TOKEN(STR_HELP),
+        minimum = <span class="hljs-number">0</span>,
+        maximum = <span class="hljs-number">0xff</span>,
+        refresh interval = <span class="hljs-number">3</span>
+endnumeric;
+</code></pre>
+<h5 id="211615-vfr-question-tag-varstoredevice-definition">2.11.6.1.5 VFR Question Tag VarstoreDevice Definition</h5>
+<pre><code class="lang-c">vfrStatementVarstoreDevice ::=
+  <span class="hljs-string">&quot;varstoredevice&quot;</span> <span class="hljs-string">&quot;=&quot;</span> getStringId <span class="hljs-string">&quot;,&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>It can only be used in questions.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">checkbox
+  name       = MyCheckBox,
+  varid      = MySTestData.mField1,
+  questionid = <span class="hljs-number">0xcb</span>,
+  prompt     = STRING_TOKEN(STR_CHECK_BOX_PROMPT),
+  help       = STRING_TOKEN(STR_CHECK_BOX_HELP),
+  flags      = CHECKBOX_DEFAULT | INTERACTIVE,
+
+  varstoredevice = STRING_TOKEN(STR_VARSTOREDEVICE),
+endcheckbox;
+</code></pre>
+<h5 id="211616-vfr-question-tag-refreshevent-definition">2.11.6.1.6 VFR Question Tag RefreshEvent Definition</h5>
+<pre><code class="lang-c">vfrStatementRefreshEvent ::=
+  <span class="hljs-string">&quot;refreshguid&quot;</span> <span class="hljs-string">&quot;=&quot;</span> guidDefinition <span class="hljs-string">&quot;,&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>It can only be used in questions.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">numeric
+  varid       = MySTestData.mField2,
+  prompt      = STRING_TOKEN(STR_NUMERIC_PROMPT),
+  help        = STRING_TOKEN(STR_NUMERIC_HELP),
+  flags       = DISPLAY_UINT_HEX,
+  minimum     = <span class="hljs-number">0</span>,
+  maximum     = <span class="hljs-number">300</span>,
+  step        = <span class="hljs-number">0</span>,
+  refreshguid = EFI_IFR_REFRESH_ID_OP_GUID,
+  <span class="hljs-keyword">default</span>     = <span class="hljs-number">175</span>,
+endnumeric;
+</code></pre>
+<h5 id="211617-vfr-question-tag-warningif-definition-vfrstatement">2.11.6.1.7 VFR Question Tag WarningIf Definition vfrStatement</h5>
+<pre><code class="lang-c">WarningIf ::=
+  <span class="hljs-string">&quot;warningif&quot;</span> <span class="hljs-string">&quot;prompt&quot;</span> <span class="hljs-string">&quot;=&quot;</span> getStringId <span class="hljs-string">&quot;,&quot;</span> {<span class="hljs-string">&quot;timeout&quot;</span> <span class="hljs-string">&quot;=&quot;</span> Number <span class="hljs-string">&quot;,&quot;</span>}
+  vfrStatementExpression
+  <span class="hljs-string">&quot;endif&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>It can only be used in questions.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">checkbox
+  name       = MyCheckBox,
+  varid      = MySTestData.mField1,
+  questionid = <span class="hljs-number">0xcb</span>,
+  prompt     = STRING_TOKEN(STR_CHECK_BOX_PROMPT),
+  help       = STRING_TOKEN(STR_CHECK_BOX_HELP),
+  flags      = CHECKBOX_DEFAULT | INTERACTIVE,
+
+  warningif prompt = STRING_TOKEN(STR_INCONSISTENT_IF), timeout = <span class="hljs-number">5</span>,
+    ideqval MySTestData.mField1 == <span class="hljs-number">2007</span>
+  endif
+endcheckbox;
+</code></pre>
+<h4 id="21162-vfr-question-tag-list-definition">2.11.6.2 VFR Question Tag List Definition</h4>
+<pre><code class="lang-c">vfrStatementQuestionTagList ::=
+  ( vfrStatementQuestionTag )*
+</code></pre>
+<hr>
+<p><strong>Note:</strong> There are no BEHAVIORS AND RESTRICTIONS or an Example for this
+section.</p>
+<hr>
+<h4 id="21163-vfr-question-option-tag-definition">2.11.6.3 VFR Question Option Tag Definition</h4>
+<pre><code class="lang-c">vfrStatementQuestionOptionTag ::=
+    vfrStatementSuppressIfQuest
+  | vfrStatementValue
+  | vfrStatementDefault
+  | vfrStatementOptions
+  | vfrStatementRead
+  | vfrStatementWrite
+</code></pre>
+<hr>
+<p><strong>Note:</strong> There are no BEHAVIORS AND RESTRICTIONS or an Example for this
+section.</p>
+<hr>
+<h5 id="211631-vfr-question-suppressif-statement-definition">2.11.6.3.1 VFR Question SuppressIf Statement Definition</h5>
+<pre><code class="lang-c">vfrStatementSuppressIfQuest ::=
+  <span class="hljs-string">&quot;suppressif&quot;</span> vfrStatementExpression <span class="hljs-string">&quot;;&quot;</span>
+    vfrStatementQuestionOptionList
+  <span class="hljs-string">&quot;endif&quot;</span>
+</code></pre>
+<hr>
+<p><strong>Note:</strong> There are no BEHAVIORS AND RESTRICTIONS or an Example for this
+section.</p>
+<hr>
+<h5 id="211632-vfr-default-statement-definition">2.11.6.3.2 VFR Default Statement Definition</h5>
+<pre><code class="lang-c">vfrStatementDefault ::=
+  <span class="hljs-string">&quot;default&quot;</span>
+  (
+    (
+        vfrStatementValue <span class="hljs-string">&quot;,&quot;</span>
+      | <span class="hljs-string">&quot;=&quot;</span> vfrConstantValueField <span class="hljs-string">&quot;,&quot;</span>
+    )
+    { <span class="hljs-string">&quot;defaultstore&quot;</span> <span class="hljs-string">&quot;=&quot;</span> StringIdentifier <span class="hljs-string">&quot;,&quot;</span> }
+  )
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>It can only be used in a question definition.</p>
+<hr>
+<p><strong>Note:</strong> <code>defaultstore</code> is optional and it points to the default store defined
+previously. If <code>defaultstore</code> is not defined, the
+<code>EFIHII_DEFAULT_CLASS_STANDARD</code> is assigned.</p>
+<hr>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c"><span class="hljs-keyword">default</span> = <span class="hljs-number">1</span>,
+<span class="hljs-keyword">default</span> value = <span class="hljs-number">1</span> + <span class="hljs-number">2</span>,
+<span class="hljs-keyword">default</span> = {<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>},
+</code></pre>
+<h5 id="211633-vfr-value-statement-definition">2.11.6.3.3 VFR Value Statement Definition</h5>
+<pre><code class="lang-c">vfrStatementValue ::=
+  <span class="hljs-string">&quot;value&quot;</span> <span class="hljs-string">&quot;=&quot;</span> vfrStatementExpression <span class="hljs-string">&quot;;&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>None.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">Value = <span class="hljs-number">0</span>;
+</code></pre>
+<h5 id="211634-vfr-option-type-statements-definition">2.11.6.3.4 VFR Option Type Statements Definition</h5>
+<pre><code class="lang-c">vfrStatementOptions ::=
+  vfrStatementOneOfOption
+</code></pre>
+<hr>
+<p><strong>Note:</strong> There are no BEHAVIORS AND RESTRICTIONS or an Example for this
+section.</p>
+<hr>
+<h5 id="211635-vfr-oneof-option-statement-definition">2.11.6.3.5 VFR OneOf Option Statement Definition</h5>
+<pre><code class="lang-c">vfrStatementOneOfOption ::=
+  <span class="hljs-string">&quot;option&quot;</span>
+  <span class="hljs-string">&quot;text&quot;</span>  <span class="hljs-string">&quot;=&quot;</span> getStringId <span class="hljs-string">&quot;,&quot;</span>
+  <span class="hljs-string">&quot;value&quot;</span> <span class="hljs-string">&quot;=&quot;</span> vfrConstantValueField <span class="hljs-string">&quot;,&quot;</span>
+  <span class="hljs-string">&quot;flags&quot;</span> <span class="hljs-string">&quot;=&quot;</span> vfrOneOfOptionFlags
+  ( <span class="hljs-string">&quot;,&quot;</span> vfrImageTag )*
+  <span class="hljs-string">&quot;;&quot;</span>
+
+vfrOneOfOptionFlags ::=
+  oneofoptionFlagsField ( <span class="hljs-string">&quot;|&quot;</span> oneofoptionFlagsField )*
+
+oneofoptionFlagsField ::=
+    Number
+  | <span class="hljs-string">&quot;OPTION_DEFAULT&quot;</span>
+  | <span class="hljs-string">&quot;OPTION_DEFAULT_MFG&quot;</span>
+  | <span class="hljs-string">&quot;INTERACTIVE&quot;</span>
+  | <span class="hljs-string">&quot;RESET_REQUIRED&quot;</span>
+  | <span class="hljs-string">&quot;DEFAULT&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>An <code>option</code> statement is special; it is used to embellish or describe questions.</p>
+<p>These statements can be used to give the possible value and set the default
+value for questions. In other words, they are not questions, but they influence
+the questions they embellish. Therefore, the options&apos; <code>flags</code> are treated as
+question <code>flags</code> and can accept all values of question <code>flags</code>.</p>
+<p>Options with the DEFAULT flags can be used to set the default value for
+questions.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">option text = STRING_TOKEN(STR_ONE_OF_TEXT), value = <span class="hljs-number">0x2</span>, flags = DEFAULT | RESET_REQUIRED;
+</code></pre>
+<h5 id="211636-vfr-read-statement-definition">2.11.6.3.6 VFR Read Statement Definition</h5>
+<pre><code class="lang-c">vfrStatementRead ::=
+  <span class="hljs-string">&quot;read&quot;</span> vfrStatementExpression <span class="hljs-string">&quot;;&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>None.</p>
+<h4 id="example">Example</h4>
+<p>None</p>
+<h5 id="211637-vfr-write-statement-definition">2.11.6.3.7 VFR Write Statement Definition</h5>
+<pre><code class="lang-c">vfrStatementWrite ::=
+  <span class="hljs-string">&quot;write&quot;</span> vfrStatementExpression <span class="hljs-string">&quot;;&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>None.</p>
+<h4 id="example">Example</h4>
+<p>None</p>
+<h4 id="21164-vfr-question-tag-list-definition">2.11.6.4 VFR Question Tag List Definition</h4>
+<pre><code class="lang-c">vfrStatementQuestionOptionList ::=
+  (
+      vfrStatementQuestionTag
+    | vfrStatementQuestionOptionTag
+  )*
+</code></pre>
+<hr>
+<p><strong>Note:</strong> There are no BEHAVIORS AND RESTRICTIONS or an Example for this
+section.</p>
+<hr>
+<h4 id="21165-vfr-boolean-type-statement-definition">2.11.6.5 VFR Boolean Type Statement Definition</h4>
+<pre><code class="lang-c">vfrStatementBooleanType ::=
+    vfrStatementCheckBox
+  | vfrStatementAction
+</code></pre>
+<hr>
+<p><strong>Note:</strong> There are no BEHAVIORS AND RESTRICTIONS or an Example for this
+section.</p>
+<hr>
+<h5 id="211651-vfr-checkbox-statement-definition">2.11.6.5.1 VFR CheckBox Statement Definition</h5>
+<pre><code class="lang-c">vfrStatementCheckBox ::=
+  <span class="hljs-string">&quot;checkbox&quot;</span>
+  vfrQuestionHeader <span class="hljs-string">&quot;,&quot;</span>
+  { <span class="hljs-string">&quot;flags&quot;</span> <span class="hljs-string">&quot;=&quot;</span> vfrCheckBoxFlags <span class="hljs-string">&quot;,&quot;</span> }
+  { <span class="hljs-string">&quot;key&quot;</span> <span class="hljs-string">&quot;=&quot;</span> Number <span class="hljs-string">&quot;,&quot;</span> }
+  vfrStatementQuestionOptionList
+  <span class="hljs-string">&quot;endcheckbox&quot;</span> <span class="hljs-string">&quot;;&quot;</span>
+
+vfrCheckBoxFlags ::=
+  checkboxFlagsField ( <span class="hljs-string">&quot;|&quot;</span> checkboxFlagsField )*
+
+checkboxFlagsField ::=
+    Number
+  | <span class="hljs-string">&quot;CHECKBOX_DEFAULT&quot;</span>
+  | <span class="hljs-string">&quot;CHECKBOX_DEFAULT_MFG&quot;</span>
+  | questionheaderFlagsField
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>The value of <code>key</code> is used as question ID.</p>
+<hr>
+<p><strong>Note:</strong> <code>flags</code> is optional, and the default value is 0.</p>
+<hr>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">checkbox
+  name    = MyCheckBox,
+  varid   = MySTestData.mField1,
+  prompt  = STRING_TOKEN(STR_CHECK_BOX_PROMPT),
+  help    = STRING_TOKEN(STR_CHECK_BOX_HELP),
+  flags   = CHECKBOX_DEFAULT | INTERACTIVE,
+  <span class="hljs-keyword">default</span> = TRUE,
+endcheckbox;
+</code></pre>
+<h5 id="211652-vfr-action-statement-definition">2.11.6.5.2 VFR Action Statement Definition</h5>
+<pre><code class="lang-c">vfrStatementAction ::=
+  <span class="hljs-string">&quot;action&quot;</span>
+  vfrQuestionHeader <span class="hljs-string">&quot;,&quot;</span>
+  { <span class="hljs-string">&quot;flags&quot;</span> <span class="hljs-string">&quot;=&quot;</span> vfrActionFlags <span class="hljs-string">&quot;,&quot;</span> }
+  <span class="hljs-string">&quot;config&quot;</span> <span class="hljs-string">&quot;=&quot;</span> getStringId <span class="hljs-string">&quot;,&quot;</span>
+  vfrStatementQuestionTagList
+  <span class="hljs-string">&quot;endaction&quot;</span> <span class="hljs-string">&quot;;&quot;</span>
+
+vfrActionFlags ::=
+  actionFlagsField ( <span class="hljs-string">&quot;|&quot;</span> actionFlagsField )*
+
+actionFlagsField ::=
+    Number
+  | questionheaderFlagsField
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<hr>
+<p><strong>Note:</strong> <code>flags</code> is optional, and the default value is 0.</p>
+<hr>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">action
+  prompt = STRING_TOKEN(STR_ACTION_PROMPT),
+  help   = STRING_TOKEN(STR_ACTION_HELP),
+  flags  = INTERACTIVE,
+  config = STRING_TOKEN(STR_ACTION_CONFIG),
+endaction;
+</code></pre>
+<h4 id="21166-vfr-numeric-type-statements-definition">2.11.6.6 VFR Numeric Type Statements Definition</h4>
+<pre><code class="lang-c">vfrStatementNumericType ::=
+    vfrStatementNumeric
+  | vfrStatementOneOf
+</code></pre>
+<hr>
+<p><strong>Note:</strong> There are no BEHAVIORS AND RESTRICTIONS or an Example for this
+section.</p>
+<hr>
+<h5 id="211661-vfr-numeric-statement-definition">2.11.6.6.1 VFR Numeric Statement Definition</h5>
+<pre><code class="lang-c">vfrStatementNumeric ::=
+  <span class="hljs-string">&quot;numeric&quot;</span>
+  vfrQuestionHeader ,
+  { <span class="hljs-string">&quot;flags&quot;</span> <span class="hljs-string">&quot;=&quot;</span> vfrNumericFlags <span class="hljs-string">&quot;,&quot;</span> }
+  { <span class="hljs-string">&quot;key&quot;</span> <span class="hljs-string">&quot;=&quot;</span> Number <span class="hljs-string">&quot;,&quot;</span> }
+  vfrSetMinMaxStep
+  vfrStatementQuestionOptionList
+  <span class="hljs-string">&quot;endnumeric&quot;</span> <span class="hljs-string">&quot;;&quot;</span>
+
+vfrSetMinMaxStep ::=
+  <span class="hljs-string">&quot;minimum&quot;</span> <span class="hljs-string">&quot;=&quot;</span> Number <span class="hljs-string">&quot;,&quot;</span>
+  <span class="hljs-string">&quot;maximum&quot;</span> <span class="hljs-string">&quot;=&quot;</span> Number <span class="hljs-string">&quot;,&quot;</span>
+  { <span class="hljs-string">&quot;step&quot;</span>  <span class="hljs-string">&quot;=&quot;</span> Number <span class="hljs-string">&quot;,&quot;</span> }
+
+vfrNumericFlags ::=
+  numericFlagsField ( <span class="hljs-string">&quot;|&quot;</span> numericFlagsField )*
+
+numericFlagsField ::=
+    Number
+  | <span class="hljs-string">&quot;NUMERIC_SIZE_1&quot;</span>
+  | <span class="hljs-string">&quot;NUMERIC_SIZE_2&quot;</span>
+  | <span class="hljs-string">&quot;NUMERIC_SIZE_4&quot;</span>
+  | <span class="hljs-string">&quot;NUMERIC_SIZE_8&quot;</span>
+  | <span class="hljs-string">&quot;DISPLAY_INT_DEC&quot;</span>
+  | <span class="hljs-string">&quot;DISPLAY_UINT_DEC&quot;</span>
+  | <span class="hljs-string">&quot;DISPLAY_UINT_HEX&quot;</span>
+  | questionheaderFlagsField
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<hr>
+<p><strong>Note:</strong> <code>flags</code> is optional, and the default value partly depends on the size
+of <code>varid</code> defined in <code>vfrQuestionHeader</code>.</p>
+<hr>
+<p>The default display format is <code>DISPLAY_UINT_DEC</code>.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">numeric
+  varid   = STestData.mField2,
+  prompt  = STRING_TOKEN(STR_NUMERIC_PROMPT),
+  help    = STRING_TOKEN(STR_NUMERIC_HELP),
+  flags   = DISPLAY_UINT_HEX,
+  minimum = <span class="hljs-number">0</span>,
+  maximum = <span class="hljs-number">300</span>,
+  step    = <span class="hljs-number">0</span>,
+  <span class="hljs-keyword">default</span> = <span class="hljs-number">175</span>,
+endnumeric;
+</code></pre>
+<h5 id="211662-vfr-oneof-statement-definition">2.11.6.6.2 VFR OneOf Statement Definition</h5>
+<pre><code class="lang-c">vfrStatementOneOf ::=
+  <span class="hljs-string">&quot;oneof&quot;</span>
+  vfrQuestionHeader,
+  { <span class="hljs-string">&quot;flags&quot;</span> <span class="hljs-string">&quot;=&quot;</span> vfrOneofFlagsField <span class="hljs-string">&quot;,&quot;</span> }
+  { vfrSetMinMaxStep }
+  vfrStatementQuestionOptionList
+  <span class="hljs-string">&quot;endoneof&quot;</span> <span class="hljs-string">&quot;;&quot;</span>
+
+vfrOneofFlagsField ::=
+  numericFlagsField ( <span class="hljs-string">&quot;|&quot;</span> numericFlagsField )*
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<hr>
+<p><strong>Note:</strong> <code>flags</code> is optional, and the default value partly depends on the size
+of <code>varid</code> defined in <code>vfrQuestionHeader</code> syntax.</p>
+<hr>
+<p>The flag is defined in the VFR Numeric Statement Definition.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">oneof
+  varid  = STestData.mField3[<span class="hljs-number">0</span>],
+  prompt = STRING_TOKEN(STR_ONE_OF_PROMPT),
+  help   = STRING_TOKEN(STR_ONE_OF_HELP),
+  flags  = DISPLAY_UINT_DEC,
+
+  option text = STRING_TOKEN(STR_ONE_OF_TEXT1), value = <span class="hljs-number">0x0</span>, flags = <span class="hljs-number">0</span>;
+  option text = STRING_TOKEN(STR_ONE_OF_TEXT2), value = <span class="hljs-number">0x1</span>, flags = <span class="hljs-number">0</span>;
+  option text = STRING_TOKEN(STR_ONE_OF_TEXT3), value = <span class="hljs-number">0x2</span>, flags = DEFAULT;
+endoneof;
+</code></pre>
+<h4 id="21167-vfr-string-type-statements-definition">2.11.6.7 VFR String Type Statements Definition</h4>
+<pre><code class="lang-c">vfrStatementStringType ::=
+    vfrStatementString
+  | vfrStatementPassword
+</code></pre>
+<hr>
+<p><strong>Note:</strong> There are no BEHAVIORS AND RESTRICTIONS or an Example for this
+section.</p>
+<hr>
+<h5 id="211671-vfr-string-statement-definition">2.11.6.7.1 VFR String Statement Definition</h5>
+<pre><code class="lang-c">vfrStatementString ::=
+  <span class="hljs-string">&quot;string&quot;</span>
+  vfrQuestionHeader <span class="hljs-string">&quot;,&quot;</span>
+  { <span class="hljs-string">&quot;flags&quot;</span> <span class="hljs-string">&quot;=&quot;</span> vfrStringFlagsField <span class="hljs-string">&quot;,&quot;</span> }
+  { <span class="hljs-string">&quot;key&quot;</span> <span class="hljs-string">&quot;=&quot;</span> Number <span class="hljs-string">&quot;,&quot;</span> }
+  <span class="hljs-string">&quot;minsize&quot;</span> <span class="hljs-string">&quot;=&quot;</span> Number <span class="hljs-string">&quot;,&quot;</span>
+  <span class="hljs-string">&quot;maxsize&quot;</span> <span class="hljs-string">&quot;=&quot;</span> Number <span class="hljs-string">&quot;,&quot;</span>
+  vfrStatementQuestionOptionList
+  <span class="hljs-string">&quot;endstring&quot;</span> <span class="hljs-string">&quot;;&quot;</span>
+
+vfrStringFlagsField ::=
+  stringFlagsField ( <span class="hljs-string">&quot;|&quot;</span> stringFlagsField )*
+
+stringFlagsField ::=
+    Number
+  | <span class="hljs-string">&quot;MULTI_LINE&quot;</span>
+  | questionheaderFlagsField
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<hr>
+<p><strong>Note:</strong> <code>flags</code> is optional, and the default value is 0.</p>
+<hr>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c"><span class="hljs-built_in">string</span>
+  varid   = STestData.mField1,
+  prompt  = STRING_TOKEN(STR_MY_STRING_PROMPT),
+  help    = STRING_TOKEN(STR_MY_STRING_HELP),
+  flags   = MULTI_LINE,
+  minsize = <span class="hljs-number">6</span>,
+  maxsize = <span class="hljs-number">0x14</span>,
+endstring;
+</code></pre>
+<h5 id="211672-vfr-password-statement-definition">2.11.6.7.2 VFR Password Statement Definition</h5>
+<pre><code class="lang-c">vfrStatementPassword ::=
+  <span class="hljs-string">&quot;password&quot;</span>
+  vfrQuestionHeader ,
+  { <span class="hljs-string">&quot;flags&quot;</span> <span class="hljs-string">&quot;=&quot;</span> vfrPasswordFlagsField <span class="hljs-string">&quot;,&quot;</span> }
+  { <span class="hljs-string">&quot;key&quot;</span> <span class="hljs-string">&quot;=&quot;</span> Number <span class="hljs-string">&quot;,&quot;</span> }
+  <span class="hljs-string">&quot;minsize&quot;</span> <span class="hljs-string">&quot;=&quot;</span> Number <span class="hljs-string">&quot;,&quot;</span>
+  <span class="hljs-string">&quot;maxsize&quot;</span> <span class="hljs-string">&quot;=&quot;</span> Number <span class="hljs-string">&quot;,&quot;</span>
+  vfrStatementQuestionOptionList
+  <span class="hljs-string">&quot;endpassword&quot;</span> <span class="hljs-string">&quot;;&quot;</span>
+
+vfrPasswordFlagsField ::=
+  passwordFlagsField ( <span class="hljs-string">&quot;|&quot;</span> passwordFlagsField )*
+
+passwordFlagsField ::=
+    Number
+  | questionheaderFlagsField
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<hr>
+<p><strong>Note:</strong> <code>flags</code> is optional, and the default value is 0.</p>
+<hr>
+<p>The value of <code>key</code> is used as a question ID.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">password
+  varid    = STestData.mPrivate.mField2,
+  prompt  = STRING_TOKEN(STR_PASSWORD_PROMPT),
+  help    = STRING_TOKEN(STR_PASSWORD_HELP),
+  minsize = <span class="hljs-number">6</span>,
+  maxsize = <span class="hljs-number">20</span>,
+endpassword;
+</code></pre>
+<h4 id="21168-vfr-orderedlist-statement-definition">2.11.6.8 VFR OrderedList Statement Definition</h4>
+<pre><code class="lang-c">vfrStatementOrderedList ::=
+  <span class="hljs-string">&quot;orderedlist&quot;</span>
+  vfrQuestionHeader <span class="hljs-string">&quot;,&quot;</span>
+  { <span class="hljs-string">&quot;maxcontainers&quot;</span> <span class="hljs-string">&quot;=&quot;</span> Number <span class="hljs-string">&quot;,&quot;</span> }
+  { <span class="hljs-string">&quot;flags&quot;</span> <span class="hljs-string">&quot;=&quot;</span> vfrOrderedListFlags }
+  vfrStatementQuestionOptionList
+  <span class="hljs-string">&quot;endlist&quot;</span> <span class="hljs-string">&quot;;&quot;</span>
+
+vfrOrderedListFlags ::=
+   orderedlistFlagsField ( <span class="hljs-string">&quot;|&quot;</span> orderedlistFlagsField )*
+
+orderedlistFlagsField ::=
+    Number
+ | <span class="hljs-string">&quot;UNIQUE&quot;</span>
+ | <span class="hljs-string">&quot;NOEMPTY&quot;</span>
+ | questionheaderFlagsField
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<hr>
+<p><strong>Note:</strong> <code>maxcontainers</code> is optional, and the default value depends on the
+variable size defined by <code>varid</code> in <code>vfrQuestionHeader</code>.</p>
+<hr>
+<p><strong>Note:</strong> <code>flags</code> is optional, and the default value is 0.</p>
+<hr>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">orderedlist
+  varid  = STestPriData.mField3,
+  prompt = STRING_TOKEN(STR_BOOT_OPTIONS),
+  help   = STRING_TOKEN(STR_BOOT_OPTIONS),
+
+  option text = STRING_TOKEN(STR_BOOT_OPTION2), value = <span class="hljs-number">2</span>, flags = RESET_REQUIRED;
+  option text = STRING_TOKEN(STR_BOOT_OPTION1), value = <span class="hljs-number">1</span>, flags = RESET_REQUIRED;
+  option text = STRING_TOKEN(STR_BOOT_OPTION3), value = <span class="hljs-number">3</span>, flags = RESET_REQUIRED;
+  option text = STRING_TOKEN(STR_BOOT_OPTION4), value = <span class="hljs-number">4</span>, flags = RESET_REQUIRED;
+  option text = STRING_TOKEN(STR_EMPTY_STRING), value = {<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>}, flags = DEFAULT;
+endlist;
+</code></pre>
+<h4 id="21169-vfr-date-statement-definition">2.11.6.9 VFR Date Statement Definition</h4>
+<pre><code class="lang-c">vfrStatementDate ::=
+  <span class="hljs-string">&quot;date&quot;</span>
+  (
+    (
+      vfrQuestionHeader ,
+      { <span class="hljs-string">&quot;flags&quot;</span> <span class="hljs-string">&quot;=&quot;</span> vfrDateFlags <span class="hljs-string">&quot;,&quot;</span> }
+      vfrStatementQuestionOptionList
+    )
+    |
+    (
+      <span class="hljs-string">&quot;year&quot;</span> <span class="hljs-string">&quot;varid&quot;</span> <span class="hljs-string">&quot;=&quot;</span> StringIdentifier <span class="hljs-string">&quot;.&quot;</span> StringIdentifier <span class="hljs-string">&quot;,&quot;</span>
+      <span class="hljs-string">&quot;prompt&quot;</span> <span class="hljs-string">&quot;=&quot;</span> getStringId <span class="hljs-string">&quot;,&quot;</span>
+      <span class="hljs-string">&quot;help&quot;</span> <span class="hljs-string">&quot;=&quot;</span> getStringId <span class="hljs-string">&quot;,&quot;</span>
+      minMaxDateStepDefault
+
+      <span class="hljs-string">&quot;month&quot;</span> <span class="hljs-string">&quot;varid&quot;</span> <span class="hljs-string">&quot;=&quot;</span> StringIdentifier <span class="hljs-string">&quot;.&quot;</span> StringIdentifier <span class="hljs-string">&quot;,&quot;</span>
+      <span class="hljs-string">&quot;prompt&quot;</span> <span class="hljs-string">&quot;=&quot;</span> getStringId <span class="hljs-string">&quot;,&quot;</span>
+      <span class="hljs-string">&quot;help&quot;</span> <span class="hljs-string">&quot;=&quot;</span> getStringId <span class="hljs-string">&quot;,&quot;</span>
+      minMaxDateStepDefault
+
+      <span class="hljs-string">&quot;day&quot;</span> <span class="hljs-string">&quot;varid&quot;</span> <span class="hljs-string">&quot;=&quot;</span> StringIdentifier <span class="hljs-string">&quot;.&quot;</span> StringIdentifier <span class="hljs-string">&quot;,&quot;</span>
+      <span class="hljs-string">&quot;prompt&quot;</span> <span class="hljs-string">&quot;=&quot;</span> getStringId <span class="hljs-string">&quot;,&quot;</span>
+      <span class="hljs-string">&quot;help&quot;</span> <span class="hljs-string">&quot;=&quot;</span> getStringId <span class="hljs-string">&quot;,&quot;</span>
+      minMaxDateStepDefault
+
+      ( vfrStatementInconsistentIf )*
+    )
+  )
+  <span class="hljs-string">&quot;enddate&quot;</span> <span class="hljs-string">&quot;;&quot;</span>
+
+minMaxDateStepDefault ::=
+  <span class="hljs-string">&quot;minimum&quot;</span> <span class="hljs-string">&quot;=&quot;</span> Number <span class="hljs-string">&quot;,&quot;</span>
+  <span class="hljs-string">&quot;maximum&quot;</span> <span class="hljs-string">&quot;=&quot;</span> Number <span class="hljs-string">&quot;,&quot;</span>
+  { <span class="hljs-string">&quot;step&quot;</span> <span class="hljs-string">&quot;=&quot;</span> Number <span class="hljs-string">&quot;,&quot;</span> }
+  { <span class="hljs-string">&quot;default&quot;</span> <span class="hljs-string">&quot;=&quot;</span> Number <span class="hljs-string">&quot;,&quot;</span> }
+
+vfrDateFlags ::=
+  dateFlagsField ( <span class="hljs-string">&quot;|&quot;</span> dateFlagsField )*
+
+dateFlagsField ::=
+    Number
+  | <span class="hljs-string">&quot;YEAR_SUPPRESS&quot;</span>
+  | <span class="hljs-string">&quot;MONTH_SUPPRESS&quot;</span>
+  | <span class="hljs-string">&quot;DAY_SUPPRESS&quot;</span>
+  | <span class="hljs-string">&quot;STORAGE_NORMAL&quot;</span>
+  | <span class="hljs-string">&quot;STORAGE_TIME&quot;</span>
+  | <span class="hljs-string">&quot;STORAGE_WAKEUP&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>There are old and new syntax of the VFR Date statement, but they are
+incompatible. The old VFR Date only uses EFI Date/Time Storage, instead of
+normal question value storage. The new VFR Date can use either the normal
+question value storage or EFI Date/Time Storage.</p>
+<p>For the new syntax of VFR, <code>flags</code> is optional, and the default value is 0
+Examples follow.</p>
+<p><strong>New syntax of VFR Date:</strong></p>
+<pre><code class="lang-c">date
+  varid   = STestData.mDate,
+  prompt  = STRING_TOKEN(STR_DATE_PROMPT),
+  help    = STRING_TOKEN(STR_DATE_PROMPT),
+  flags   = STORAGE_NORMAL,
+  <span class="hljs-keyword">default</span> = <span class="hljs-number">2007</span>/<span class="hljs-number">08</span>/<span class="hljs-number">26</span>,
+enddate;
+</code></pre>
+<p><strong>Old syntax of VFR Date:</strong></p>
+<pre><code class="lang-c">date year varid       = Date.Year,
+          prompt      = STRING_TOKEN(STR_DATE_PROMPT),
+          help        = STRING_TOKEN(STR_DATE_HELP),
+          minimum     = <span class="hljs-number">2003</span>,
+          maximum     = <span class="hljs-number">2100</span>,
+          step        = <span class="hljs-number">1</span>,
+          <span class="hljs-keyword">default</span>     = <span class="hljs-number">2003</span>,
+
+          month varid = Date.Month
+          prompt      = STRING_TOKEN(STR_DATE_PROMPT),
+          help        = STRING_TOKEN(STR_DATE_HELP),
+          minimum     = <span class="hljs-number">1</span>,
+          maximum     = <span class="hljs-number">12</span>,
+          step        = <span class="hljs-number">1</span>,
+          <span class="hljs-keyword">default</span>     = <span class="hljs-number">1</span>,
+
+          day varid   = Date.Day,
+          prompt      = STRING_TOKEN(STR_DATE_PROMPT),
+          help        = STRING_TOKEN(STR_DATE_HELP),
+          minimum     = <span class="hljs-number">1</span>,
+          maximum     = <span class="hljs-number">31</span>,
+          step        = <span class="hljs-number">0x1</span>,
+          <span class="hljs-keyword">default</span>     = <span class="hljs-number">1</span>,
+enddate;
+</code></pre>
+<h4 id="211610-vfr-time-statement-definition">2.11.6.10 VFR Time Statement Definition</h4>
+<pre><code class="lang-c">vfrStatementTime :
+  <span class="hljs-string">&quot;time&quot;</span>
+  (
+    (
+      vfrQuestionHeader <span class="hljs-string">&quot;,&quot;</span>
+      { <span class="hljs-string">&quot;flags&quot;</span> <span class="hljs-string">&quot;=&quot;</span> vfrTimeFlags <span class="hljs-string">&quot;,&quot;</span> }
+      vfrStatementQuestionOptionList
+    )
+    |
+    (
+      <span class="hljs-string">&quot;hour&quot;</span> <span class="hljs-string">&quot;varid&quot;</span> <span class="hljs-string">&quot;=&quot;</span> StringIdentifier <span class="hljs-string">&quot;.&quot;</span> StringIdentifier <span class="hljs-string">&quot;,&quot;</span>
+      <span class="hljs-string">&quot;prompt&quot;</span> <span class="hljs-string">&quot;=&quot;</span> getStringId <span class="hljs-string">&quot;,&quot;</span>
+      <span class="hljs-string">&quot;help&quot;</span> <span class="hljs-string">&quot;=&quot;</span> getStringId <span class="hljs-string">&quot;,&quot;</span>
+      minMaxTimeStepDefault
+
+      <span class="hljs-string">&quot;minute&quot;</span> <span class="hljs-string">&quot;varid&quot;</span> <span class="hljs-string">&quot;=&quot;</span> StringIdentifier <span class="hljs-string">&quot;.&quot;</span> StringIdentifier <span class="hljs-string">&quot;,&quot;</span>
+      <span class="hljs-string">&quot;prompt&quot;</span> <span class="hljs-string">&quot;=&quot;</span> getStringId <span class="hljs-string">&quot;,&quot;</span>
+      <span class="hljs-string">&quot;help&quot;</span> <span class="hljs-string">&quot;=&quot;</span> getStringId <span class="hljs-string">&quot;,&quot;</span>
+      minMaxTimeStepDefault
+
+      <span class="hljs-string">&quot;second&quot;</span> <span class="hljs-string">&quot;varid&quot;</span> <span class="hljs-string">&quot;=&quot;</span> StringIdentifier <span class="hljs-string">&quot;.&quot;</span> StringIdentifier <span class="hljs-string">&quot;,&quot;</span>
+      <span class="hljs-string">&quot;prompt&quot;</span> <span class="hljs-string">&quot;=&quot;</span> getStringId <span class="hljs-string">&quot;,&quot;</span>
+      <span class="hljs-string">&quot;help&quot;</span> <span class="hljs-string">&quot;=&quot;</span> getStringId <span class="hljs-string">&quot;,&quot;</span>
+      minMaxTimeStepDefault
+
+      ( vfrStatementInconsistentIf )*
+    )
+  )
+  <span class="hljs-string">&quot;endtime&quot;</span> <span class="hljs-string">&quot;;&quot;</span>
+
+minMaxTimeStepDefault ::=
+  <span class="hljs-string">&quot;minimum&quot;</span>   <span class="hljs-string">&quot;=&quot;</span> Number <span class="hljs-string">&quot;,&quot;</span>
+  <span class="hljs-string">&quot;maximum&quot;</span>   <span class="hljs-string">&quot;=&quot;</span> Number <span class="hljs-string">&quot;,&quot;</span>
+  { <span class="hljs-string">&quot;step&quot;</span>    <span class="hljs-string">&quot;=&quot;</span> Number <span class="hljs-string">&quot;,&quot;</span> }
+  { <span class="hljs-string">&quot;default&quot;</span> <span class="hljs-string">&quot;=&quot;</span> Number <span class="hljs-string">&quot;,&quot;</span> }
+
+vfrTimeFlags ::=
+  timeFlagsField ( <span class="hljs-string">&quot;|&quot;</span> timeFlagsField )*
+
+timeFlagsField ::=
+    Number
+  | <span class="hljs-string">&quot;HOUR_SUPPRESS&quot;</span>
+  | <span class="hljs-string">&quot;MINUTE_SUPPRESS&quot;</span>
+  | <span class="hljs-string">&quot;SECOND_SUPPRESS&quot;</span>
+  | <span class="hljs-string">&quot;STORAGE_NORMAL&quot;</span>
+  | <span class="hljs-string">&quot;STORAGE_TIME&quot;</span>
+  | <span class="hljs-string">&quot;STORAGE_WAKEUP&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS:</h4>
+<p>There are old and new syntax of VFR Time statements. They are incompatible.</p>
+<ul>
+<li><p><strong>New:</strong> VFR Time can use either the normal question value storage or EFI
+Date/Time Storage.</p>
+</li>
+<li><p><strong>Old:</strong> VFR Date can use only EFI Date/Time Storage, instead of normal
+question value storage.</p>
+</li>
+</ul>
+<p>In the new syntax of VFR, <code>flags</code> is optional, and the default value is 0</p>
+<h4 id="example">Example</h4>
+<p><strong>New Time Syntax:</strong></p>
+<pre><code class="lang-c">time
+      name    = MyTime,
+      varid   = STestData.mTime,
+      prompt  = STRING_TOKEN(STR_TIME_PROMPT),
+      help    = STRING_TOKEN(STR_TIME_PROMPT),
+      flags   = STORAGE_NORMAL,
+      <span class="hljs-keyword">default</span> = <span class="hljs-number">15</span>:<span class="hljs-number">33</span>:<span class="hljs-number">33</span>,
+endtime;
+</code></pre>
+<p><strong>Old Time Syntax:</strong></p>
+<pre><code class="lang-c">time hour varid = Time.Hour,
+     prompt     = STRING_TOKEN(STR_TIME_PROMPT),
+     help       = STRING_TOKEN(STR_TIME_HELP),
+     minimum    = <span class="hljs-number">0</span>,
+     maximum    = <span class="hljs-number">23</span>,
+     step       = <span class="hljs-number">1</span>,
+     <span class="hljs-keyword">default</span>    = <span class="hljs-number">0</span>,
+
+     minute varid = Time.Minute,
+     prompt       = STRING_TOKEN(STR_TIME_PROMPT),
+     help         = STRING_TOKEN(STR_TIME_HELP),
+     minimum      = <span class="hljs-number">0</span>,
+     maximum      = <span class="hljs-number">59</span>,
+     step         = <span class="hljs-number">1</span>,
+     <span class="hljs-keyword">default</span>      = <span class="hljs-number">0</span>,
+
+     second varid = Time.Second,
+     prompt       = STRING_TOKEN(STR_TIME_PROMPT),
+     help         = STRING_TOKEN(STR_TIME_HELP),
+     minimum      = <span class="hljs-number">0</span>,
+     maximum      = <span class="hljs-number">59</span>,
+     step         = <span class="hljs-number">1</span>,
+     <span class="hljs-keyword">default</span>      = <span class="hljs-number">0</span>,
+endtime;
+</code></pre>
+<h3 id="2117-vfr-conditional-type-statements-definition">2.11.7 VFR Conditional Type Statements Definition</h3>
+<pre><code class="lang-c">vfrStatementConditional ::=
+    vfrStatementDisableIfStat
+  | vfrStatementSuppressIfStat
+  | vfrStatementGrayOutIfStat
+</code></pre>
+<hr>
+<p><strong>Note:</strong> There are no BEHAVIORS AND RESTRICTION or an Example for this section.</p>
+<hr>
+<h4 id="21171-vfr-statement-list-definition">2.11.7.1 VFR Statement List Definition</h4>
+<pre><code class="lang-c">vfrStatementStatList ::=
+    vfrStatementStat
+  | vfrStatementQuestions
+  | vfrStatementConditional
+  | vfrStatementLabel
+  | vfrStatementExtension
+</code></pre>
+<hr>
+<p><strong>Note:</strong> There are no BEHAVIORS AND RESTRICTIONS or an Example for this
+section.</p>
+<hr>
+<h4 id="21172-vfr-statement-disalbeif-definition">2.11.7.2 VFR Statement DisalbeIf Definition</h4>
+<pre><code class="lang-c">vfrStatementDisableIfStat ::=
+  <span class="hljs-string">&quot;disableif&quot;</span> vfrStatementExpression <span class="hljs-string">&quot;;&quot;</span>
+  ( vfrStatementStatList )*
+  <span class="hljs-string">&quot;endif&quot;</span> <span class="hljs-string">&quot;;&quot;</span>
+</code></pre>
+<hr>
+<p><strong>Note:</strong> There are no BEHAVIORS AND RESTRICTIONS or an Example for this
+section.</p>
+<hr>
+<h4 id="21173-vfr-statement-suppressif-definition">2.11.7.3 VFR Statement SuppressIf Definition</h4>
+<pre><code class="lang-c">vfrStatementSuppressIfStat ::=
+  <span class="hljs-string">&quot;suppressif&quot;</span> vfrStatementExpression <span class="hljs-string">&quot;;&quot;</span>
+  ( vfrStatementStatList )*
+  <span class="hljs-string">&quot;endif&quot;</span> <span class="hljs-string">&quot;;&quot;</span>
+</code></pre>
+<hr>
+<p><strong>Note:</strong> There are no BEHAVIORS AND RESTRICTIONS or an Example for this
+section.</p>
+<hr>
+<h4 id="21174-vfr-statement-grayoutif-definition">2.11.7.4 VFR Statement GrayOutIf Definition</h4>
+<pre><code class="lang-c">vfrStatementGrayOutIfStat ::=
+  <span class="hljs-string">&quot;grayoutif&quot;</span> vfrStatementExpression <span class="hljs-string">&quot;;&quot;</span>
+  ( vfrStatementStatList )*
+  <span class="hljs-string">&quot;endif&quot;</span> <span class="hljs-string">&quot;;&quot;</span>
+</code></pre>
+<hr>
+<p><strong>Note:</strong> There are no BEHAVIORS AND RESTRICTIONS or an Example for this
+section.</p>
+<hr>
+<h3 id="2118-vfr-guid-statement-definition">2.11.8 VFR GUID Statement Definition</h3>
+<h4 id="21181-vfr-label-statement-definition">2.11.8.1 VFR Label Statement Definition</h4>
+<pre><code class="lang-c">vfrStatementLabel ::=
+  <span class="hljs-string">&quot;label&quot;</span> Number <span class="hljs-string">&quot;;&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>It is an extended EFI_IFR_GUID op-code.</p>
+<p>It should be paired in the VFR program.</p>
+<hr>
+<p><strong>Note:</strong> <code>label</code> is used to insert op-codes at runtime.</p>
+<hr>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">label LABEL_START;
+label LABEL_END;
+</code></pre>
+<h4 id="21182-vfr-banner-statement-definition">2.11.8.2 VFR Banner Statement Definition</h4>
+<pre><code class="lang-c">vfrStatementBanner ::=
+  <span class="hljs-string">&quot;banner&quot;</span> { <span class="hljs-string">&quot;,&quot;</span> }
+  <span class="hljs-string">&quot;title&quot;</span> <span class="hljs-string">&quot;=&quot;</span> getStringId <span class="hljs-string">&quot;,&quot;</span>
+  (
+    (
+      <span class="hljs-string">&quot;line&quot;</span> Number <span class="hljs-string">&quot;,&quot;</span>
+      <span class="hljs-string">&quot;align&quot;</span> ( <span class="hljs-string">&quot;left&quot;</span> | <span class="hljs-string">&quot;center&quot;</span> | <span class="hljs-string">&quot;right&quot;</span> ) <span class="hljs-string">&quot;;&quot;</span>
+    )
+    |
+    ( <span class="hljs-string">&quot;timeout&quot;</span> <span class="hljs-string">&quot;=&quot;</span> Number <span class="hljs-string">&quot;;&quot;</span> )
+  )
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>It is an extended EFI_IFR_GUID op-code.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">banner
+  title = STRING_TOKEN(STR_BANNER_TITLE),
+  line <span class="hljs-number">1</span>,
+  align center;
+</code></pre>
+<h4 id="21183-vfr-guid-extension-definition">2.11.8.3 VFR GUID Extension Definition</h4>
+<pre><code class="lang-c">vfrStatementExtension ::=
+  <span class="hljs-string">&quot;guidop&quot;</span>
+  <span class="hljs-string">&quot;guid&quot;</span> <span class="hljs-string">&quot;=&quot;</span> guidDefinition
+  {
+    <span class="hljs-string">&quot;,&quot;</span> <span class="hljs-string">&quot;datatype&quot;</span> <span class="hljs-string">&quot;=&quot;</span>
+    (
+        <span class="hljs-string">&quot;UINT64&quot;</span> { <span class="hljs-string">&quot;[&quot;</span> Number <span class="hljs-string">&quot;]&quot;</span> }
+      | <span class="hljs-string">&quot;UINT32&quot;</span> { <span class="hljs-string">&quot;[&quot;</span> Number <span class="hljs-string">&quot;]&quot;</span> }
+      | <span class="hljs-string">&quot;UINT16&quot;</span> { <span class="hljs-string">&quot;[&quot;</span> Number <span class="hljs-string">&quot;]&quot;</span> }
+      | <span class="hljs-string">&quot;UINT8&quot;</span> { <span class="hljs-string">&quot;[&quot;</span> Number <span class="hljs-string">&quot;]&quot;</span> }
+      | <span class="hljs-string">&quot;BOOLEAN&quot;</span> { <span class="hljs-string">&quot;[&quot;</span> Number <span class="hljs-string">&quot;]&quot;</span> }
+      | <span class="hljs-string">&quot;EFI_STRING_ID&quot;</span> { <span class="hljs-string">&quot;[&quot;</span> Number <span class="hljs-string">&quot;]&quot;</span> }
+      | <span class="hljs-string">&quot;EFI_HII_DATE&quot;</span> { <span class="hljs-string">&quot;[&quot;</span> Number <span class="hljs-string">&quot;]&quot;</span> }
+      | <span class="hljs-string">&quot;EFI_HII_TIME&quot;</span> { <span class="hljs-string">&quot;[&quot;</span> Number <span class="hljs-string">&quot;]&quot;</span> }
+      | <span class="hljs-string">&quot;EFI_HII_REF&quot;</span> { <span class="hljs-string">&quot;[&quot;</span> Number <span class="hljs-string">&quot;]&quot;</span> }
+      | StringIdentifier { <span class="hljs-string">&quot;[&quot;</span> Number <span class="hljs-string">&quot;]&quot;</span> }
+    )
+    vfrExtensionData
+  }
+  {
+    <span class="hljs-string">&quot;,&quot;</span> ( vfrStatementExtension )*
+    <span class="hljs-string">&quot;endguidop&quot;</span>
+  }
+  <span class="hljs-string">&quot;;&quot;</span>
+
+vfrExtensionData ::=
+  (
+    <span class="hljs-string">&quot;,&quot;</span> <span class="hljs-string">&quot;data&quot;</span> { <span class="hljs-string">&quot;[&quot;</span> Number <span class="hljs-string">&quot;]&quot;</span> }
+    (
+      <span class="hljs-string">&quot;.&quot;</span> StringIdentifier { <span class="hljs-string">&quot;[&quot;</span> Number <span class="hljs-string">&quot;]&quot;</span> }
+    )*
+    <span class="hljs-string">&quot;=&quot;</span> Number
+  )*
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>The generic guidop statement is used to specify user extension opcodes. By
+default, unassigned byte will be zero. The array number in the &quot;data&quot; part
+cannot be equal to or larger than the one in the &quot;datatype&quot; part. That is, the
+array index starts from zero.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">guidop
+  guid = GUID,
+  datatype = UINT32,
+  data = <span class="hljs-number">0x12345678</span>;
+</code></pre>
+<h3 id="2119-vfr-modal-statement-definition">2.11.9 VFR Modal Statement Definition</h3>
+<pre><code class="lang-c">vfrStatementModal ::=
+  modal<span class="hljs-string">&quot;;&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>It is only used in a form.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">modal;
+</code></pre>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                    
+                    
+
+<div>
+    <hr>
+    
+      <h2>
+        <div style="position:absolute;text-align:left">EDK II VFR Programming Language Specification</div>
+        <div style="text-align:right">Revision 1.91</div>
+      </h2>  
+    
+</div>
+
+
+
+                
+            </div>
+
+            
+                
+                <a href="210_vfr_general_token_definition.html#210-vfr-general-token-definition" class="navigation navigation-prev " aria-label="Previous page: 2.10 VFR General Token Definition">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="212_vfr_expression_statement_definition.html#212-vfr-expression-statement-definition" class="navigation navigation-next " aria-label="Next page: 2.12 VFR Expression Statement Definition">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2.11 VFR Form Definition","level":"1.3.11","depth":2,"next":{"title":"2.12 VFR Expression Statement Definition","level":"1.3.12","depth":2,"anchor":"#212-vfr-expression-statement-definition","path":"2_vfr_description_in_bnf/212_vfr_expression_statement_definition.md","ref":"2_vfr_description_in_bnf/212_vfr_expression_statement_definition.md#212-vfr-expression-statement-definition","articles":[]},"previous":{"title":"2.10 VFR General Token Definition","level":"1.3.10","depth":2,"anchor":"#210-vfr-general-token-definition","path":"2_vfr_description_in_bnf/210_vfr_general_token_definition.md","ref":"2_vfr_description_in_bnf/210_vfr_general_token_definition.md#210-vfr-general-token-definition","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"title":"EDK II VFR Programming Language Specification","version":"Revision 1.91"},"plugins":["puml-aleung"],"pluginsConfig":{"puml-aleung":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"2_vfr_description_in_bnf/211_vfr_form_definition.md","mtime":"2020-12-01T05:57:50.003Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-01T05:58:21.328Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,1210 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2.12 VFR Expression Statement Definition · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="211_vfr_form_definition.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../#edk-ii-vfr-programming-language-specification">
+            
+                    
+                    EDK II VFR Programming Language Specification
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../1_introduction.html">
+            
+                <a href="../1_introduction.html#1-introduction">
+            
+                    
+                    1 Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../1_introduction.html">
+            
+                <a href="../1_introduction.html#11-overview">
+            
+                    
+                    1.1 Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../1_introduction.html">
+            
+                <a href="../1_introduction.html#12-assumed-knowledge">
+            
+                    
+                    1.2 Assumed Knowledge
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../1_introduction.html">
+            
+                <a href="../1_introduction.html#13-related-information">
+            
+                    
+                    1.3 Related Information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../1_introduction.html">
+            
+                <a href="../1_introduction.html#14-terms">
+            
+                    
+                    1.4 Terms
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./#2-vfr-description-in-bnf">
+            
+                    
+                    2 VFR Description in BNF
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="21_vfr_programming_keywords.html">
+            
+                <a href="21_vfr_programming_keywords.html#21-vfr-programming-keywords">
+            
+                    
+                    2.1 VFR Programming Keywords
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="22_vfr_program.html">
+            
+                <a href="22_vfr_program.html#22-vfr-program">
+            
+                    
+                    2.2 VFR Program
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="23_vfr_data_struct_definition.html">
+            
+                <a href="23_vfr_data_struct_definition.html#23-vfr-data-struct-definition">
+            
+                    
+                    2.3 VFR Data Struct Definition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="24_vfr_formset_definition.html">
+            
+                <a href="24_vfr_formset_definition.html#24-vfr-formset-definition">
+            
+                    
+                    2.4 VFR FormSet Definition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="25_vfr_formset_list_definition.html">
+            
+                <a href="25_vfr_formset_list_definition.html#25-vfr-formset-list-definition">
+            
+                    
+                    2.5 VFR FormSet List Definition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="26_vfr_default_stores_definition.html">
+            
+                <a href="26_vfr_default_stores_definition.html#26-vfr-default-stores-definition">
+            
+                    
+                    2.6 VFR Default Stores Definition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="27_vfr_variable_store_definition.html">
+            
+                <a href="27_vfr_variable_store_definition.html#27-vfr-variable-store-definition">
+            
+                    
+                    2.7 VFR Variable Store Definition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="28_vfr_formset_disableif_definition.html">
+            
+                <a href="28_vfr_formset_disableif_definition.html#28-vfr-formset-disableif-definition">
+            
+                    
+                    2.8 VFR FormSet DisableIf Definition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="29_vfr_formset_suppressif_definition.html">
+            
+                <a href="29_vfr_formset_suppressif_definition.html#29-vfr-formset-suppressif-definition">
+            
+                    
+                    2.9 VFR FormSet SuppressIf Definition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="210_vfr_general_token_definition.html">
+            
+                <a href="210_vfr_general_token_definition.html#210-vfr-general-token-definition">
+            
+                    
+                    2.10 VFR General Token Definition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="211_vfr_form_definition.html">
+            
+                <a href="211_vfr_form_definition.html#211-vfr-form-definition">
+            
+                    
+                    2.11 VFR Form Definition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="212_vfr_expression_statement_definition.html">
+            
+                <a href="212_vfr_expression_statement_definition.html#212-vfr-expression-statement-definition">
+            
+                    
+                    2.12 VFR Expression Statement Definition
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >2.12 VFR Expression Statement Definition</a>
+    </h1>
+</div>
+<div>
+    <!-- 
+    <img style="float:left; align:middle; height:2em" src="media/TianocoreTitlePageLogo.jpg"/>
+     -->
+    
+      <h2>
+        <div style="position:absolute;text-align:left">EDK II VFR Programming Language Specification</div>
+        <div style="text-align:right">Revision 1.91</div>
+      </h2>  
+    
+    <hr>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <!--- @file
+  2.12 VFR Expression Statement Definition
+
+  Copyright (c) 2007-2017, Intel Corporation. All rights reserved.<BR>
+
+  Redistribution and use in source (original document form) and 'compiled'
+  forms (converted to PDF, epub, HTML and other formats) with or without
+  modification, are permitted provided that the following conditions are met:
+
+  1) Redistributions of source code (original document form) must retain the
+     above copyright notice, this list of conditions and the following
+     disclaimer as the first lines of this file unmodified.
+
+  2) Redistributions in compiled form (transformed to other DTDs, converted to
+     PDF, epub, HTML and other formats) must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution.
+
+  THIS DOCUMENTATION IS PROVIDED BY TIANOCORE PROJECT "AS IS" AND ANY EXPRESS OR
+  IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+  MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+  EVENT SHALL TIANOCORE PROJECT  BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+  OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS DOCUMENTATION, EVEN IF
+  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+-->
+<h2 id="212-vfr-expression-statement-definition">2.12 VFR Expression Statement Definition</h2>
+<p>The VFR expression is defined in C-style language.</p>
+<p>The syntax of VFR expression is defined as a tree. The positions in the tree
+are determined according to the priority of the operator (for example: + - *
+/). At the root of it are the terms of <code>OR</code>, followed by the terms of <code>AND</code>,
+because the priority of operator <code>OR</code> is lower than the operator <code>AND</code>(s). The
+leaves of the tree are sub- expressions of built-in-functions, unary operators,
+ternary operators, and constants.</p>
+<h3 id="2121-or">2.12.1 OR</h3>
+<pre><code class="lang-c">vfrStatementExpression ::=
+  andTerm ( <span class="hljs-string">&quot;OR&quot;</span> andTerm )*
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_OR</code> op-codes.</p>
+<h3 id="2122-and">2.12.2 AND</h3>
+<pre><code class="lang-c">andTerm ::=
+  bitwiseorTerm ( <span class="hljs-string">&quot;AND&quot;</span> bitwiseorTerm )*
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_AND</code> op-codes.</p>
+<h3 id="2123-bitwiseor">2.12.3 bitwiseor</h3>
+<pre><code class="lang-c">bitwiseorTerm ::=
+  bitwiseandTerm ( <span class="hljs-string">&quot;|&quot;</span> bitwiseandTerm )*
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_BITWISE_OR</code> op-codes.</p>
+<h3 id="2124-bitwiseand">2.12.4 bitwiseand</h3>
+<pre><code class="lang-c">bitwiseandTerm ::=
+  equalTerm ( <span class="hljs-string">&quot;&amp;&quot;</span> equalTerm )*
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_BITWISE_AND</code> op-codes.</p>
+<h3 id="2125-equal">2.12.5 equal</h3>
+<pre><code class="lang-c">equalTerm ::=
+  compareTerm
+  (
+      <span class="hljs-string">&quot;==&quot;</span> compareTerm
+    | <span class="hljs-string">&quot;!=&quot;</span> compareTerm
+  )*
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_EQUAL</code> or <code>EFI_IFR_NOT_EQUAL</code> op-codes.</p>
+<h3 id="2126-compare">2.12.6 compare</h3>
+<pre><code class="lang-c">compareTerm ::=
+  shiftTerm
+  (
+      <span class="hljs-string">&quot;&lt;&quot;</span> shiftTerm
+    | <span class="hljs-string">&quot;&lt;=&quot;</span> shiftTerm
+    | <span class="hljs-string">&quot;&gt;&quot;</span> shiftTerm
+    | <span class="hljs-string">&quot;&gt;=&quot;</span> shiftTerm
+  )*
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_LESS_THAN EFI_IFR_LESS_EQUAL, EFI_IFR_IFR_GREATER_EQUAL,</code> or
+<code>EFI_IFR_GREATER_THAN</code> op-codes.</p>
+<h3 id="2127-shift">2.12.7 shift</h3>
+<pre><code class="lang-c">shiftTerm ::=
+  addMinusTerm
+  (
+      <span class="hljs-string">&quot;&lt;&lt;&quot;</span> addMinusTerm
+    | <span class="hljs-string">&quot;&gt;&gt;&quot;</span> addMinusTerm
+  )*
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_SHIFT_LEFT</code> or <code>EFI_IFR_SHIFT_RIGHT</code> op-codes.</p>
+<h3 id="2128-addminus">2.12.8 add/minus</h3>
+<pre><code class="lang-c">addMinusTerm ::=
+  multdivmodTerm
+  (
+      <span class="hljs-string">&quot;+&quot;</span> multdivmodTerm
+    | <span class="hljs-string">&quot;-&quot;</span> multdivmodTerm
+  )*
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_ADD</code> or <code>EFI_IFR_SUBTRACT</code> op-codes.</p>
+<h3 id="2129-multiplydividemodulo">2.12.9 multiply/divide/modulo</h3>
+<pre><code class="lang-c">multdivmodTerm ::=
+  castTerm
+  (
+      <span class="hljs-string">&quot;*&quot;</span> castTerm
+    | <span class="hljs-string">&quot;/&quot;</span> castTerm
+    | <span class="hljs-string">&quot;%&quot;</span> castTerm
+  )*
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_MULTIPLY EFI_IFR_MODULO</code> or <code>EFI_IFR_DIVIDE</code> op-codes.</p>
+<h3 id="21210-cast-terms">2.12.10 cast terms</h3>
+<pre><code class="lang-c">castTerm ::=
+  (
+    <span class="hljs-string">&quot;(&quot;</span>
+    (
+        <span class="hljs-string">&quot;BOOLEAN&quot;</span>
+      | <span class="hljs-string">&quot;UINT64&quot;</span>
+      | <span class="hljs-string">&quot;UINT32&quot;</span>
+      | <span class="hljs-string">&quot;UINT16&quot;</span>
+      | <span class="hljs-string">&quot;UINT8&quot;</span>
+    )
+    <span class="hljs-string">&quot;)&quot;</span>
+  )*
+  atomTerm
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>The VFR supports the C-style type conversion. The values can be converted into
+one of the following types: <code>BOOLEAN</code>, <code>UINT64</code>, <code>UINT32</code>, <code>UINT16</code>,  <code>UINT8</code>.</p>
+<h3 id="21211-atom-terms">2.12.11 atom terms</h3>
+<pre><code class="lang-c">atomTerm ::=
+    vfrExpressionCatenate
+  | vfrExpressionMatch
+  | vfrExpressionParen
+  | vfrExpressionBuildInFunction
+  | vfrExpressionConstant
+  | vfrExpressionUnaryOp
+  | vfrExpressionTernaryOp
+  | vfrExpressionMap
+  | ( <span class="hljs-string">&quot;NOT&quot;</span> atomTerm )
+  | vfrExpressionMatch2
+</code></pre>
+<h4 id="212111-catenate">2.12.11.1 catenate</h4>
+<pre><code class="lang-c">vfrExpressionCatenate ::=
+  <span class="hljs-string">&quot;catenate&quot;</span>
+  <span class="hljs-string">&quot;(&quot;</span> vfrStatementExpression <span class="hljs-string">&quot;,&quot;</span> vfrStatementExpression <span class="hljs-string">&quot;)&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_CATENATE</code> op-codes.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c"><span class="hljs-built_in">string</span>  varid   = MyData.String,
+        prompt  = STRING_TOKEN(STR_PROMPT),
+        help    = STRING_TOKEN(STR_HELP),
+        minsize = <span class="hljs-number">6</span>,
+        maxsize = <span class="hljs-number">40</span>,
+        inconsistentif prompt = STRING_TOKEN(STR_CHECK),
+           pushthis != catenate(stringref(STRING_TOKEN(STR_STRING_RIGHT)),
+                                stringref(STRING_TOKEN(STR_STRING_LEFT))),
+        endif
+endstring;
+</code></pre>
+<h4 id="212112-match">2.12.11.2 match</h4>
+<pre><code class="lang-c">vfrExpressionMatch ::=
+  <span class="hljs-string">&quot;match&quot;</span>
+  <span class="hljs-string">&quot;(&quot;</span> vfrStatementExpression <span class="hljs-string">&quot;,&quot;</span> vfrStatementExpression <span class="hljs-string">&quot;)&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_MATCH</code> op-codes.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">grayoutif  match(stringref(STRING_TOKEN(STR_PATTERN)),
+                 stringref(STRING_TOKEN(STR_STRING)))
+      numeric varid   = MyData.Data,
+              prompt  = STRING_TOKEN(STR_PROMPT),
+              help    = STRING_TOKEN(STR_HELP),
+              minimum = 0,
+              maximum = 243,
+      endnumeric;
+endif;
+</code></pre>
+<h4 id="212113-parenthesis">2.12.11.3 parenthesis</h4>
+<pre><code class="lang-c">vfrExpressionParen ::=
+  <span class="hljs-string">&quot;(&quot;</span> vfrStatementExpression <span class="hljs-string">&quot;)&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Changes the order of the calculation.</p>
+<h4 id="212114-build-in-functions">2.12.11.4 build-in functions</h4>
+<pre><code class="lang-c">vfrExpressionBuildInFunction ::=
+    dupExp
+  | ideqvalExp
+  | ideqidExp
+  | ideqvallistExp
+  | questionref1Exp
+  | rulerefExp
+  | stringref1Exp
+  | pushthisExp
+  | securityExp
+  | getExp
+</code></pre>
+<h5 id="2121141-dup">2.12.11.4.1 dup</h5>
+<pre><code class="lang-c">dupExp ::=
+  <span class="hljs-string">&quot;dup&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_DUP</code> op-codes.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">numeric varid   = MyData.Data,
+        prompt  = STRING_TOKEN(STR_PROMPT),
+        help    = STRING_TOKEN(STR_HELP),
+        minimum = <span class="hljs-number">0</span>,
+        maximum = <span class="hljs-number">0xf0</span>,
+          <span class="hljs-keyword">default</span> value = <span class="hljs-number">2</span> + dup,
+endnumeric;
+</code></pre>
+<h5 id="2121142-ideqval">2.12.11.4.2 ideqval</h5>
+<pre><code class="lang-c">ideqvalExp ::=
+  <span class="hljs-string">&quot;ideqval&quot;</span>
+  vfrQuestionDataFieldName <span class="hljs-string">&quot;==&quot;</span> Number
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_EQ_ID_VAL</code> op-codes.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">grayoutif ideqval MyData.Data1 == <span class="hljs-number">99</span>;
+  numeric varid   = MyData.Data,
+          prompt  = STRING_TOKEN(STR_PROMPT),
+          help    = STRING_TOKEN(STR_HELP),
+          minimum = <span class="hljs-number">0</span>,
+          maximum = <span class="hljs-number">0xf0</span>,
+  endnumeric;
+endif;
+</code></pre>
+<h5 id="2121143-ideqid">2.12.11.4.3 ideqid</h5>
+<pre><code class="lang-c">ideqidExp ::=
+  <span class="hljs-string">&quot;ideqid&quot;</span>
+  vfrQuestionDataFieldName <span class="hljs-string">&quot;==&quot;</span> vfrQuestionDataFieldName
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_EQ_ID_ID</code> op-codes.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">grayoutif ideqid MyData.Data2 == MyData.Data3;
+  numeric varid   = MyData.Data,
+          prompt  = STRING_TOKEN(STR_PROMPT),
+          help    = STRING_TOKEN(STR_HELP),
+          minimum = <span class="hljs-number">0</span>,
+          maximum = <span class="hljs-number">0xf0</span>,
+  endnumeric;
+endif;
+</code></pre>
+<h5 id="2121144-ideqvallist">2.12.11.4.4 ideqvallist</h5>
+<pre><code class="lang-c">ideqvallistExp ::=
+  <span class="hljs-string">&quot;ideqvallist&quot;</span>
+  vfrQuestionDataFieldName <span class="hljs-string">&quot;==&quot;</span> ( Number )+
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_EQ_ID_LIST</code> op-codes.</p>
+<pre><code class="lang-c">grayoutif ideqvallist MyData.Data1 == <span class="hljs-number">1</span> <span class="hljs-number">3</span>;
+  numeric name    = MyNumeric,
+          varid   = MyData.Data,
+          prompt  = STRING_TOKEN(STR_PROMPT),
+          help    = STRING_TOKEN(STR_HELP),
+          minimum = <span class="hljs-number">0</span>,
+          maximum = <span class="hljs-number">0xf0</span>,
+  endnumeric;
+endif;
+</code></pre>
+<h5 id="2121145-questionref">2.12.11.4.5 questionref</h5>
+<pre><code class="lang-c">questionref1Exp ::=
+  <span class="hljs-string">&quot;questionref&quot;</span>
+    <span class="hljs-string">&quot;(&quot;</span> StringIdentifier | Number <span class="hljs-string">&quot;)&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_QUESTION_REF1</code> op-codes.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">numeric varid   = MyData.Data,
+        prompt  = STRING_TOKEN(STR_PROMPT),
+        help    = STRING_TOKEN(STR_HELP),
+        minimum = <span class="hljs-number">0</span>,
+        maximum = <span class="hljs-number">0xf0</span>,
+        <span class="hljs-keyword">default</span> value = questionref(MyNumeric),
+endnumeric;
+</code></pre>
+<h5 id="2121146-ruleref">2.12.11.4.6 ruleref</h5>
+<pre><code class="lang-c">rulerefExp ::=
+  <span class="hljs-string">&quot;ruleref&quot;</span> <span class="hljs-string">&quot;(&quot;</span> StringIdentifier <span class="hljs-string">&quot;)&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_RULE_REF</code> op-codes.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c"><span class="hljs-function">grayoutif <span class="hljs-title">ruleref</span><span class="hljs-params">(MyRule)</span> </span>== <span class="hljs-number">1</span>;
+  <span class="hljs-built_in">string</span> varid   = MyData.String,
+         prompt  = STRING_TOKEN(STR_PROMPT),
+         help    = STRING_TOKEN(STR_HELP),
+         minsize = <span class="hljs-number">6</span>,
+         maxsize = <span class="hljs-number">40</span>,
+  endstring;
+endif;
+</code></pre>
+<h5 id="2121147-stringref">2.12.11.4.7 stringref</h5>
+<pre><code class="lang-c">stringref1Exp ::=
+  <span class="hljs-string">&quot;stringref&quot;</span> <span class="hljs-string">&quot;(&quot;</span> getStringId <span class="hljs-string">&quot;)&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_STRING_REF1</code> op-codes.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">grayoutif stringref(STRING_TOKEN(STR_STRING)) == 1;
+  string varid   = MyData.String,
+         prompt  = STRING_TOKEN(STR_PROMPT),
+         help    = STRING_TOKEN(STR_HELP),
+         minsize = 6,
+         maxsize = 40,
+  endstring;
+endif;
+</code></pre>
+<h5 id="2121148-pushthis">2.12.11.4.8 pushthis</h5>
+<pre><code class="lang-c">pushthisExp ::=
+  <span class="hljs-string">&quot;pushthis&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_THIS</code> op-codes.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c"><span class="hljs-built_in">string</span>  varid   = MyData.String,
+        prompt  = STRING_TOKEN(STR_PROMPT), help = STRING_TOKEN(STR_HELP),
+        minsize = <span class="hljs-number">6</span>,
+        maxsize = <span class="hljs-number">40</span>,
+        inconsistentif prompt = STRING_TOKEN(STR_CHECK),
+          pushthis != stringref(STRING_TOKEN(STR_STRING))
+        endif
+endstring;
+</code></pre>
+<h5 id="2121149-security">2.12.11.4.9 security</h5>
+<pre><code>securityExp ::=
+  &quot;security&quot; &quot;(&quot; guidDefinition &quot;)&quot;
+</code></pre><h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_SECURITY</code> op-codes.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c"><span class="hljs-function">grayoutif NOT <span class="hljs-title">security</span><span class="hljs-params">(EFI_GUID)</span></span>;
+    text
+      help = STRING_TOKEN(STR_HELP),
+      text = STRING_TOKEN(STR_TEXT);
+endif;
+</code></pre>
+<h5 id="21211410-get">2.12.11.4.10 get</h5>
+<pre><code>getExp ::=
+  &quot;get&quot; &quot;(&quot; vfrStorageVarId { &quot;|&quot; &quot;flags&quot; &quot;=&quot; vfrNumericFlags } &quot;)&quot;
+</code></pre><h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_GET</code> op-codes.</p>
+<pre><code class="lang-c">numeric varid   = MyData.Data,
+        prompt  = STRING_TOKEN(STR_PROMPT),
+        help    = STRING_TOKEN(STR_HELP),
+        minimum = <span class="hljs-number">0</span>,
+        maximum = <span class="hljs-number">255</span>,
+        <span class="hljs-function">read <span class="hljs-title">get</span><span class="hljs-params">(MyData.Data1)</span></span>;
+endnumeric;
+</code></pre>
+<h4 id="212115-constant">2.12.11.5 constant</h4>
+<pre><code class="lang-c">vfrExpressionConstant ::=
+    <span class="hljs-string">&quot;TRUE&quot;</span>
+  | <span class="hljs-string">&quot;FALSE&quot;</span> | <span class="hljs-string">&quot;ONE&quot;</span>
+  | <span class="hljs-string">&quot;ONES&quot;</span>
+  | <span class="hljs-string">&quot;ZERO&quot;</span>
+  | <span class="hljs-string">&quot;UNDEFINED&quot;</span>
+  | <span class="hljs-string">&quot;VERSION&quot;</span>
+  | Number
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_TRUE EFI_IFR_FALSE</code>, <code>EFI_IFR_ONE EFI_IFR_ONES</code>,
+<code>EFI_IFR_ZERO</code>, <code>EFI_IFR_UNDEFINED</code>, or <code>EFI_IFR_VERSION</code> op-codes.</p>
+<h4 id="212116-unary-operators">2.12.11.6 unary operators</h4>
+<pre><code class="lang-c">vfrExpressionUnaryOp ::=
+    lengthExp
+  | bitwisenotExp
+  | question23refExp
+  | stringref2Exp
+  | toboolExp
+  | tostringExp
+  | unintExp
+  | toupperExp
+  | tolwerExp
+  | setExp
+</code></pre>
+<h5 id="2121161-length">2.12.11.6.1 length</h5>
+<pre><code class="lang-c">lengthExp ::=
+  <span class="hljs-string">&quot;length&quot;</span> <span class="hljs-string">&quot;(&quot;</span> vfrStatementExpression <span class="hljs-string">&quot;)&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_LENGTH</code> op-codes.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">numeric varid   = MyData.Data,
+        prompt  = STRING_TOKEN(STR_PROMPT),
+        help    = STRING_TOKEN(STR_HELP),
+        minimum = <span class="hljs-number">0</span>,
+        maximum = <span class="hljs-number">255</span>,
+        <span class="hljs-keyword">default</span> value = length(stringref(STRING_TOKEN(STR_STRING))),
+endnumeric;
+</code></pre>
+<h5 id="2121162-bitwisenot">2.12.11.6.2 bitwisenot</h5>
+<pre><code class="lang-c">bitwisenotExp ::=
+  <span class="hljs-string">&quot;~&quot;</span> <span class="hljs-string">&quot;(&quot;</span> vfrStatementExpression <span class="hljs-string">&quot;)&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_BITWISENOT</code> op-codes.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">numeric varid   = MyData.Data,
+        prompt  = STRING_TOKEN(STR_PROMPT),
+        help    = STRING_TOKEN(STR_HELP),
+        minimum = <span class="hljs-number">0</span>,
+        maximum = <span class="hljs-number">255</span>,
+        <span class="hljs-keyword">default</span> value = ~(length(stringref(STRING_TOKEN(STR_STRING)))),
+endnumeric;
+</code></pre>
+<h5 id="2121163-questionrefval">2.12.11.6.3 questionrefval</h5>
+<pre><code class="lang-c">question23refExp ::=
+  <span class="hljs-string">&quot;questionrefval&quot;</span>
+  <span class="hljs-string">&quot;(&quot;</span>
+    {
+      DevicePath <span class="hljs-string">&quot;=&quot;</span> <span class="hljs-string">&quot;STRING_TOKEN&quot;</span> <span class="hljs-string">&quot;\(&quot;</span> S:Number <span class="hljs-string">&quot;\)&quot;</span> <span class="hljs-string">&quot;,&quot;</span>
+    }
+    {
+      Uuid <span class="hljs-string">&quot;=&quot;</span> guidDefinition[Guid] <span class="hljs-string">&quot;,&quot;</span>
+    }
+    vfrStatementExpression
+  <span class="hljs-string">&quot;)&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_QUESTION_REF2</code> or <code>EFI_IFR_QUESTION_REF3</code> op-codes.</p>
+<pre><code class="lang-c">numeric varid   = MyData.Data,
+        prompt  = STRING_TOKEN(STR_PROMPT),
+        help    = STRING_TOKEN(STR_HELP),
+        minimum = <span class="hljs-number">0</span>,
+        maximum = <span class="hljs-number">255</span>,
+        <span class="hljs-keyword">default</span> value = questionrefval(QuestionID),
+endnumeric;
+</code></pre>
+<h5 id="2121164-stringrefval">2.12.11.6.4 stringrefval</h5>
+<pre><code class="lang-c">stringref2Exp ::=
+  <span class="hljs-string">&quot;stringrefval&quot;</span> <span class="hljs-string">&quot;(&quot;</span> vfrStatementExpression <span class="hljs-string">&quot;)&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_STRING_REF2</code> op-codes.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">numeric varid   = MyData.Data,
+        prompt  = STRING_TOKEN(STR_PROMPT),
+        help    = STRING_TOKEN(STR_HELP),
+        minimum = <span class="hljs-number">0</span>,
+        maximum = <span class="hljs-number">255</span>,
+        <span class="hljs-keyword">default</span> value = length(stringrefval(STR_STRING)),
+endnumeric;
+</code></pre>
+<h5 id="2121165-boolval">2.12.11.6.5 boolval</h5>
+<pre><code class="lang-c">toboolExp ::=
+  <span class="hljs-string">&quot;boolval&quot;</span> <span class="hljs-string">&quot;(&quot;</span> vfrStatementExpression <span class="hljs-string">&quot;)&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_TO_BOOLEAN</code> op-codes.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">numeric varid   = MyData.Data,
+        prompt  = STRING_TOKEN(STR_PROMPT),
+        help    = STRING_TOKEN(STR_HELP),
+        minimum = <span class="hljs-number">0</span>,
+        maximum = <span class="hljs-number">255</span>, <span class="hljs-keyword">default</span> value = boolval(<span class="hljs-number">12</span>),
+endnumeric;
+</code></pre>
+<h5 id="2121166-stringval">2.12.11.6.6 stringval</h5>
+<pre><code>tostringExp ::=
+  &quot;stringval&quot; { &quot;format&quot; &quot;=&quot; Number &quot;,&quot; }
+  &quot;(&quot; vfrStatementExpression &quot;)&quot;
+</code></pre><h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_TO_STRING</code> op-codes.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">numeric varid   = MyData.Data,
+        prompt  = STRING_TOKEN(STR_PROMPT),
+        help    = STRING_TOKEN(STR_HELP),
+        minimum = <span class="hljs-number">0</span>,
+        maximum = <span class="hljs-number">255</span>,
+        <span class="hljs-keyword">default</span> value = length(stringval(format = <span class="hljs-number">8</span>, <span class="hljs-number">12</span>)),
+endnumeric;
+</code></pre>
+<h5 id="2121167-unintval">2.12.11.6.7 unintval</h5>
+<pre><code class="lang-c">unintExp ::=
+  <span class="hljs-string">&quot;unintval&quot;</span> <span class="hljs-string">&quot;(&quot;</span> vfrStatementExpression <span class="hljs-string">&quot;)&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_TO_UINT</code> op-codes.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">numeric varid   = MyData.Data,
+        prompt  = STRING_TOKEN(STR_PROMPT),
+        help    = STRING_TOKEN(STR_HELP),
+        minimum = <span class="hljs-number">0</span>,
+        maximum = <span class="hljs-number">255</span>,
+        <span class="hljs-keyword">default</span> value = unintval(<span class="hljs-number">12</span> * <span class="hljs-number">3</span>),
+endnumeric;
+</code></pre>
+<h5 id="2121168-toupper">2.12.11.6.8 toupper</h5>
+<pre><code class="lang-c">toupperExp ::=
+  <span class="hljs-string">&quot;toupper&quot;</span> <span class="hljs-string">&quot;(&quot;</span> vfrStatementExpression <span class="hljs-string">&quot;)&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_TO_UPPER</code> op-codes.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">grayoutif length(toupper(stringref(STRING_TOKEN(STR_STRING))))==1;
+  string varid   = MyData.String,
+         prompt  = STRING_TOKEN(STR_PROMPT),
+         help    = STRING_TOKEN(STR_HELP),
+         minsize = 6,
+         maxsize = 40,
+  endstring;
+endif;
+</code></pre>
+<h5 id="2121169-tolower">2.12.11.6.9 tolower</h5>
+<pre><code class="lang-c">tolwerExp ::=
+  <span class="hljs-string">&quot;tolower&quot;</span> <span class="hljs-string">&quot;(&quot;</span> vfrStatementExpression <span class="hljs-string">&quot;)&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_TO_LOWER</code> op-codes.</p>
+<pre><code class="lang-c">grayoutif length(tolower(stringref(STRING_TOKEN(STR_STRING))))==2;
+  string varid   = MyData.String,
+         prompt  = STRING_TOKEN(STR_PROMPT),
+         help    = STRING_TOKEN(STR_HELP),
+         minsize = 6,
+         maxsize = 40,
+  endstring;
+endif;
+</code></pre>
+<h5 id="21211610-set">2.12.11.6.10 set</h5>
+<pre><code class="lang-c">setExp ::=
+  <span class="hljs-string">&quot;set&quot;</span>
+  <span class="hljs-string">&quot;(&quot;</span>
+  vfrStorageVarId { <span class="hljs-string">&quot;|&quot;</span> <span class="hljs-string">&quot;flags&quot;</span> <span class="hljs-string">&quot;=&quot;</span> vfrNumericFlags } <span class="hljs-string">&quot;,&quot;</span>
+  vfrStatementExpression
+  <span class="hljs-string">&quot;)&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_SET</code> op-codes.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">numeric varid   = MyData.Data,
+        prompt  = STRING_TOKEN(STR_PROMPT),
+        help    = STRING_TOKEN(STR_HELP),
+        minimum = <span class="hljs-number">0</span>,
+        maximum = <span class="hljs-number">255</span>,
+        <span class="hljs-function">write <span class="hljs-title">set</span><span class="hljs-params">(MyData.Data1,<span class="hljs-number">10</span>)</span></span>;
+endnumeric;
+</code></pre>
+<h5 id="212117-ternary-operators">2.12.11.7 ternary operators</h5>
+<pre><code class="lang-c">vfrExpressionTernaryOp ::=
+    conditionalExp
+  | findExp
+  | midExp
+  | tokenExp
+  | spanExp
+</code></pre>
+<h5 id="2121171-cond">2.12.11.7.1 cond</h5>
+<pre><code class="lang-c">conditionalExp ::=
+  <span class="hljs-string">&quot;cond&quot;</span>
+  <span class="hljs-string">&quot;(&quot;</span>
+  vfrStatementExpression1
+  <span class="hljs-string">&quot;?&quot;</span>
+  vfrStatementExpression2
+  <span class="hljs-string">&quot;:&quot;</span>
+  vfrStatementExpression3
+  <span class="hljs-string">&quot;)&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p><code>If (Expr1) then x = Expr3 else Expr2</code></p>
+<p>Generates <code>EFI_IFR_CONDITIONAL</code> op-codes.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">numeric varid   = MyData.Data,
+        prompt  = STRING_TOKEN(STR_PROMPT),
+        help    = STRING_TOKEN(STR_HELP),
+        minimum = <span class="hljs-number">0</span>,
+        maximum = <span class="hljs-number">255</span>,
+        <span class="hljs-keyword">default</span> value = cond(<span class="hljs-number">2</span> == <span class="hljs-number">1</span> ? <span class="hljs-number">5</span> : <span class="hljs-number">10</span>),
+endnumeric;
+</code></pre>
+<h5 id="2121172-find">2.12.11.7.2 find</h5>
+<pre><code class="lang-c">findExp ::=
+  <span class="hljs-string">&quot;find&quot;</span>
+  <span class="hljs-string">&quot;(&quot;</span>
+  findFormat ( <span class="hljs-string">&quot;|&quot;</span> findFormat )*
+  <span class="hljs-string">&quot;,&quot;</span>
+  vfrStatementExpression
+  <span class="hljs-string">&quot;,&quot;</span>
+  vfrStatementExpression
+  <span class="hljs-string">&quot;,&quot;</span>
+  vfrStatementExpression
+  <span class="hljs-string">&quot;)&quot;</span>
+
+findFormat ::=
+    <span class="hljs-string">&quot;SENSITIVE&quot;</span>
+  | <span class="hljs-string">&quot;INSENSITIVE&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_FIND</code> op-codes.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">numeric varid   = MyData.Data,
+        prompt  = STRING_TOKEN(STR_PROMPT),
+        help    = STRING_TOKEN(STR_HELP),
+        minimum = <span class="hljs-number">0</span>,
+        maximum = <span class="hljs-number">255</span>,
+        <span class="hljs-keyword">default</span> value =
+          find(INSENSITIVE, (stringref(STRING_TOKEN(STR_STRING1))),
+                            (stringref(STRING_TOKEN(STR_STRING2))), <span class="hljs-number">1</span>),
+endnumeric;
+</code></pre>
+<h5 id="2121173-mid">2.12.11.7.3 mid</h5>
+<pre><code class="lang-c">midExp ::=
+  <span class="hljs-string">&quot;mid&quot;</span>
+  <span class="hljs-string">&quot;(&quot;</span>
+  vfrStatementExpression
+  <span class="hljs-string">&quot;,&quot;</span>
+  vfrStatementExpression
+  <span class="hljs-string">&quot;,&quot;</span>
+  vfrStatementExpression
+  <span class="hljs-string">&quot;)&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_MID</code> op-codes.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">grayoutif length(mid(stringref(STRING_TOKEN(STR_STRING)),6,8))==1;
+  string varid   = MyData.String,
+         prompt  = STRING_TOKEN(STR_PROMPT),
+         help    = STRING_TOKEN(STR_HELP),
+         minsize = 6,
+         maxsize = 40,
+  endstring;
+endif;
+</code></pre>
+<h5 id="2121174-tok">2.12.11.7.4 tok</h5>
+<pre><code class="lang-c">tokenExp ::=
+  <span class="hljs-string">&quot;token&quot;</span>
+  <span class="hljs-string">&quot;(&quot;</span>
+  vfrStatementExpression
+  <span class="hljs-string">&quot;,&quot;</span>
+  vfrStatementExpression
+  <span class="hljs-string">&quot;,&quot;</span>
+  vfrStatementExpression
+  <span class="hljs-string">&quot;)&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_TOKEN</code> op-codes.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">grayoutif length(token(stringref(STRING_TOKEN(STR_STRING1)),
+                 stringref(STRING_TOKEN(STR_STRING2)), 0)) == 2;
+  string varid   = MyData.String,
+         prompt  = STRING_TOKEN(STR_PROMPT),
+         help    = STRING_TOKEN(STR_HELP),
+         minsize = 6,
+         maxsize = 40,
+  endstring;
+endif;
+</code></pre>
+<h5 id="2121175-span">2.12.11.7.5 span</h5>
+<pre><code class="lang-c">spanExp ::=
+  <span class="hljs-string">&quot;span&quot;</span>
+  <span class="hljs-string">&quot;(&quot;</span>
+  <span class="hljs-string">&quot;flags&quot;</span> <span class="hljs-string">&quot;=&quot;</span> spanFlags ( <span class="hljs-string">&quot;|&quot;</span> spanFlags )*
+  <span class="hljs-string">&quot;,&quot;</span>
+  vfrStatementExpression
+  <span class="hljs-string">&quot;,&quot;</span>
+  vfrStatementExpression
+  <span class="hljs-string">&quot;,&quot;</span>
+  vfrStatementExpression
+  <span class="hljs-string">&quot;)&quot;</span>
+
+spanFlags ::=
+    Number
+  | <span class="hljs-string">&quot;LAST_NON_MATCH&quot;</span>
+  | <span class="hljs-string">&quot;FIRST_NON_MATCH&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_SPAN</code> op-codes.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">numeric varid = MyData.Data,
+        prompt  = STRING_TOKEN(STR_PROMPT),
+        help    = STRING_TOKEN(STR_HELP),
+        minimum = <span class="hljs-number">0</span>,
+        maximum = <span class="hljs-number">255</span>,
+        <span class="hljs-keyword">default</span> value = span(flags = LAST_NON_MATCH,
+                             stringref(STRING_TOKEN(STR_STRING1)),
+                             stringref(STRING_TOKEN(STR_STRING2)),<span class="hljs-number">0</span>),
+endnumeric;
+</code></pre>
+<h4 id="212118-map">2.12.11.8 map</h4>
+<pre><code class="lang-c">vfrExpressionMap ::=
+  <span class="hljs-string">&quot;map&quot;</span>
+  <span class="hljs-string">&quot;(&quot;</span>
+  vfrStatementExpression
+  <span class="hljs-string">&quot;:&quot;</span>
+  (
+    vfrStatementExpression
+    <span class="hljs-string">&quot;,&quot;</span>
+    vfrStatementExpression
+    <span class="hljs-string">&quot;;&quot;</span>
+  )*
+  <span class="hljs-string">&quot;)&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_MAP</code> op-codes.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">numeric varid   = MyData.Data,
+        prompt  = STRING_TOKEN(STR_PROMPT),
+        help    = STRING_TOKEN(STR_HELP),
+        minimum = <span class="hljs-number">0</span>,
+        maximum = <span class="hljs-number">255</span>,
+        <span class="hljs-keyword">default</span> value = <span class="hljs-built_in">map</span>(pushthis:<span class="hljs-number">0</span>,<span class="hljs-number">10</span>;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>;<span class="hljs-number">3</span>,<span class="hljs-number">5</span>;<span class="hljs-number">6</span>,<span class="hljs-number">8</span>;),
+endnumeric;
+</code></pre>
+<h4 id="212119-match2">2.12.11.9 match2</h4>
+<pre><code class="lang-c">vfrExpressionMatch ::=
+  <span class="hljs-string">&quot;match2&quot;</span>
+  <span class="hljs-string">&quot;(&quot;</span>
+  vfrStatementExpressionPattern
+  <span class="hljs-string">&quot;,&quot;</span>
+  vfrStatementExpressionString
+  <span class="hljs-string">&quot;,&quot;</span>
+  guidDefinition[Guid]
+  <span class="hljs-string">&quot;)&quot;</span>
+</code></pre>
+<h4 id="behaviors-and-restrictions">BEHAVIORS AND RESTRICTIONS</h4>
+<p>Generates <code>EFI_IFR_MATCH2</code> op-codes.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-c">grayoutif match2(stringref(STRING_TOKEN(STR_PATTERN)),
+                 stringref(STRING_TOKEN(STR_STRING)),
+                 PERL_GUID);
+    numeric varid   = MyData.Data,
+            prompt  = STRING_TOKEN(STR_PROMPT),
+            help    = STRING_TOKEN(STR_HELP),
+            minimum = 0,
+            maximum = 243,
+    endnumeric;
+endif;
+</code></pre>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                    
+                    
+
+<div>
+    <hr>
+    
+      <h2>
+        <div style="position:absolute;text-align:left">EDK II VFR Programming Language Specification</div>
+        <div style="text-align:right">Revision 1.91</div>
+      </h2>  
+    
+</div>
+
+
+
+                
+            </div>
+
+            
+                
+                <a href="211_vfr_form_definition.html#211-vfr-form-definition" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 2.11 VFR Form Definition">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2.12 VFR Expression Statement Definition","level":"1.3.12","depth":2,"previous":{"title":"2.11 VFR Form Definition","level":"1.3.11","depth":2,"anchor":"#211-vfr-form-definition","path":"2_vfr_description_in_bnf/211_vfr_form_definition.md","ref":"2_vfr_description_in_bnf/211_vfr_form_definition.md#211-vfr-form-definition","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"title":"EDK II VFR Programming Language Specification","version":"Revision 1.91"},"plugins":["puml-aleung"],"pluginsConfig":{"puml-aleung":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"2_vfr_description_in_bnf/212_vfr_expression_statement_definition.md","mtime":"2020-12-01T05:57:50.007Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-01T05:58:21.328Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
